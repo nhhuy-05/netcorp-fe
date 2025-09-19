@@ -1,0 +1,130 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "news": "News",
+    "contact": "Contact",
+    "client": "Clients",
+    "clientPortal": "Client Portal",
+    "partners": "Partners"
+  },
+  "hero": {
+    "tagline": "Leading Technology Solutions in Vietnam",
+    "title": "We Build Innovative Technology Solutions",
+    "description": "Helping businesses thrive in the digital age with cutting-edge infrastructure, software development, and IT consulting services.",
+    "getStarted": "Get Started",
+    "exploreServices": "Explore Services",
+    "trustedBy": "Trusted by",
+    "companies": "Companies",
+    "projects": "Projects"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Technology Solutions for Business Growth",
+    "description": "We provide comprehensive IT services to help your business reach its full potential in today's digital landscape.",
+    "learnMore": "Learn More",
+    "getConsultation": "Get Free Consultation",
+    "viewAll": "View All Services",
+    "items": {
+      "infrastructure": {
+        "title": "IT Infrastructure",
+        "description": "Design and implementation of scalable and secure IT infrastructure tailored to your business needs."
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity",
+        "description": "Comprehensive security solutions to protect your business from evolving cyber threats."
+      },
+      "development": {
+        "title": "Software Development",
+        "description": "Custom software solutions designed to streamline your business processes and enhance productivity."
+      },
+      "cloud": {
+        "title": "Cloud Solutions",
+        "description": "Seamless migration and management of cloud infrastructure for improved flexibility and cost-efficiency."
+      },
+      "database": {
+        "title": "Database Management",
+        "description": "Optimization and maintenance of database systems to ensure data integrity and performance."
+      },
+      "consulting": {
+        "title": "IT Consulting",
+        "description": "Strategic IT advisory services to align technology investments with your business objectives."
+      }
+    }
+  },
+  "about": {
+    "title": "About NetCorp",
+    "subtitle": "Your Trusted Technology Partner",
+    "description": "With over 10 years of experience, NetCorp has been helping businesses in Vietnam transform through technology. Our team of certified professionals delivers innovative solutions tailored to each client's unique needs.",
+    "mission": "Our mission is to empower businesses with technology solutions that drive growth, efficiency, and competitive advantage.",
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "awards": "Industry Awards"
+    },
+    "team": {
+      "title": "Our Expert Team",
+      "subtitle": "Meet the people behind our success"
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Delivering Excellence Across Industries",
+    "description": "Explore our portfolio of successful projects that have helped our clients achieve their business objectives.",
+    "categories": {
+      "all": "All Projects",
+      "infrastructure": "Infrastructure",
+      "software": "Software",
+      "cybersecurity": "Cybersecurity",
+      "cloud": "Cloud Solutions"
+    },
+    "viewProject": "View Project",
+    "viewAll": "View All Projects",
+    "client": "Client"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Let's Discuss Your Project",
+    "description": "Ready to transform your business with technology? Get in touch with our team of experts.",
+    "name": "Your Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "office": "Our Office",
+    "email": "Email Us",
+    "call": "Call Us",
+    "address": "123 Technology Street, District 1, Ho Chi Minh City, Vietnam"
+  },
+  "footer": {
+    "about": "About NetCorp",
+    "aboutText": "NetCorp is a leading IT solutions provider in Vietnam, helping businesses leverage technology for growth and innovation.",
+    "links": "Quick Links",
+    "services": "Our Services",
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
+    },
+    "contact": "Contact Information",
+    "copyright": "© 2023 NetCorp. All rights reserved."
+  },
+  "language": {
+    "en": "English",
+    "vi": "Vietnamese"
+  },
+  "partners": {
+    "title": "Our Partners",
+    "subtitle": "Strategic Technology Partnerships",
+    "description": "Collaborating with industry leaders to deliver cutting-edge solutions.",
+    "categories": {
+      "all": "All Partners",
+      "technology": "Technology Partners",
+      "consulting": "Consulting Partners",
+      "security": "Security Partners"
+    }
+  }
+} 

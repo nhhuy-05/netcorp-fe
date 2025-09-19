@@ -1,0 +1,130 @@
+{
+  "navbar": {
+    "home": "Trang chủ",
+    "services": "Dịch vụ",
+    "about": "Giới thiệu",
+    "projects": "Dự án",
+    "news": "Tin tức",
+    "contact": "Liên hệ",
+    "client": "Khách hàng",
+    "clientPortal": "Cổng khách hàng",
+    "partners": "Đối tác"
+  },
+  "hero": {
+    "tagline": "Giải pháp Công nghệ Hàng đầu tại Việt Nam",
+    "title": "Chúng tôi Xây dựng Giải pháp Công nghệ Sáng tạo",
+    "description": "Giúp doanh nghiệp phát triển trong kỷ nguyên số với cơ sở hạ tầng tiên tiến, phát triển phần mềm và dịch vụ tư vấn CNTT.",
+    "getStarted": "Bắt đầu",
+    "exploreServices": "Khám phá dịch vụ",
+    "trustedBy": "Được tin cậy bởi",
+    "companies": "Công ty",
+    "projects": "Dự án"
+  },
+  "services": {
+    "title": "Dịch vụ của chúng tôi",
+    "subtitle": "Giải pháp Công nghệ cho Phát triển Kinh doanh",
+    "description": "Chúng tôi cung cấp dịch vụ CNTT toàn diện để giúp doanh nghiệp đạt được tiềm năng tối đa trong bối cảnh kỹ thuật số hiện nay.",
+    "learnMore": "Tìm hiểu thêm",
+    "getConsultation": "Nhận Tư vấn Miễn phí",
+    "viewAll": "Xem Tất cả Dịch vụ",
+    "items": {
+      "infrastructure": {
+        "title": "Cơ sở Hạ tầng CNTT",
+        "description": "Thiết kế và triển khai cơ sở hạ tầng CNTT có khả năng mở rộng và an toàn, được điều chỉnh theo nhu cầu kinh doanh của bạn."
+      },
+      "cybersecurity": {
+        "title": "An ninh mạng",
+        "description": "Giải pháp bảo mật toàn diện để bảo vệ doanh nghiệp của bạn khỏi các mối đe dọa mạng đang phát triển."
+      },
+      "development": {
+        "title": "Phát triển Phần mềm",
+        "description": "Giải pháp phần mềm tùy chỉnh được thiết kế để hợp lý hóa quy trình kinh doanh và nâng cao năng suất."
+      },
+      "cloud": {
+        "title": "Giải pháp Đám mây",
+        "description": "Di chuyển và quản lý cơ sở hạ tầng đám mây liền mạch để cải thiện tính linh hoạt và hiệu quả chi phí."
+      },
+      "database": {
+        "title": "Quản lý Cơ sở Dữ liệu",
+        "description": "Tối ưu hóa và bảo trì hệ thống cơ sở dữ liệu để đảm bảo tính toàn vẹn và hiệu suất dữ liệu."
+      },
+      "consulting": {
+        "title": "Tư vấn CNTT",
+        "description": "Dịch vụ tư vấn CNTT chiến lược để gắn kết đầu tư công nghệ với mục tiêu kinh doanh của bạn."
+      }
+    }
+  },
+  "about": {
+    "title": "Về NetCorp",
+    "subtitle": "Đối tác Công nghệ Đáng tin cậy của Bạn",
+    "description": "Với hơn 10 năm kinh nghiệm, NetCorp đã giúp các doanh nghiệp tại Việt Nam chuyển đổi thông qua công nghệ. Đội ngũ chuyên gia được chứng nhận của chúng tôi cung cấp giải pháp sáng tạo phù hợp với nhu cầu độc đáo của từng khách hàng.",
+    "mission": "Sứ mệnh của chúng tôi là trao quyền cho doanh nghiệp với các giải pháp công nghệ thúc đẩy tăng trưởng, hiệu quả và lợi thế cạnh tranh.",
+    "stats": {
+      "projects": "Dự án Hoàn thành",
+      "clients": "Khách hàng Hài lòng",
+      "awards": "Giải thưởng Ngành"
+    },
+    "team": {
+      "title": "Đội ngũ Chuyên gia của Chúng tôi",
+      "subtitle": "Gặp gỡ những người đứng sau thành công của chúng tôi"
+    }
+  },
+  "projects": {
+    "title": "Dự án của chúng tôi",
+    "subtitle": "Mang lại Sự Xuất sắc Trên Nhiều Ngành",
+    "description": "Khám phá danh mục các dự án thành công đã giúp khách hàng của chúng tôi đạt được mục tiêu kinh doanh.",
+    "categories": {
+      "all": "Tất cả Dự án",
+      "infrastructure": "Cơ sở Hạ tầng",
+      "software": "Phần mềm",
+      "cybersecurity": "An ninh mạng",
+      "cloud": "Giải pháp Đám mây"
+    },
+    "viewProject": "Xem Dự án",
+    "viewAll": "Xem Tất cả Dự án",
+    "client": "Khách hàng"
+  },
+  "contact": {
+    "title": "Liên hệ với Chúng tôi",
+    "subtitle": "Hãy Thảo luận về Dự án của Bạn",
+    "description": "Sẵn sàng chuyển đổi doanh nghiệp của bạn với công nghệ? Liên hệ với đội ngũ chuyên gia của chúng tôi.",
+    "name": "Tên của Bạn",
+    "email": "Địa chỉ Email",
+    "phone": "Số Điện thoại",
+    "message": "Tin nhắn của Bạn",
+    "submit": "Gửi Tin nhắn",
+    "office": "Văn phòng của Chúng tôi",
+    "email": "Email cho Chúng tôi",
+    "call": "Gọi cho Chúng tôi",
+    "address": "123 Đường Công nghệ, Quận 1, Thành phố Hồ Chí Minh, Việt Nam"
+  },
+  "footer": {
+    "about": "Về NetCorp",
+    "aboutText": "NetCorp là nhà cung cấp giải pháp CNTT hàng đầu tại Việt Nam, giúp doanh nghiệp tận dụng công nghệ để tăng trưởng và đổi mới.",
+    "links": "Liên kết Nhanh",
+    "services": "Dịch vụ của Chúng tôi",
+    "legal": {
+      "title": "Pháp lý",
+      "privacy": "Chính sách Riêng tư",
+      "terms": "Điều khoản Dịch vụ",
+      "cookies": "Chính sách Cookie"
+    },
+    "contact": "Thông tin Liên hệ",
+    "copyright": "© 2023 NetCorp. Tất cả các quyền được bảo lưu."
+  },
+  "language": {
+    "en": "Tiếng Anh",
+    "vi": "Tiếng Việt"
+  },
+  "partners": {
+    "title": "Đối tác của Chúng tôi",
+    "subtitle": "Quan hệ Đối tác Công nghệ Chiến lược",
+    "description": "Hợp tác với các đơn vị hàng đầu trong ngành để cung cấp giải pháp tiên tiến.",
+    "categories": {
+      "all": "Tất cả Đối tác",
+      "technology": "Đối tác Công nghệ",
+      "consulting": "Đối tác Tư vấn",
+      "security": "Đối tác An ninh"
+    }
+  }
+} 

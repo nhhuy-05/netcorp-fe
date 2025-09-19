@@ -1,0 +1,254 @@
+/* AOS animation styles */
+@import 'aos/dist/aos.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #c1d72e; /* Updated primary color */
+  --primary-dark: #a8c025; /* Darker shade for hover states */
+  --secondary: #6d6e71;
+  --dark: #111827;
+  --darker: #121212;
+  --light: #F9FAFB;
+  --gray-custom: #6B7280;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    @apply font-sans bg-white text-gray-800;
+    min-height: 100vh;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  /* Ensure all images are responsive */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Grid background pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Line clamp utilities for text truncation */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  .container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    min-width: 320px; /* Minimum width for very small devices */
+  }
+  
+  .btn {
+    @apply inline-block px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-300 whitespace-nowrap;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .section-subtitle {
+    @apply text-sm font-medium text-primary mb-2;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4;
+  }
+  
+  .section-divider {
+    @apply h-1 w-16 bg-primary mb-6;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+
+  .nav-link {
+    @apply px-4 py-2 font-medium transition-all duration-300 hover:text-primary;
+  }
+  
+  .active-nav-link {
+    @apply text-primary;
+  }
+
+  /* Service page styles */
+  .service-hero {
+    @apply relative h-[40vh] sm:h-[50vh] md:h-[60vh] w-full flex items-center justify-center;
+  }
+
+  .service-hero-content {
+    @apply relative z-10 text-center text-white px-4;
+  }
+
+  .service-hero-title {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 uppercase;
+  }
+
+  .service-content {
+    @apply grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 py-12 lg:py-20;
+  }
+
+  .service-main {
+    @apply lg:col-span-2;
+  }
+
+  .service-sidebar {
+    @apply w-full lg:w-auto space-y-8;
+  }
+
+  /* Work Showcase styles */
+  .work-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+
+  .work-item {
+    @apply relative overflow-hidden bg-white w-full;
+  }
+
+  /* Ensure responsive images in grid */
+  .work-image {
+    @apply w-full h-full object-cover transition-transform duration-700;
+    aspect-ratio: 1 / 1;
+  }
+
+  .work-overlay {
+    @apply absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300 flex items-center justify-center;
+  }
+
+  .work-content {
+    @apply text-center text-white transform translate-y-4 transition-transform duration-300 px-4;
+  }
+
+  .work-item:hover .work-image {
+    @apply scale-110;
+  }
+
+  .work-item:hover .work-overlay {
+    @apply opacity-100;
+  }
+
+  .work-item:hover .work-content {
+    @apply translate-y-0;
+  }
+
+  /* Ensure buttons don't overflow on mobile */
+  .btn-container {
+    @apply flex flex-wrap gap-2 justify-center sm:justify-start;
+  }
+}
+
+/* Fix for mobile overflow issues */
+@media screen and (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Adjust grid gaps for mobile */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Ensure text doesn't overflow */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    @apply tracking-tight;
+  }
+
+  /* Improve mobile text readability */
+  p {
+    @apply text-sm leading-relaxed;
+  }
+
+  /* Adjust service page spacing */
+  .service-content {
+    @apply py-8;
+  }
+
+  .service-hero {
+    @apply min-h-[300px];
+  }
+
+  /* Adjust mobile navigation */
+  .nav-link {
+    @apply py-3;
+  }
+}
+
+/* Theme colors for Tailwind */
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+  .bg-primary {
+    background-color: var(--primary);
+  }
+  .border-primary {
+    border-color: var(--primary);
+  }
+  .bg-primary-dark {
+    background-color: var(--primary-dark);
+  }
+}
+
+/* Prose styles for blog content */
+.prose {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold text-gray-900 mt-8 mb-4;
+}
+
+.prose h3 {
+  @apply text-xl font-bold text-gray-800 mt-6 mb-3;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose li {
+  @apply mb-2;
+}
+
+.prose-lg {
+  @apply text-lg;
+}
+
+.prose-lg h2 {
+  @apply text-3xl;
+}
+
+.prose-lg h3 {
+  @apply text-2xl;
+}

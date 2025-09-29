@@ -3,15 +3,16 @@ import Hero from '../ui/Hero';
 import ReadySection from '../ui/ReadySection';
 import VideoSection from '../ui/VideoSection';
 import WorkShowcase from '../ui/WorkShowcase';
+import { bg_homepage } from '../../assets/images';
 
 const Home: React.FC = () => {
   return (
     <main className="min-h-screen pt-20 relative">
       {/* Dark overlay background */}
-      <div 
+      <div
         className="fixed inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bg_homepage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -21,7 +22,15 @@ const Home: React.FC = () => {
       {/* Content */}
       <div className="relative z-10">
         <Hero />
-        <ReadySection />
+        <div
+          id="ready"
+          // only use scrollMarginTop so scrollIntoView positions the section below the fixed navbar
+          style={{
+            scrollMarginTop: '80px' // adjust this to match your navbar height if needed
+          }}
+        >
+          <ReadySection />
+        </div>
         <VideoSection />
         <WorkShowcase />
       </div>
@@ -29,4 +38,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home; 
+export default Home;

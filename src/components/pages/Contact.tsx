@@ -10,65 +10,65 @@ const Contact: React.FC = () => {
 
   const contactCards = isEn
     ? [
-        {
-          icon: <FiHome size={32} className="text-primary mb-2" />,
-          title: 'Address',
-          content: (
-            <>
-              <div>Casla Building, 78 Duy Tan Alley, Dich Vong Hau, Cau Giay, Hanoi.</div>
-            </>
-          ),
-        },
-        {
-          icon: <FiBriefcase size={32} className="text-primary mb-2" />,
-          title: 'Sales Department',
-          content: (
-            <>
-              <div> Email: info@netcorp.vn</div>
-              <div> Hotline: 024.7770.1912</div>
-            </>
-          ),
-        },
-        {
-          icon: <FiCpu size={32} className="text-primary mb-2" />,
-          title: 'Technical Department',
-          content: (
-            <>
-              <div> Email: nis@netcorp.vn</div>
-            </>
-          ),
-        },
-      ]
+      {
+        icon: <FiHome size={32} className="text-primary mb-2" />,
+        title: 'Address',
+        content: (
+          <>
+            <div>Casla Building, 78 Duy Tan Alley, Cau Giay, Hanoi.</div>
+          </>
+        ),
+      },
+      {
+        icon: <FiBriefcase size={32} className="text-primary mb-2" />,
+        title: 'Sales Department',
+        content: (
+          <>
+            <div> Email: info@netcorp.vn</div>
+            <div> Hotline: 024.7770.1912</div>
+          </>
+        ),
+      },
+      {
+        icon: <FiCpu size={32} className="text-primary mb-2" />,
+        title: 'Technical Department',
+        content: (
+          <>
+            <div> Email: nis@netcorp.vn</div>
+          </>
+        ),
+      },
+    ]
     : [
-        {
-          icon: <FiHome size={32} className="text-primary mb-2" />,
-          title: 'Địa chỉ',
-          content: (
-            <>
-              <div>Tòa nhà Casla, Ngõ 78 Duy Tân, Dịch Vọng Hậu, Cầu Giấy, Hà Nội.</div>
-            </>
-          ),
-        },
-        {
-          icon: <FiBriefcase size={32} className="text-primary mb-2" />,
-          title: 'Bộ Phận Kinh Doanh',
-          content: (
-            <>
-              <div> Email: info@netcorp.vn</div>
-              <div> Hotline: 024.7770.1912</div>
-            </>
-          ),
-        },
-        {
-          icon: <FiCpu size={32} className="text-primary mb-2" />,
-          title: 'Bộ Phận Kỹ Thuật',
-          content: (
-            <>
-              <div> Email: nis@netcorp.vn</div>
-            </>
-          ),
-        },
-      ];
+      {
+        icon: <FiHome size={32} className="text-primary mb-2" />,
+        title: 'Địa chỉ',
+        content: (
+          <>
+            <div>Tòa nhà Casla, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội.</div>
+          </>
+        ),
+      },
+      {
+        icon: <FiBriefcase size={32} className="text-primary mb-2" />,
+        title: 'Bộ Phận Kinh Doanh',
+        content: (
+          <>
+            <div> Email: info@netcorp.vn</div>
+            <div> Hotline: 024.7770.1912</div>
+          </>
+        ),
+      },
+      {
+        icon: <FiCpu size={32} className="text-primary mb-2" />,
+        title: 'Bộ Phận Kỹ Thuật',
+        content: (
+          <>
+            <div> Email: nis@netcorp.vn</div>
+          </>
+        ),
+      },
+    ];
 
   const namePlaceholder = isEn ? 'Your Name' : 'Họ tên';
   const emailPlaceholder = isEn ? 'Email Address' : 'Địa chỉ mail';
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-center text-white">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-6xl font-bold mb-4 uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,15 +103,15 @@ const Contact: React.FC = () => {
           >
             <Breadcrumb
               items={[
-                { 
-                  name: { 
+                {
+                  name: {
                     en: 'Home',
                     vi: 'Trang chủ'
-                  }, 
-                  path: '/' 
+                  },
+                  path: '/'
                 },
-                { 
-                  name: { 
+                {
+                  name: {
                     en: 'Contact',
                     vi: 'Liên hệ'
                   }
@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Google Map */}
-          <motion.div 
+          <motion.div
             className="flex justify-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -217,17 +217,17 @@ const Contact: React.FC = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   {buttonText}
-                  <span className="absolute right-0 bottom-0 w-6 h-6 bg-green-700 rounded-br-md" style={{clipPath: 'polygon(100% 0, 0 100%, 100% 100%)'}}></span>
+                  <span className="absolute right-0 bottom-0 w-6 h-6 bg-green-700 rounded-br-md" style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></span>
                 </motion.button>
               </div>
             </form>
           </motion.div>
         </div>
-        
+
         {/* Background Elements */}
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 -mb-48 -mr-48 transform rotate-45"></div>
         <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 -ml-36 rounded-full filter blur-3xl"></div>
-        
+
         {/* Spacing before footer */}
         <div className="h-16"></div>
       </div>

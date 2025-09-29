@@ -1,35 +1,29 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 // Import translations
-import enTranslation from './locales/en/translation.json';
-import viTranslation from './locales/vi/translation.json';
+import enTranslation from "./locales/en/translation.json";
+import viTranslation from "./locales/vi/translation.json";
 
 // Initialize i18next
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
       en: {
-        translation: enTranslation
+        translation: enTranslation,
       },
       vi: {
-        translation: viTranslation
-      }
+        translation: viTranslation,
+      },
     },
-    fallbackLng: 'en',
+    lng: "vi", // default language
+    fallbackLng: "vi",
     debug: import.meta.env.DEV,
-    
+
     interpolation: {
-      escapeValue: false // React already safes from XSS
+      escapeValue: false, // React already safes from XSS
     },
-    
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
-    }
   });
 
-export default i18n; 
+export default i18n;

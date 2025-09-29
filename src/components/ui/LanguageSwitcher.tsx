@@ -7,21 +7,22 @@ interface LanguageSwitcherProps {
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) => {
   const { i18n } = useTranslation();
-  
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
+    localStorage.setItem('language', lng); // Lưu lại lựa chọn
   };
 
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
-      <button 
+      <button
         className={`text-sm px-2 py-1 transition-colors ${i18n.language === 'en' ? 'text-primary font-medium' : 'text-gray-200 hover:text-primary'}`}
         onClick={() => changeLanguage('en')}
       >
         EN
       </button>
       <span className="text-gray-500">|</span>
-      <button 
+      <button
         className={`text-sm px-2 py-1 transition-colors ${i18n.language === 'vi' ? 'text-primary font-medium' : 'text-gray-200 hover:text-primary'}`}
         onClick={() => changeLanguage('vi')}
       >
@@ -31,4 +32,4 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = '' }) =
   );
 };
 
-export default LanguageSwitcher; 
+export default LanguageSwitcher;

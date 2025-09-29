@@ -1,18 +1,61 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Hero: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  
+
+  const heroRef = useRef<HTMLElement | null>(null);
+  const [heroInView, setHeroInView] = useState(true);
+  const [atPageBottom, setAtPageBottom] = useState(false);
+
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        setHeroInView(entries[0].isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      // consider bottom when within 80px of document end
+      setAtPageBottom(scrollPos >= docHeight - 80);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const handleStickyClick = () => {
+    if (atPageBottom) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.getElementById('ready');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // fallback: scroll down by viewport height
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative h-[85vh] overflow-hidden">
-    
+    <section id="hero" ref={heroRef} className="relative h-[85vh] overflow-hidden">
+
       {/* Main content */}
       <div className="container mx-auto px-4 h-full flex items-center relative z-20">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <motion.div 
+          <motion.div
             className="text-white lg:col-span-8 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -34,13 +77,13 @@ const Hero: React.FC = () => {
               )}
             </h1>
             <p className="text-base sm:text-lg mb-6 lg:mb-8 text-white/90 max-w-lg mx-auto lg:mx-0">
-              {currentLanguage === 'vi' 
-                ? "Chúng tôi phân phối các thương hiệu công nghệ hàng đầu nhằm mang đến những giải pháp tối ưu và hiệu quả nhất cho khách hàng."
-                : "We distribute leading technology brands to deliver the most optimal and effective solutions to our clients."
+              {currentLanguage === 'vi'
+                ? "Chúng tôi cung cấp các giải pháp công nghệ hàng đầu nhằm mang đến hiệu quả vận hành tối ưu cho khách hàng."
+                : "We provide leading technology solutions to deliver optimal operational efficiency for our clients."
               }
             </p>
             <motion.button
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white rounded-md font-semibold text-base sm:text-lg hover:bg-primary-dark transition-colors duration-300 w-full sm:w-auto"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-white border border-white rounded-md font-semibold text-base sm:text-lg hover:bg-primary hover:border-primary transition-colors duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -48,89 +91,39 @@ const Hero: React.FC = () => {
             </motion.button>
           </motion.div>
 
-          <motion.div 
+
+          <motion.div
             className="relative lg:col-span-4 hidden lg:block"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative">
-              {/* Circular image container */}
-              <div className="aspect-square rounded-full overflow-hidden relative scale-125 -translate-x-12">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                  alt="Digital Marketing Team"
-                  className="w-full h-full object-cover"
-                />
 
-              </div>
-
-              {/* Floating info boxes */}
-              <motion.div 
-                className="absolute -bottom-6 -left-40 bg-white p-4 rounded-lg shadow-lg"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-800">
-                      {currentLanguage === 'vi' ? 'Giải Pháp Số' : 'Digital Solutions'}
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      {currentLanguage === 'vi' ? 'Dịch Vụ Toàn Diện' : 'End-to-End Services'}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -top-6 -right-10 bg-white p-4 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.4 }}
-              >
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-bold text-gray-800">
-                      {currentLanguage === 'vi' ? 'Đối Tác Tin Cậy' : 'Trusted Partner'}
-                    </div>
-                    <div className="text-sm text-gray-600">
-                      {currentLanguage === 'vi' ? 'Từ Năm 2005' : 'Since 2005'}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div 
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
+      {/* Sticky action button (bottom-right) */}
+      <button
+        onClick={handleStickyClick}
+        aria-label={atPageBottom ? (currentLanguage === 'vi' ? 'Lên đầu trang' : 'Go to top') : (currentLanguage === 'vi' ? 'Đến phần sẵn sàng' : 'Go to Ready section')}
+        className="fixed bottom-6 right-6 z-50 bg-transparent text-white border border-white p-3.5 rounded-full shadow-lg hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300 hover:scale-105 transition-transform"
+        title={atPageBottom ? (currentLanguage === 'vi' ? 'Lên đầu trang' : 'Go to top') : (currentLanguage === 'vi' ? 'Đến phần sẵn sàng' : 'Go to Ready section')}
       >
-        <div className="text-sm mb-2">Scroll to discover</div>
-        <svg className="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </motion.div>
+        {/* simple icon: up when at bottom, down otherwise */}
+        {atPageBottom ? (
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path>
+          </svg>
+        ) : (
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        )}
+      </button>
 
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;

@@ -20,198 +20,275 @@ const Partners: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const partners: Partner[] = [
-    // Banking Partners
     {
       id: 1,
-      name: "Vietcombank",
-      category: "banking",
+      name: "AVAYA",
+      category: "enterprise",
       description: {
-        en: "Leading commercial bank in Vietnam",
-        vi: "Ngân hàng thương mại hàng đầu Việt Nam"
+        en: "Leading provider of business communications solutions.",
+        vi: "Nhà cung cấp giải pháp truyền thông doanh nghiệp hàng đầu."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-AVAYA.png"
     },
     {
       id: 2,
-      name: "BIDV",
-      category: "banking",
+      name: "AVER",
+      category: "enterprise",
       description: {
-        en: "Bank for Investment and Development of Vietnam",
-        vi: "Ngân hàng Đầu tư và Phát triển Việt Nam"
+        en: "Innovative video conferencing and education technology.",
+        vi: "Công nghệ hội nghị truyền hình và giáo dục sáng tạo."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-AVER.png"
     },
     {
       id: 3,
-      name: "VietinBank",
-      category: "banking",
+      name: "CHECKPOINT",
+      category: "security",
       description: {
-        en: "Vietnam Joint Stock Commercial Bank for Industry and Trade",
-        vi: "Ngân hàng Thương mại Cổ phần Công thương Việt Nam"
+        en: "Global leader in cybersecurity solutions.",
+        vi: "Nhà cung cấp giải pháp an ninh mạng hàng đầu thế giới."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-CHECKPOINT.png"
     },
     {
       id: 4,
-      name: "Agribank",
-      category: "banking",
+      name: "CISCO",
+      category: "networking",
       description: {
-        en: "Vietnam Bank for Agriculture and Rural Development",
-        vi: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam"
+        en: "World leader in IT, networking, and cybersecurity solutions.",
+        vi: "Nhà cung cấp giải pháp CNTT, mạng và an ninh mạng hàng đầu thế giới."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-CISCO.png"
     },
     {
       id: 5,
-      name: "ACB Bank",
-      category: "banking",
+      name: "CLEARONE",
+      category: "enterprise",
       description: {
-        en: "Asia Commercial Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Á Châu"
+        en: "Leading provider of audio and visual communication solutions.",
+        vi: "Nhà cung cấp giải pháp truyền thông âm thanh và hình ảnh hàng đầu."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-CLEARONE.png"
     },
     {
       id: 6,
-      name: "Sacombank",
-      category: "banking",
+      name: "CYBERARK",
+      category: "security",
       description: {
-        en: "Saigon Thuong Tin Commercial Joint Stock Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Sài Gòn Thương Tín"
+        en: "Leader in privileged access management.",
+        vi: "Nhà cung cấp giải pháp quản lý truy cập đặc quyền hàng đầu."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-CYBERARK.png"
     },
     {
       id: 7,
-      name: "HDBank",
-      category: "banking",
+      name: "DAHUA",
+      category: "surveillance",
       description: {
-        en: "Ho Chi Minh City Development Joint Stock Commercial Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Phát triển TP.HCM"
+        en: "Provider of video surveillance solutions.",
+        vi: "Nhà cung cấp giải pháp giám sát video."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-DAHUA.png"
     },
     {
       id: 8,
-      name: "Shinhan Bank",
-      category: "banking",
-      description: {
-        en: "Shinhan Bank Vietnam",
-        vi: "Ngân hàng Shinhan Việt Nam"
-      },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
-    },
-
-    // Enterprise Partners
-    {
-      id: 9,
-      name: "PetroVietnam",
+      name: "DELL",
       category: "enterprise",
       description: {
-        en: "Vietnam Oil and Gas Group",
-        vi: "Tập đoàn Dầu khí Việt Nam"
+        en: "Global technology leader in computing and storage.",
+        vi: "Nhà cung cấp công nghệ toàn cầu về máy tính và lưu trữ."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-DELL.png"
+    },
+    {
+      id: 9,
+      name: "F5",
+      category: "networking",
+      description: {
+        en: "Application delivery and security solutions.",
+        vi: "Giải pháp phân phối và bảo mật ứng dụng."
+      },
+      image: "/image/partners/logo-F5.png"
     },
     {
       id: 10,
-      name: "Viettel Solutions",
-      category: "enterprise",
+      name: "FORTINET",
+      category: "security",
       description: {
-        en: "Viettel Technology Solutions Corporation",
-        vi: "Tổng Công ty Giải pháp Công nghệ Viettel"
+        en: "Broad, integrated, and automated cybersecurity solutions.",
+        vi: "Giải pháp an ninh mạng tích hợp, tự động và toàn diện."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-FORTINET.png"
     },
     {
       id: 11,
-      name: "VNPay",
+      name: "HPE",
       category: "enterprise",
       description: {
-        en: "Vietnam Payment Solution Joint Stock Company",
-        vi: "Công ty Cổ phần Giải pháp Thanh toán Việt Nam"
+        en: "Enterprise IT infrastructure and cloud solutions.",
+        vi: "Giải pháp hạ tầng CNTT và điện toán đám mây doanh nghiệp."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-HPE.png"
     },
     {
       id: 12,
-      name: "VTVcab",
-      category: "enterprise",
+      name: "IBM",
+      category: "software",
       description: {
-        en: "Vietnam Television Cable Corporation",
-        vi: "Tổng Công ty Truyền hình Cáp Việt Nam"
+        en: "Global leader in hybrid cloud and AI.",
+        vi: "Nhà cung cấp giải pháp điện toán đám mây lai và AI hàng đầu."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-IBM.png"
     },
     {
       id: 13,
-      name: "ACV",
-      category: "enterprise",
+      name: "JUNIPER",
+      category: "networking",
       description: {
-        en: "Airports Corporation of Vietnam",
-        vi: "Tổng Công ty Cảng hàng không Việt Nam"
+        en: "High-performance networking and cybersecurity.",
+        vi: "Giải pháp mạng hiệu suất cao và an ninh mạng."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-JUNIPER.png"
     },
     {
       id: 14,
-      name: "Genco 1",
-      category: "enterprise",
+      name: "MCAFEE",
+      category: "security",
       description: {
-        en: "Power Generation Corporation 1",
-        vi: "Tổng Công ty Phát điện 1"
+        en: "Cybersecurity solutions for businesses.",
+        vi: "Giải pháp an ninh mạng cho doanh nghiệp."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-MCAFEE.png"
     },
-
-    // Government Partners
     {
       id: 15,
-      name: "Bộ TNMT",
-      category: "government",
+      name: "MICROSOFT",
+      category: "software",
       description: {
-        en: "Ministry of Natural Resources and Environment",
-        vi: "Bộ Tài nguyên và Môi trường"
+        en: "Global leader in software, cloud, and productivity solutions.",
+        vi: "Nhà cung cấp phần mềm, điện toán đám mây và giải pháp năng suất hàng đầu."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-MICROSOFT.png"
     },
     {
       id: 16,
-      name: "Bộ Văn hóa",
-      category: "government",
+      name: "NETAPP",
+      category: "enterprise",
       description: {
-        en: "Ministry of Culture, Sports and Tourism",
-        vi: "Bộ Văn hóa, Thể thao và Du lịch"
+        en: "Data management and cloud storage solutions.",
+        vi: "Giải pháp quản lý dữ liệu và lưu trữ đám mây."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-NETAPP.png"
     },
     {
       id: 17,
-      name: "Tỉnh Bắc Ninh",
-      category: "government",
+      name: "ORACLE",
+      category: "software",
       description: {
-        en: "Bac Ninh Province People's Committee",
-        vi: "Ủy ban Nhân dân tỉnh Bắc Ninh"
+        en: "Database, cloud, and enterprise software solutions.",
+        vi: "Giải pháp cơ sở dữ liệu, đám mây và phần mềm doanh nghiệp."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-ORACLE.png"
     },
     {
       id: 18,
-      name: "Tỉnh Phú Thọ",
-      category: "government",
+      name: "PALOALTO",
+      category: "security",
       description: {
-        en: "Phu Tho Province People's Committee",
-        vi: "Ủy ban Nhân dân tỉnh Phú Thọ"
+        en: "Next-generation cybersecurity solutions.",
+        vi: "Giải pháp an ninh mạng thế hệ mới."
       },
-      image: "https://via.placeholder.com/300x200/CCCCCC/666666?text=Partner+Logo"
+      image: "/image/partners/logo-PALOALTO.png"
+    },
+    {
+      id: 19,
+      name: "POLYCOM",
+      category: "enterprise",
+      description: {
+        en: "Unified communications and collaboration solutions.",
+        vi: "Giải pháp truyền thông hợp nhất và cộng tác."
+      },
+      image: "/image/partners/logo-POLYCOM.png"
+    },
+    {
+      id: 20,
+      name: "RADWARE",
+      category: "security",
+      description: {
+        en: "Application delivery and cybersecurity solutions.",
+        vi: "Giải pháp phân phối ứng dụng và an ninh mạng."
+      },
+      image: "/image/partners/logo-RADWARE.png"
+    },
+    {
+      id: 21,
+      name: "SCHNEIDER",
+      category: "enterprise",
+      description: {
+        en: "Energy management and automation solutions.",
+        vi: "Giải pháp quản lý năng lượng và tự động hóa."
+      },
+      image: "/image/partners/logo-SCHNEIDER.png"
+    },
+    {
+      id: 22,
+      name: "SYMANTEC",
+      category: "security",
+      description: {
+        en: "Cybersecurity software and services.",
+        vi: "Phần mềm và dịch vụ an ninh mạng."
+      },
+      image: "/image/partners/logo-SYMANTEC.png"
+    },
+    {
+      id: 23,
+      name: "THALES",
+      category: "security",
+      description: {
+        en: "Digital identity and security solutions.",
+        vi: "Giải pháp nhận dạng số và bảo mật."
+      },
+      image: "/image/partners/logo-THALES.png"
+    },
+    {
+      id: 24,
+      name: "TUFIN",
+      category: "security",
+      description: {
+        en: "Security policy automation solutions.",
+        vi: "Giải pháp tự động hóa chính sách bảo mật."
+      },
+      image: "/image/partners/logo-TUFIN.png"
+    },
+    {
+      id: 25,
+      name: "VERTIV",
+      category: "enterprise",
+      description: {
+        en: "Critical infrastructure and data center solutions.",
+        vi: "Giải pháp hạ tầng quan trọng và trung tâm dữ liệu."
+      },
+      image: "/image/partners/logo-VERTIV.png"
+    },
+    {
+      id: 26,
+      name: "VMWARE",
+      category: "enterprise",
+      description: {
+        en: "Cloud computing and virtualization solutions.",
+        vi: "Giải pháp điện toán đám mây và ảo hóa."
+      },
+      image: "/image/partners/logo-VMWARE.png"
     }
   ];
 
   const categories = [
     { id: 'all', label: currentLanguage === 'vi' ? 'TẤT CẢ' : 'ALL', count: partners.length },
-    { id: 'banking', label: currentLanguage === 'vi' ? 'NGÂN HÀNG' : 'BANKING', count: partners.filter(p => p.category === 'banking').length },
     { id: 'enterprise', label: currentLanguage === 'vi' ? 'DOANH NGHIỆP' : 'ENTERPRISE', count: partners.filter(p => p.category === 'enterprise').length },
-    { id: 'government', label: currentLanguage === 'vi' ? 'CHÍNH PHỦ' : 'GOVERNMENT', count: partners.filter(p => p.category === 'government').length }
+    { id: 'security', label: currentLanguage === 'vi' ? 'AN NINH MẠNG' : 'SECURITY', count: partners.filter(p => p.category === 'security').length },
+    { id: 'networking', label: currentLanguage === 'vi' ? 'HẠ TẦNG MẠNG' : 'NETWORKING', count: partners.filter(p => p.category === 'networking').length },
+    { id: 'surveillance', label: currentLanguage === 'vi' ? 'GIÁM SÁT' : 'SURVEILLANCE', count: partners.filter(p => p.category === 'surveillance').length },
+    { id: 'software', label: currentLanguage === 'vi' ? 'PHẦN MỀM' : 'SOFTWARE', count: partners.filter(p => p.category === 'software').length }
   ];
 
   const filteredPartners = activeCategory === 'all'
@@ -328,7 +405,7 @@ const Partners: React.FC = () => {
                   <img
                     src={partner.image}
                     alt={partner.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

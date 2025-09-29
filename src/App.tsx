@@ -24,8 +24,8 @@ function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    // Get the language from localStorage or default to 'en'
-    const savedLanguage = localStorage.getItem('language') || 'en';
+    // Lấy ngôn ngữ từ localStorage nếu có, không thì mặc định 'vi'
+    const savedLanguage = localStorage.getItem('language') || 'vi';
     i18n.changeLanguage(savedLanguage);
   }, [i18n]);
 

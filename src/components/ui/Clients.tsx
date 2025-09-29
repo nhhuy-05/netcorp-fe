@@ -30,7 +30,7 @@ const Clients: React.FC = () => {
         en: "Airport Corporation of Vietnam",
         vi: "Tổng công ty Cảng hàng không Việt Nam"
       },
-      image: "/image/enterprise/logo ACV.jpg"
+      image: "/image/enterprise/logo-ACV.png"
     },
     {
       id: 2,
@@ -40,7 +40,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Airport Ground Services",
         vi: "Công ty TNHH Dịch vụ mặt đất sân bay Việt Nam"
       },
-      image: "/image/enterprise/logo cong ty tnhh dịch vụ mặt đất sân bay việt nam.png"
+      image: "/image/enterprise/logo-Viags.png"
     },
     {
       id: 3,
@@ -50,7 +50,7 @@ const Clients: React.FC = () => {
         en: "Power Generation Corporation 1",
         vi: "Tổng công ty Phát điện 1"
       },
-      image: "/image/enterprise/logo Genco 1.jpg"
+      image: "/image/enterprise/logo-Genco1.png"
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const Clients: React.FC = () => {
         en: "National Single Window Portal",
         vi: "Cổng thông tin một cửa quốc gia"
       },
-      image: "/image/enterprise/logo NCTS.jpg"
+      image: "/image/enterprise/logo-NCTS.png"
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Oil and Gas Group",
         vi: "Tập đoàn Dầu khí Việt Nam"
       },
-      image: "/image/enterprise/logo petrovietnam.jpg"
+      image: "/image/enterprise/logo-Petrovietnam.png"
     },
     {
       id: 6,
@@ -80,7 +80,7 @@ const Clients: React.FC = () => {
         en: "PetroVietnam Gas Corporation",
         vi: "Tổng công ty Khí Việt Nam"
       },
-      image: "/image/enterprise/logo PVgas.png"
+      image: "/image/enterprise/logo-PVGas.png"
     },
     {
       id: 7,
@@ -90,7 +90,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Cement Corporation",
         vi: "Tổng công ty Xi măng Việt Nam"
       },
-      image: "/image/enterprise/logo tổng cty xi măng vn.jpg"
+      image: "/image/enterprise/logo-VICEM.png"
     },
     {
       id: 8,
@@ -100,7 +100,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Airlines Ground Services",
         vi: "Công ty Dịch vụ mặt đất hàng không Việt Nam"
       },
-      image: "/image/enterprise/logo Viags.jpg"
+      image: "/image/enterprise/logo-Viags.png"
     },
     {
       id: 9,
@@ -110,7 +110,7 @@ const Clients: React.FC = () => {
         en: "Viettel Technology Solutions",
         vi: "Tập đoàn Công nghiệp - Viễn thông Quân đội"
       },
-      image: "/image/enterprise/logo viettel solutions.png"
+      image: "/image/enterprise/logo-ViettelSolutions.png"
     },
     {
       id: 10,
@@ -120,7 +120,7 @@ const Clients: React.FC = () => {
         en: "Vietnam National Shipping Lines",
         vi: "Tổng công ty Hàng hải Việt Nam"
       },
-      image: "/image/enterprise/logo vinalines.jpg"
+      image: "/image/enterprise/logo-Vinalines.png"
     },
     {
       id: 11,
@@ -130,7 +130,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Payment Solution",
         vi: "Công ty Cổ phần Giải pháp Thanh toán Việt Nam"
       },
-      image: "/image/enterprise/logo vnpay.jpg"
+      image: "/image/enterprise/logo-VNPay.png"
     },
     {
       id: 12,
@@ -140,7 +140,7 @@ const Clients: React.FC = () => {
         en: "Vietnam Television Cable",
         vi: "Công ty Truyền hình cáp Việt Nam"
       },
-      image: "/image/enterprise/logo VTVcab.png"
+      image: "/image/enterprise/logo-VTVcab.png"
     },
     {
       id: 13,
@@ -150,7 +150,7 @@ const Clients: React.FC = () => {
         en: "TH Group Corporation",
         vi: "Tập đoàn TH"
       },
-      image: "/image/enterprise/Logo_th_group.png"
+      image: "/image/enterprise/logo-TH.png"
     },
     {
       id: 14,
@@ -160,7 +160,7 @@ const Clients: React.FC = () => {
         en: "MCredit Financial Services",
         vi: "Công ty Tài chính MCredit"
       },
-      image: "/image/enterprise/logo-mcredit-2.png"
+      image: "/image/enterprise/logo-Mcredit.png"
     },
     {
       id: 15,
@@ -170,7 +170,7 @@ const Clients: React.FC = () => {
         en: "National Payment Corporation",
         vi: "Công ty Cổ phần Thanh toán Quốc gia Việt Nam"
       },
-      image: "/image/enterprise/logo-napas.png"
+      image: "/image/enterprise/logo-Napas.png"
     },
 
     // Banking Companies (19)
@@ -182,7 +182,7 @@ const Clients: React.FC = () => {
         en: "Digital banking transformation",
         vi: "Chuyển đổi số ngân hàng"
       },
-      image: "/image/bank/logo abbank.png"
+      image: "/image/bank/logo-ABBank.png"
     },
     {
       id: 17,
@@ -192,7 +192,7 @@ const Clients: React.FC = () => {
         en: "Financial technology solutions",
         vi: "Giải pháp công nghệ tài chính"
       },
-      image: "/image/bank/logo ABIC.png"
+      image: "/image/bank/logo-ABIC.png"
     },
     {
       id: 18,
@@ -202,7 +202,7 @@ const Clients: React.FC = () => {
         en: "Modern banking infrastructure",
         vi: "Cơ sở hạ tầng ngân hàng hiện đại"
       },
-      image: "/image/bank/logo ACB Bank.png"
+      image: "/image/bank/logo-ACBBank.png"
     },
     {
       id: 19,
@@ -212,7 +212,7 @@ const Clients: React.FC = () => {
         en: "Agricultural banking solutions",
         vi: "Giải pháp ngân hàng nông nghiệp"
       },
-      image: "/image/bank/logo agribank.png"
+      image: "/image/bank/logo-Agribank.png"
     },
     {
       id: 20,
@@ -222,7 +222,7 @@ const Clients: React.FC = () => {
         en: "Regional banking services",
         vi: "Dịch vụ ngân hàng khu vực"
       },
-      image: "/image/bank/logo Bắc Á.png"
+      image: "/image/bank/logo-BacABank.png"
     },
     {
       id: 21,
@@ -232,7 +232,7 @@ const Clients: React.FC = () => {
         en: "Digital banking innovation",
         vi: "Đổi mới ngân hàng số"
       },
-      image: "/image/bank/logo LPbank.png"
+      image: "/image/bank/logo-LPbank.png"
     },
     {
       id: 22,
@@ -242,7 +242,7 @@ const Clients: React.FC = () => {
         en: "Securities and banking services",
         vi: "Dịch vụ chứng khoán và ngân hàng"
       },
-      image: "/image/bank/logo MBS.png"
+      image: "/image/bank/logo-MBS.png"
     },
     {
       id: 23,
@@ -252,7 +252,7 @@ const Clients: React.FC = () => {
         en: "Investment and banking solutions",
         vi: "Giải pháp đầu tư và ngân hàng"
       },
-      image: "/image/bank/logo MIC.png"
+      image: "/image/bank/logo-MIC.png"
     },
     {
       id: 24,
@@ -262,7 +262,7 @@ const Clients: React.FC = () => {
         en: "Petrol banking services",
         vi: "Dịch vụ ngân hàng xăng dầu"
       },
-      image: "/image/bank/logo pgbank.png"
+      image: "/image/bank/logo-PGBank.png"
     },
     {
       id: 25,
@@ -272,7 +272,7 @@ const Clients: React.FC = () => {
         en: "Bank for Investment and Development",
         vi: "Ngân hàng Đầu tư và Phát triển Việt Nam"
       },
-      image: "/image/bank/logo bidv.jpg"
+      image: "/image/bank/logo-BIDV.png"
     },
     {
       id: 26,
@@ -282,7 +282,7 @@ const Clients: React.FC = () => {
         en: "Banking and Securities Company",
         vi: "Công ty Chứng khoán và Ngân hàng"
       },
-      image: "/image/bank/logo BSC.png"
+      image: "/image/bank/logo-BSC.png"
     },
     {
       id: 27,
@@ -292,7 +292,7 @@ const Clients: React.FC = () => {
         en: "Cooperative Bank of Vietnam",
         vi: "Ngân hàng Hợp tác xã Việt Nam"
       },
-      image: "/image/bank/logo Coopbank.png"
+      image: "/image/bank/logo-CoopBank.png"
     },
     {
       id: 28,
@@ -302,7 +302,7 @@ const Clients: React.FC = () => {
         en: "Shinhan Bank Vietnam",
         vi: "Ngân hàng Shinhan Việt Nam"
       },
-      image: "/image/bank/logo shinhan bank.png"
+      image: "/image/bank/logo-ShinhanBank.png"
     },
     {
       id: 29,
@@ -312,7 +312,7 @@ const Clients: React.FC = () => {
         en: "Joint Stock Commercial Bank for Foreign Trade",
         vi: "Ngân hàng Thương mại Cổ phần Ngoại thương Việt Nam"
       },
-      image: "/image/bank/logo Vietcombank.png"
+      image: "/image/bank/logo-Vietcombank.png"
     },
     {
       id: 30,
@@ -322,7 +322,7 @@ const Clients: React.FC = () => {
         en: "Joint Stock Commercial Bank for Industry and Trade",
         vi: "Ngân hàng Thương mại Cổ phần Công thương Việt Nam"
       },
-      image: "/image/bank/logo Vietinbank.png"
+      image: "/image/bank/logo-Vietinbank.png"
     },
     {
       id: 31,
@@ -332,7 +332,7 @@ const Clients: React.FC = () => {
         en: "Cooperative Bank Services",
         vi: "Dịch vụ Ngân hàng Hợp tác"
       },
-      image: "/image/bank/logo-coop-bank.jpg"
+      image: "/image/bank/logo-CoopBank.png"
     },
     {
       id: 32,
@@ -342,7 +342,7 @@ const Clients: React.FC = () => {
         en: "HDBank Commercial Joint Stock Bank",
         vi: "Ngân hàng Thương mại Cổ phần Phát triển TP.HCM"
       },
-      image: "/image/bank/Logo-HDBank.png"
+      image: "/image/bank/logo-HDBank.png"
     },
     {
       id: 33,
@@ -352,7 +352,7 @@ const Clients: React.FC = () => {
         en: "VietBank Commercial Joint Stock Bank",
         vi: "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín"
       },
-      image: "/image/bank/logo-vietbank.jpg"
+      image: "/image/bank/logo-Vietbank.png"
     },
     {
       id: 34,
@@ -362,7 +362,7 @@ const Clients: React.FC = () => {
         en: "Saigon Thuong Tin Commercial Joint Stock Bank",
         vi: "Ngân hàng Thương mại Cổ phần Sài Gòn Thương Tín"
       },
-      image: "/image/bank/Logo-Sacombank.png"
+      image: "/image/bank/logo-Sacombank.png"
     },
 
     // Government Agencies (6)
@@ -374,7 +374,7 @@ const Clients: React.FC = () => {
         en: "Government Cipher Committee",
         vi: "Ban Cơ yếu Chính phủ"
       },
-      image: "/image/govern/logo ban cơ yếu chính phủ.png"
+      image: "/image/govern/logo-BCYCP.png"
     },
     {
       id: 36,
@@ -384,7 +384,7 @@ const Clients: React.FC = () => {
         en: "Ministry of Natural Resources and Environment",
         vi: "Bộ Tài nguyên và Môi trường"
       },
-      image: "/image/govern/logo Bộ TNMT.png"
+      image: "/image/govern/logo-BTNVMT.jpg"
     },
     {
       id: 37,
@@ -394,7 +394,7 @@ const Clients: React.FC = () => {
         en: "Ministry of Culture",
         vi: "Bộ Văn hóa, Thể thao và Du lịch"
       },
-      image: "/image/govern/logo Bộ Văn hóa.jpg"
+      image: "/image/govern/logo-BVH.png"
     },
     {
       id: 38,
@@ -404,7 +404,7 @@ const Clients: React.FC = () => {
         en: "Bac Ninh Province",
         vi: "Tỉnh Bắc Ninh"
       },
-      image: "/image/govern/logo tỉnh bắc ninh.png"
+      image: "/image/govern/logo-TBN.png"
     },
     {
       id: 39,
@@ -414,7 +414,7 @@ const Clients: React.FC = () => {
         en: "Phu Tho Province",
         vi: "Tỉnh Phú Thọ"
       },
-      image: "/image/govern/Logo_tỉnh_Phú_Thọ.png"
+      image: "/image/govern/logo-TPT.png"
     },
 
     // Foreign Companies (3)

@@ -17,7 +17,7 @@ const About: React.FC = () => {
     },
     visionMission: {
       en: "With the motto \"Smart Partner\", Netcorp is committed to delivering cutting-edge technology solutions, accompanying businesses in their digital transformation journey, enhancing operational efficiency, and creating sustainable value. We continuously innovate to provide the most optimal products and services that meet current demands while anticipating future needs.\n\nNetcorp aspires to become a leading technology corporation in Vietnam. We are pioneers in providing modern technology solutions that help shape a digital future for enterprises. With an unwavering drive for innovation, Netcorp aims to expand its technology ecosystem, build a solid foundation to meet the ever-growing demands of the market, and create a distinctive edge through creativity and high expertise.",
-      vi: "Với phương châm \"Smart Partner\", Netcorp cam kết cung cấp các giải pháp công nghệ tiên tiến, đồng hành cùng doanh nghiệp trong quá trình chuyển đổi số, nâng cao hiệu suất vận hành và tạo ra giá trị bền vững. Chúng tôi không ngừng đổi mới, mang đến những sản phẩm và dịch vụ tối ưu nhất, đáp ứng nhu cầu hiện tại và định hướng tương lai của khách hàng.\n\nNetcorp hướng đến trở thành tập đoàn công nghệ hàng đầu tại Việt Nam. Chúng tôi tiên phong trong việc cung cấp các giải pháp công nghệ hiện đại, góp phần định hình tương lai số hóa cho doanh nghiệp.Với khát vọng đổi mới không ngừng, Netcorp đặt mục tiêu mở rộng hệ sinh thái công nghệ, xây dựng nền tảng vững chắc để đáp ứng nhu cầu ngày càng cao của thị trường, đồng thời tạo ra sự khác biệt bằng sự sáng tạo và chuyên môn cao.",
+      vi: "Với phương châm \"Smart Partner\", Netcorp cam kết cung cấp các giải pháp công nghệ tiên tiến, đồng hành cùng doanh nghiệp trong quá trình chuyển đổi số, nâng cao hiệu suất vận hành và tạo ra giá trị bền vững. Chúng tôi không ngừng đổi mới, mang đến những sản phẩm và dịch vụ tối ưu nhất, đáp ứng nhu cầu hiện tại và định hướng tương lai của khách hàng.\n\nNetcorp hướng đến trở thành tập đoàn công nghệ hàng đầu tại Việt Nam. Chúng tôi tiên phong trong việc cung cấp các giải pháp công nghệ hiện đại, góp phần định hình tương lai số hóa cho doanh nghiệp. Với khát vọng đổi mới không ngừng, Netcorp đặt mục tiêu mở rộng hệ sinh thái công nghệ, xây dựng nền tảng vững chắc để đáp ứng nhu cầu ngày càng cao của thị trường, đồng thời tạo ra sự khác biệt bằng sự sáng tạo và chuyên môn cao.",
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
     },
     coreValues: {
@@ -124,9 +124,17 @@ const About: React.FC = () => {
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 {currentLanguage === 'vi' ? (
-                  <>CÔNG TY CỔ PHẦN <br /><span className="text-primary">NETCORP</span></>
+                  <>
+                    <span className="text-3xl md:text-4xl font-semibold">CÔNG TY CỔ PHẦN TẬP ĐOÀN</span>
+                    <br />
+                    <span className="text-primary text-4xl md:text-5xl font-bold">NETCORP</span>
+                  </>
                 ) : (
-                  <>NETCORP<br /><span className="text-primary">CORPORATION</span></>
+                  <>
+                    <span className="text-primary text-4xl md:text-5xl font-bold uppercase">NETCORP</span>
+                    <br />
+                    <span className="text-3xl md:text-4xl font-semibold uppercase">Group Joint Stock Company</span>
+                  </>
                 )}
               </h2>
               <div className="grid grid-cols-1 gap-8">
@@ -135,7 +143,7 @@ const About: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                 >
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line text-justify">
                     {currentLanguage === 'vi'
                       ? `Được thành lập vào năm 2005, với gần hai thập kỷ phát triển, Netcorp đã không ngừng đổi mới và mở rộng để mang đến những giải pháp công nghệ toàn diện, đáp ứng nhu cầu đa dạng của khách hàng.
 
@@ -173,10 +181,20 @@ const About: React.FC = () => {
               </svg>
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            DO THE <span className="text-primary">BEST</span><br />
-            FROM BEGINNING
-          </h2>
+          {
+            currentLanguage === 'vi' ? (
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                DO THE <span className="text-primary">BEST</span><br />
+                FROM BEGINNING
+              </h2>
+            ) : (
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+                DO THE <span className="text-primary">BEST</span><br />
+                FROM BEGINNING
+              </h2>
+            )
+          }
+
         </div>
       </div>
 
@@ -258,14 +276,14 @@ const About: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <p
-                    className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-6"
-                    dangerouslySetInnerHTML={{
-                      __html: activeTab === 'humanResource'
-                        ? getHumanResourceText()
-                        : activeTab === 'visionMission'
-                          ? getVisionMissionText()
-                          : getCoreValuesText()
-                    }}
+                  className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-6 text-justify"
+                  dangerouslySetInnerHTML={{
+                    __html: activeTab === 'humanResource'
+                    ? getHumanResourceText()
+                    : activeTab === 'visionMission'
+                      ? getVisionMissionText()
+                      : getCoreValuesText()
+                  }}
                   />
                 </motion.div>
               </div>

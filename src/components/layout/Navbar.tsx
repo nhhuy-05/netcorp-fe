@@ -6,15 +6,16 @@ import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 const services = [
-  { name: { en: 'ICT', vi: 'ICT' }, path: '/services/ict' },
-  { name: { en: 'Broadcasting', vi: 'Truyền thông' }, path: '/services/broadcasting' },
-  { name: { en: 'Business Application', vi: 'Ứng dụng doanh nghiệp' }, path: '/services/business-application' },
-  { name: { en: 'M&E', vi: 'M&E' }, path: '/services/me' },
+  { name: { en: 'ICT', vi: 'ICT' }, path: '/solutions/ict' },
+  { name: { en: 'Broadcasting', vi: 'Broadcasting' }, path: '/solutions/broadcasting' },
+  { name: { en: 'Business Application', vi: 'Business Application' }, path: '/solutions/business-application' },
+  { name: { en: 'M&E', vi: 'M&E' }, path: '/solutions/me' },
 ];
 
 const Navbar: React.FC = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [navHover, setNavHover] = useState(false); // new: track hover on whole navbar
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -51,10 +52,13 @@ const Navbar: React.FC = () => {
     return location.pathname === path;
   };
 
+  // compute active state (either scrolled or hovered)
+  const navActive = scrolled || navHover;
+
   // Nav items (contact removed from main list; careers added)
   const navItems = [
     { name: t('navbar.about'), path: '/about' },
-    { name: t('navbar.services'), path: '/services' },
+    { name: t('navbar.solutions'), path: '/solutions' },
     { name: t('navbar.client'), path: '/client' },
     { name: t('navbar.partners'), path: '/partners' },
     { name: t('navbar.news'), path: '/news' },
@@ -65,8 +69,10 @@ const Navbar: React.FC = () => {
     <>
       {/* Main Navigation */}
       <motion.nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/60 shadow-lg backdrop-blur-sm py-4' : 'bg-transparent py-6'
-          }`}
+        // track hover on the whole nav to trigger background change
+        onMouseEnter={() => setNavHover(true)}
+        onMouseLeave={() => setNavHover(false)}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navActive ? 'bg-black/50 shadow-lg backdrop-blur-sm py-6' : 'bg-transparent py-6'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
@@ -83,7 +89,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
-              item.path === '/services' ? (
+              item.path === '/solutions' ? (
                 <div
                   key={item.path}
                   className="relative group"
@@ -101,9 +107,9 @@ const Navbar: React.FC = () => {
                 >
                   <Link
                     to={item.path}
-                    className={`nav-link px-5 py-3 font-medium transition-all duration-300 flex items-center ${location.pathname.startsWith('/services')
-                        ? 'text-primary'
-                        : 'text-white hover:text-primary'
+                    className={`nav-link px-5 py-3 font-medium transition-all duration-300 flex items-center ${location.pathname.startsWith('/solutions')
+                      ? 'text-primary'
+                      : 'text-white hover:text-primary'
                       }`}
                   >
                     {item.name}
@@ -145,7 +151,7 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-            <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
             <Link
               to="/contact"
@@ -153,7 +159,7 @@ const Navbar: React.FC = () => {
             >
               {currentLanguage === 'vi' ? 'Liên hệ' : 'Contact'}
             </Link>
-            </div>
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -180,11 +186,11 @@ const Navbar: React.FC = () => {
           >
             <div className="container mx-auto py-4 px-4 flex flex-col space-y-3">
               {navItems.map((item) => (
-                item.path === '/services' ? (
+                item.path === '/solutions' ? (
                   <div key={item.path} className="border-b border-gray-800/50 pb-2">
                     <Link
                       to={item.path}
-                      className={`block px-4 py-3 font-medium rounded-md transition-colors duration-200 ${location.pathname === '/services'
+                      className={`block px-4 py-3 font-medium rounded-md transition-colors duration-200 ${location.pathname === '/solutions'
                         ? 'text-primary'
                         : 'text-white hover:text-primary hover:bg-gray-800/30'
                         }`}

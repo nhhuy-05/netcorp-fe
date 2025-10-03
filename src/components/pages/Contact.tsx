@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         content: (
           <>
             <div> Email: info@netcorp.vn</div>
-            <div> Hotline: 024.7770.1912</div>
+            <div> Tel: (+84) 24.777.01912</div>
           </>
         ),
       },
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
         content: (
           <>
             <div> Email: info@netcorp.vn</div>
-            <div> Hotline: 024.7770.1912</div>
+            <div> Tel: (+84) 24.777.01912</div>
           </>
         ),
       },
@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
             {contactCards.map((card, idx) => (
               <motion.div
                 key={card.title}
-                className="group rounded-xl p-8 shadow-md flex flex-col items-start cursor-pointer transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
+                className="group rounded-xl p-8 shadow-md flex flex-col items-start  transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 * idx }}
@@ -173,17 +173,25 @@ const Contact: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               {isEn ? 'Request a Consultation' : 'Gửi yêu cầu tư vấn'}
             </h2>
-            <form className="space-y-6">
+            <form
+              action="https://formspree.io/f/xkgqrvel"
+              method="POST"
+              className="space-y-6"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.input
                   type="text"
+                  name="name"
                   placeholder={namePlaceholder}
+                  required
                   className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
                   whileFocus={{ scale: 1.02 }}
                 />
                 <motion.input
                   type="email"
+                  name="email"
                   placeholder={emailPlaceholder}
+                  required
                   className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
                   whileFocus={{ scale: 1.02 }}
                 />
@@ -191,12 +199,14 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.input
                   type="text"
+                  name="phone"
                   placeholder={phonePlaceholder}
                   className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
                   whileFocus={{ scale: 1.02 }}
                 />
                 <motion.input
                   type="text"
+                  name="subject"
                   placeholder={subjectPlaceholder}
                   className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
                   whileFocus={{ scale: 1.02 }}
@@ -204,7 +214,9 @@ const Contact: React.FC = () => {
               </div>
               <motion.textarea
                 rows={6}
+                name="message"
                 placeholder={messagePlaceholder}
+                required
                 className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
                 whileFocus={{ scale: 1.02 }}
               ></motion.textarea>

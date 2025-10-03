@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FiCheck } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { video_section } from '../../assets/videos';
+import { Link } from 'react-router-dom';
 
 const VideoSection: React.FC = () => {
   const { i18n } = useTranslation();
@@ -26,8 +27,8 @@ const VideoSection: React.FC = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Phương pháp của chúng tôi' : 'Our Approach'}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            {currentLanguage === 'vi' ? 'Khám phá cách chúng tôi giải quyết thách thức trong lĩnh vực CNTT' : 'See How We Transform IT Challenges'}
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white" style={{ fontSize: '40px' }}>
+            {currentLanguage === 'vi' ? 'GIẢI PHÁP' : 'SOLUTIONS'}
           </h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-200">
@@ -71,7 +72,7 @@ const VideoSection: React.FC = () => {
               <div className="mb-6">
                 <ul className="space-y-2">
                   {[
-                    currentLanguage === 'vi' ? 'Phát triển phần mềm tùy chỉnh' : 'Custom software development',
+                    currentLanguage === 'vi' ? 'Phát triển phần mềm trí tuệ nhân tạo AI' : 'AI software development',
                     currentLanguage === 'vi' ? 'Tối ưu hạ tầng CNTT' : 'IT infrastructure optimization',
                     currentLanguage === 'vi' ? 'Giải pháp an ninh mạng' : 'Cybersecurity solutions',
                     currentLanguage === 'vi' ? 'Chuyển đổi nền tảng điện toán đám mây' : 'Cloud transformation'
@@ -91,17 +92,24 @@ const VideoSection: React.FC = () => {
                 </ul>
               </div>
 
-              <motion.a
-                href="/services"
-                className="inline-flex items-center bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition-colors max-w-max"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <Link
+                to="/solutions"
+                className="inline-flex items-center bg-transparent text-white border border-white px-6 py-3 rounded-md font-medium transition-colors max-w-max hover:bg-primary-dark hover:border-primary group relative overflow-hidden"
               >
-                {currentLanguage === 'vi' ? 'Khám phá dịch vụ của chúng tôi' : 'Explore Our Services'}
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                </svg>
-              </motion.a>
+                {currentLanguage === 'vi' ? 'Khám phá các giải pháp của chúng tôi' : 'Explore Our Solutions'}
+                {/* icon container: width transition on hover */}
+                <span className="relative ml-0 group-hover:ml-2 transition-all duration-300 ease-in-out w-0 group-hover:w-5 flex items-center overflow-hidden">
+                  <svg
+                    className="w-5 h-5 transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </span>
+              </Link>
             </motion.div>
           </div>
         </div>

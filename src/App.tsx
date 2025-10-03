@@ -19,6 +19,9 @@ import ScrollToTop from './components/ui/ScrollToTop';
 import Services from './components/ui/Services';
 import News from './components/ui/News';
 import Blog from './components/pages/Blog';
+import ProjectDetail from './pages/ProjectDetail';
+import Careers from './components/pages/Careers';
+import CareerDetail from './pages/CareerDetail';
 
 function App() {
   const { i18n } = useTranslation();
@@ -44,34 +47,21 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={
-            <div className="pt-20">
-              <About />
-            </div>
-          } />
+          <Route path="/about" element={<About />} />
           <Route path="/about/home" element={<Navigate to="/" replace />} />
-          <Route path="/client" element={
-            <div className="pt-20">
-              <Clients />
-            </div>
-          } />
-          <Route path="/partners" element={
-            <div className="pt-20">
-              <Partners />
-            </div>
-          } />
+          <Route path="/client" element={<Clients />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/services" element={
-            <div className="pt-20">
-              <Services />
-            </div>
-          } />
-          <Route path="/services/ict" element={<IctServicePage />} />
-          <Route path="/services/broadcasting" element={<BroadcastingServicePage />} />
-          <Route path="/services/business-application" element={<BusinessApplicationServicePage />} />
-          <Route path="/services/me" element={<MeServicePage />} />
+          <Route path="/solutions" element={<Services />} />
+          <Route path="/solutions/ict" element={<IctServicePage />} />
+          <Route path="/solutions/broadcasting" element={<BroadcastingServicePage />} />
+          <Route path="/solutions/business-application" element={<BusinessApplicationServicePage />} />
+          <Route path="/solutions/me" element={<MeServicePage />} />
           <Route path="/news" element={<News />} />
           <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/project/:slug" element={<ProjectDetail />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:slug" element={<CareerDetail />} />
         </Routes>
         <Footer />
       </div>

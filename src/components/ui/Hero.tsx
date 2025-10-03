@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +8,7 @@ const Hero: React.FC = () => {
   const currentLanguage = i18n.language;
 
   const heroRef = useRef<HTMLElement | null>(null);
-  const [heroInView, setHeroInView] = useState(true);
+  const [, setHeroInView] = useState(true);
   const [atPageBottom, setAtPageBottom] = useState(false);
 
   useEffect(() => {
@@ -83,7 +84,8 @@ const Hero: React.FC = () => {
               }
             </p>
             <motion.button
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent text-white border border-white rounded-md font-semibold text-base sm:text-lg hover:bg-primary hover:border-primary transition-colors duration-300 w-full sm:w-auto"
+            onClick={handleStickyClick}
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white border border-primary rounded-md font-semibold text-base sm:text-lg hover:bg-primary-dark hover:border-primary hover:text-white transition-colors duration-300 w-full sm:w-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -107,7 +109,7 @@ const Hero: React.FC = () => {
       <button
         onClick={handleStickyClick}
         aria-label={atPageBottom ? (currentLanguage === 'vi' ? 'Lên đầu trang' : 'Go to top') : (currentLanguage === 'vi' ? 'Đến phần sẵn sàng' : 'Go to Ready section')}
-        className="fixed bottom-6 right-6 z-50 bg-transparent text-white border border-white p-3.5 rounded-full shadow-lg hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300 hover:scale-105 transition-transform"
+        className="fixed bottom-6 right-6 z-50 bg-transparent/30 text-white border border-white p-3.5 rounded-full shadow-lg hover:bg-primary hover:border-primary hover:text-white transition-colors duration-300 hover:scale-105 transition-transform"
         title={atPageBottom ? (currentLanguage === 'vi' ? 'Lên đầu trang' : 'Go to top') : (currentLanguage === 'vi' ? 'Đến phần sẵn sàng' : 'Go to Ready section')}
       >
         {/* simple icon: up when at bottom, down otherwise */}

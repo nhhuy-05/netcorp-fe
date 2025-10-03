@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Breadcrumb from './Breadcrumb';
@@ -17,283 +18,269 @@ interface Partner {
 const Partners: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
-  const [activeCategory, setActiveCategory] = useState('all');
 
   const partners: Partner[] = [
-    {
-      id: 1,
-      name: "AVAYA",
-      category: "enterprise",
-      description: {
-        en: "Leading provider of business communications solutions.",
-        vi: "Nhà cung cấp giải pháp truyền thông doanh nghiệp hàng đầu."
-      },
-      image: "/image/partners/logo-AVAYA.png"
+  {
+    id: 1,
+    name: "DELL",
+    category: "enterprise",
+    description: {
+      en: "Global technology leader in computing and storage.",
+      vi: "Nhà cung cấp công nghệ toàn cầu về máy tính và lưu trữ."
     },
-    {
-      id: 2,
-      name: "AVER",
-      category: "enterprise",
-      description: {
-        en: "Innovative video conferencing and education technology.",
-        vi: "Công nghệ hội nghị truyền hình và giáo dục sáng tạo."
-      },
-      image: "/image/partners/logo-AVER.png"
+    image: "/image/partners/logo-DELL.png"
+  },
+  {
+    id: 2,
+    name: "CISCO",
+    category: "networking",
+    description: {
+      en: "World leader in IT, networking, and cybersecurity solutions.",
+      vi: "Nhà cung cấp giải pháp CNTT, mạng và an ninh mạng hàng đầu thế giới."
     },
-    {
-      id: 3,
-      name: "CHECKPOINT",
-      category: "security",
-      description: {
-        en: "Global leader in cybersecurity solutions.",
-        vi: "Nhà cung cấp giải pháp an ninh mạng hàng đầu thế giới."
-      },
-      image: "/image/partners/logo-CHECKPOINT.png"
+    image: "/image/partners/logo-CISCO.png"
+  },
+  {
+    id: 3,
+    name: "IBM",
+    category: "software",
+    description: {
+      en: "Global leader in hybrid cloud and AI.",
+      vi: "Nhà cung cấp giải pháp điện toán đám mây lai và AI hàng đầu."
     },
-    {
-      id: 4,
-      name: "CISCO",
-      category: "networking",
-      description: {
-        en: "World leader in IT, networking, and cybersecurity solutions.",
-        vi: "Nhà cung cấp giải pháp CNTT, mạng và an ninh mạng hàng đầu thế giới."
-      },
-      image: "/image/partners/logo-CISCO.png"
+    image: "/image/partners/logo-IBM.png"
+  },
+  {
+    id: 4,
+    name: "HPE",
+    category: "enterprise",
+    description: {
+      en: "Enterprise IT infrastructure and cloud solutions.",
+      vi: "Giải pháp hạ tầng CNTT và điện toán đám mây doanh nghiệp."
     },
-    {
-      id: 5,
-      name: "CLEARONE",
-      category: "enterprise",
-      description: {
-        en: "Leading provider of audio and visual communication solutions.",
-        vi: "Nhà cung cấp giải pháp truyền thông âm thanh và hình ảnh hàng đầu."
-      },
-      image: "/image/partners/logo-CLEARONE.png"
+    image: "/image/partners/logo-HPE.png"
+  },
+  {
+    id: 5,
+    name: "ORACLE",
+    category: "software",
+    description: {
+      en: "Database, cloud, and enterprise software solutions.",
+      vi: "Giải pháp cơ sở dữ liệu, đám mây và phần mềm doanh nghiệp."
     },
-    {
-      id: 6,
-      name: "CYBERARK",
-      category: "security",
-      description: {
-        en: "Leader in privileged access management.",
-        vi: "Nhà cung cấp giải pháp quản lý truy cập đặc quyền hàng đầu."
-      },
-      image: "/image/partners/logo-CYBERARK.png"
+    image: "/image/partners/logo-ORACLE.png"
+  },
+  {
+    id: 6,
+    name: "MICROSOFT",
+    category: "software",
+    description: {
+      en: "Global leader in software, cloud, and productivity solutions.",
+      vi: "Nhà cung cấp phần mềm, điện toán đám mây và giải pháp năng suất hàng đầu."
     },
-    {
-      id: 7,
-      name: "DAHUA",
-      category: "surveillance",
-      description: {
-        en: "Provider of video surveillance solutions.",
-        vi: "Nhà cung cấp giải pháp giám sát video."
-      },
-      image: "/image/partners/logo-DAHUA.png"
+    image: "/image/partners/logo-MICROSOFT.png"
+  },
+  {
+    id: 7,
+    name: "VMWARE",
+    category: "enterprise",
+    description: {
+      en: "Cloud computing and virtualization solutions.",
+      vi: "Giải pháp điện toán đám mây và ảo hóa."
     },
-    {
-      id: 8,
-      name: "DELL",
-      category: "enterprise",
-      description: {
-        en: "Global technology leader in computing and storage.",
-        vi: "Nhà cung cấp công nghệ toàn cầu về máy tính và lưu trữ."
-      },
-      image: "/image/partners/logo-DELL.png"
+    image: "/image/partners/logo-VMWARE.png"
+  },
+  {
+    id: 8,
+    name: "PALOALTO",
+    category: "security",
+    description: {
+      en: "Next-generation cybersecurity solutions.",
+      vi: "Giải pháp an ninh mạng thế hệ mới."
     },
-    {
-      id: 9,
-      name: "F5",
-      category: "networking",
-      description: {
-        en: "Application delivery and security solutions.",
-        vi: "Giải pháp phân phối và bảo mật ứng dụng."
-      },
-      image: "/image/partners/logo-F5.png"
+    image: "/image/partners/logo-PALOALTO.png"
+  },
+  {
+    id: 9,
+    name: "CHECKPOINT",
+    category: "security",
+    description: {
+      en: "Global leader in cybersecurity solutions.",
+      vi: "Nhà cung cấp giải pháp an ninh mạng hàng đầu thế giới."
     },
-    {
-      id: 10,
-      name: "FORTINET",
-      category: "security",
-      description: {
-        en: "Broad, integrated, and automated cybersecurity solutions.",
-        vi: "Giải pháp an ninh mạng tích hợp, tự động và toàn diện."
-      },
-      image: "/image/partners/logo-FORTINET.png"
+    image: "/image/partners/logo-CHECKPOINT.png"
+  },
+  {
+    id: 10,
+    name: "THALES",
+    category: "security",
+    description: {
+      en: "Digital identity and security solutions.",
+      vi: "Giải pháp nhận dạng số và bảo mật."
     },
-    {
-      id: 11,
-      name: "HPE",
-      category: "enterprise",
-      description: {
-        en: "Enterprise IT infrastructure and cloud solutions.",
-        vi: "Giải pháp hạ tầng CNTT và điện toán đám mây doanh nghiệp."
-      },
-      image: "/image/partners/logo-HPE.png"
+    image: "/image/partners/logo-THALES.png"
+  },
+  {
+    id: 11,
+    name: "NETAPP",
+    category: "enterprise",
+    description: {
+      en: "Data management and cloud storage solutions.",
+      vi: "Giải pháp quản lý dữ liệu và lưu trữ đám mây."
     },
-    {
-      id: 12,
-      name: "IBM",
-      category: "software",
-      description: {
-        en: "Global leader in hybrid cloud and AI.",
-        vi: "Nhà cung cấp giải pháp điện toán đám mây lai và AI hàng đầu."
-      },
-      image: "/image/partners/logo-IBM.png"
+    image: "/image/partners/logo-NETAPP.png"
+  },
+  {
+    id: 12,
+    name: "FORTINET",
+    category: "security",
+    description: {
+      en: "Broad, integrated, and automated cybersecurity solutions.",
+      vi: "Giải pháp an ninh mạng tích hợp, tự động và toàn diện."
     },
-    {
-      id: 13,
-      name: "JUNIPER",
-      category: "networking",
-      description: {
-        en: "High-performance networking and cybersecurity.",
-        vi: "Giải pháp mạng hiệu suất cao và an ninh mạng."
-      },
-      image: "/image/partners/logo-JUNIPER.png"
+    image: "/image/partners/logo-FORTINET.png"
+  },
+  {
+    id: 13,
+    name: "JUNIPER",
+    category: "networking",
+    description: {
+      en: "High-performance networking and cybersecurity.",
+      vi: "Giải pháp mạng hiệu suất cao và an ninh mạng."
     },
-    {
-      id: 14,
-      name: "MCAFEE",
-      category: "security",
-      description: {
-        en: "Cybersecurity solutions for businesses.",
-        vi: "Giải pháp an ninh mạng cho doanh nghiệp."
-      },
-      image: "/image/partners/logo-MCAFEE.png"
+    image: "/image/partners/logo-JUNIPER.png"
+  },
+  {
+    id: 14,
+    name: "F5",
+    category: "networking",
+    description: {
+      en: "Application delivery and security solutions.",
+      vi: "Giải pháp phân phối và bảo mật ứng dụng."
     },
-    {
-      id: 15,
-      name: "MICROSOFT",
-      category: "software",
-      description: {
-        en: "Global leader in software, cloud, and productivity solutions.",
-        vi: "Nhà cung cấp phần mềm, điện toán đám mây và giải pháp năng suất hàng đầu."
-      },
-      image: "/image/partners/logo-MICROSOFT.png"
+    image: "/image/partners/logo-F5.png"
+  },
+  {
+    id: 15,
+    name: "RADWARE",
+    category: "security",
+    description: {
+      en: "Application delivery and cybersecurity solutions.",
+      vi: "Giải pháp phân phối ứng dụng và an ninh mạng."
     },
-    {
-      id: 16,
-      name: "NETAPP",
-      category: "enterprise",
-      description: {
-        en: "Data management and cloud storage solutions.",
-        vi: "Giải pháp quản lý dữ liệu và lưu trữ đám mây."
-      },
-      image: "/image/partners/logo-NETAPP.png"
+    image: "/image/partners/logo-RADWARE.png"
+  },
+  {
+    id: 16,
+    name: "MCAFEE",
+    category: "security",
+    description: {
+      en: "Cybersecurity solutions for businesses.",
+      vi: "Giải pháp an ninh mạng cho doanh nghiệp."
     },
-    {
-      id: 17,
-      name: "ORACLE",
-      category: "software",
-      description: {
-        en: "Database, cloud, and enterprise software solutions.",
-        vi: "Giải pháp cơ sở dữ liệu, đám mây và phần mềm doanh nghiệp."
-      },
-      image: "/image/partners/logo-ORACLE.png"
+    image: "/image/partners/logo-MCAFEE.png"
+  },
+  {
+    id: 17,
+    name: "CYBERARK",
+    category: "security",
+    description: {
+      en: "Leader in privileged access management.",
+      vi: "Nhà cung cấp giải pháp quản lý truy cập đặc quyền hàng đầu."
     },
-    {
-      id: 18,
-      name: "PALOALTO",
-      category: "security",
-      description: {
-        en: "Next-generation cybersecurity solutions.",
-        vi: "Giải pháp an ninh mạng thế hệ mới."
-      },
-      image: "/image/partners/logo-PALOALTO.png"
+    image: "/image/partners/logo-CYBERARK.png"
+  },
+  {
+    id: 18,
+    name: "TUFIN",
+    category: "security",
+    description: {
+      en: "Security policy automation solutions.",
+      vi: "Giải pháp tự động hóa chính sách bảo mật."
     },
-    {
-      id: 19,
-      name: "POLYCOM",
-      category: "enterprise",
-      description: {
-        en: "Unified communications and collaboration solutions.",
-        vi: "Giải pháp truyền thông hợp nhất và cộng tác."
-      },
-      image: "/image/partners/logo-POLYCOM.png"
+    image: "/image/partners/logo-TUFIN.png"
+  },
+  {
+    id: 19,
+    name: "VERTIV",
+    category: "enterprise",
+    description: {
+      en: "Critical infrastructure and data center solutions.",
+      vi: "Giải pháp hạ tầng quan trọng và trung tâm dữ liệu."
     },
-    {
-      id: 20,
-      name: "RADWARE",
-      category: "security",
-      description: {
-        en: "Application delivery and cybersecurity solutions.",
-        vi: "Giải pháp phân phối ứng dụng và an ninh mạng."
-      },
-      image: "/image/partners/logo-RADWARE.png"
+    image: "/image/partners/logo-VERTIV.png"
+  },
+  {
+    id: 20,
+    name: "SCHNEIDER",
+    category: "enterprise",
+    description: {
+      en: "Energy management and automation solutions.",
+      vi: "Giải pháp quản lý năng lượng và tự động hóa."
     },
-    {
-      id: 21,
-      name: "SCHNEIDER",
-      category: "enterprise",
-      description: {
-        en: "Energy management and automation solutions.",
-        vi: "Giải pháp quản lý năng lượng và tự động hóa."
-      },
-      image: "/image/partners/logo-SCHNEIDER.png"
+    image: "/image/partners/logo-SCHNEIDER.png"
+  },
+  {
+    id: 21,
+    name: "POLYCOM",
+    category: "enterprise",
+    description: {
+      en: "Unified communications and collaboration solutions.",
+      vi: "Giải pháp truyền thông hợp nhất và cộng tác."
     },
-    {
-      id: 22,
-      name: "SYMANTEC",
-      category: "security",
-      description: {
-        en: "Cybersecurity software and services.",
-        vi: "Phần mềm và dịch vụ an ninh mạng."
-      },
-      image: "/image/partners/logo-SYMANTEC.png"
+    image: "/image/partners/logo-POLYCOM.png"
+  },
+  {
+    id: 22,
+    name: "AVER",
+    category: "enterprise",
+    description: {
+      en: "Innovative video conferencing and education technology.",
+      vi: "Công nghệ hội nghị truyền hình và giáo dục sáng tạo."
     },
-    {
-      id: 23,
-      name: "THALES",
-      category: "security",
-      description: {
-        en: "Digital identity and security solutions.",
-        vi: "Giải pháp nhận dạng số và bảo mật."
-      },
-      image: "/image/partners/logo-THALES.png"
+    image: "/image/partners/logo-AVER.png"
+  },
+  {
+    id: 23,
+    name: "SYMANTEC",
+    category: "security",
+    description: {
+      en: "Cybersecurity software and services.",
+      vi: "Phần mềm và dịch vụ an ninh mạng."
     },
-    {
-      id: 24,
-      name: "TUFIN",
-      category: "security",
-      description: {
-        en: "Security policy automation solutions.",
-        vi: "Giải pháp tự động hóa chính sách bảo mật."
-      },
-      image: "/image/partners/logo-TUFIN.png"
+    image: "/image/partners/logo-SYMANTEC.png"
+  },
+  {
+    id: 24,
+    name: "CLEARONE",
+    category: "enterprise",
+    description: {
+      en: "Leading provider of audio and visual communication solutions.",
+      vi: "Nhà cung cấp giải pháp truyền thông âm thanh và hình ảnh hàng đầu."
     },
-    {
-      id: 25,
-      name: "VERTIV",
-      category: "enterprise",
-      description: {
-        en: "Critical infrastructure and data center solutions.",
-        vi: "Giải pháp hạ tầng quan trọng và trung tâm dữ liệu."
-      },
-      image: "/image/partners/logo-VERTIV.png"
+    image: "/image/partners/logo-CLEARONE.png"
+  },
+  {
+    id: 25,
+    name: "DAHUA",
+    category: "surveillance",
+    description: {
+      en: "Provider of video surveillance solutions.",
+      vi: "Nhà cung cấp giải pháp giám sát video."
     },
-    {
-      id: 26,
-      name: "VMWARE",
-      category: "enterprise",
-      description: {
-        en: "Cloud computing and virtualization solutions.",
-        vi: "Giải pháp điện toán đám mây và ảo hóa."
-      },
-      image: "/image/partners/logo-VMWARE.png"
-    }
-  ];
-
-  const categories = [
-    { id: 'all', label: currentLanguage === 'vi' ? 'TẤT CẢ' : 'ALL', count: partners.length },
-    { id: 'enterprise', label: currentLanguage === 'vi' ? 'DOANH NGHIỆP' : 'ENTERPRISE', count: partners.filter(p => p.category === 'enterprise').length },
-    { id: 'security', label: currentLanguage === 'vi' ? 'AN NINH MẠNG' : 'SECURITY', count: partners.filter(p => p.category === 'security').length },
-    { id: 'networking', label: currentLanguage === 'vi' ? 'HẠ TẦNG MẠNG' : 'NETWORKING', count: partners.filter(p => p.category === 'networking').length },
-    { id: 'surveillance', label: currentLanguage === 'vi' ? 'GIÁM SÁT' : 'SURVEILLANCE', count: partners.filter(p => p.category === 'surveillance').length },
-    { id: 'software', label: currentLanguage === 'vi' ? 'PHẦN MỀM' : 'SOFTWARE', count: partners.filter(p => p.category === 'software').length }
-  ];
-
-  const filteredPartners = activeCategory === 'all'
-    ? partners
-    : partners.filter(partner => partner.category === activeCategory);
+    image: "/image/partners/logo-DAHUA.png"
+  },
+  {
+    id: 26,
+    name: "AVAYA",
+    category: "enterprise",
+    description: {
+      en: "Leading provider of business communications solutions.",
+      vi: "Nhà cung cấp giải pháp truyền thông doanh nghiệp hàng đầu."
+    },
+    image: "/image/partners/logo-AVAYA.png"
+  }
+];
 
   return (
     <section className="relative">
@@ -362,7 +349,7 @@ const Partners: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Filter Categories */}
+          {/* Filter Categories
           <div className="flex flex-wrap justify-center gap-6 mb-12">
             {categories.map((category) => (
               <motion.button
@@ -388,17 +375,17 @@ const Partners: React.FC = () => {
                 )}
               </motion.button>
             ))}
-          </div>
+          </div> */}
 
           {/* Partners Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {filteredPartners.map((partner, index) => (
+            {partners.map((partner, index) => (
               <motion.div 
                 key={partner.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.02 }}
                 className="group relative overflow-hidden rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
               >
                 <div className="relative h-48 w-full overflow-hidden">

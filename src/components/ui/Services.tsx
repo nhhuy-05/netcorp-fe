@@ -25,7 +25,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
   const [isActive, setIsActive] = useState(false);
 
   const cardContent = (
-    <motion.div 
+    <motion.div
       className={`group relative overflow-hidden rounded-lg bg-white shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 transition-all duration-300 p-6 h-full hover:shadow-[0_8px_30px_rgba(0,128,0,0.12)] ${isActive || 'hover:bg-primary'} ${isActive && 'bg-primary'}`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ const Services: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
-  const services = [
+  const solutions = [
     {
       icon: <FiServer />,
       title: {
@@ -73,20 +73,33 @@ const Services: React.FC = () => {
         vi: "Giải pháp công nghệ thông tin và truyền thông toàn diện cho doanh nghiệp của bạn."
       },
       delay: 0.1,
-      link: '/services/ict'
+      link: '/solutions/ict'
+    },
+    {
+      icon: <FiRadio />,
+      title: {
+        en: "Broadcasting",
+        vi: "Broadcasting"
+      },
+      description: {
+        en: "Building multi-platform content distribution infrastructure, applying AI, VR, and AR technologies.",
+        vi: "Xây dựng hạ tầng sản xuất phân phối nội dung đa nền tảng, ứng dụng trí tuệ nhân tạo (AI), thực tế ảo (VR), thực tế tăng cường (AR)."
+      },
+      delay: 0.2,
+      link: '/solutions/broadcasting'
     },
     {
       icon: <FiDatabase />,
       title: {
         en: "Business Application",
-        vi: "Ứng dụng doanh nghiệp"
+        vi: "Business Application"
       },
       description: {
         en: "Development and deployment of custom business applications tailored to your needs.",
         vi: "Phát triển và triển khai các ứng dụng doanh nghiệp tùy chỉnh theo nhu cầu của bạn."
       },
-      delay: 0.2,
-      link: '/services/business-application'
+      delay: 0.3,
+      link: '/solutions/business-application'
     },
     {
       icon: <FiCode />,
@@ -98,21 +111,8 @@ const Services: React.FC = () => {
         en: "Monitoring and evaluation solutions for projects and business processes.",
         vi: "Giải pháp giám sát và đánh giá hiệu quả cho các dự án và quy trình kinh doanh."
       },
-      delay: 0.3,
-      link: '/services/me'
-    },
-    {
-      icon: <FiRadio />,
-      title: {
-        en: "Broadcasting",
-        vi: "Truyền thông"
-      },
-      description: {
-        en: "Advanced broadcasting and multimedia communication systems.",
-        vi: "Hệ thống phát sóng và truyền thông đa phương tiện tiên tiến."
-      },
       delay: 0.4,
-      link: '/services/broadcasting'
+      link: '/solutions/me'
     }
   ];
 
@@ -130,13 +130,13 @@ const Services: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-white text-center">
           <div className="mt-16">
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              {currentLanguage === 'vi' ? 'DỊCH VỤ' : 'OUR SERVICES'}
+              {currentLanguage === 'vi' ? 'GIẢI PHÁP' : 'OUR SOLUTIONS'}
             </motion.h1>
             <motion.div
               initial={{ opacity: 0 }}
@@ -145,17 +145,17 @@ const Services: React.FC = () => {
             >
               <Breadcrumb
                 items={[
-                  { 
-                    name: { 
+                  {
+                    name: {
                       en: 'Home',
                       vi: 'Trang chủ'
-                    }, 
-                    path: '/' 
+                    },
+                    path: '/'
                   },
-                  { 
-                    name: { 
-                      en: 'Services',
-                      vi: 'Dịch vụ'
+                  {
+                    name: {
+                      en: 'Solutions',
+                      vi: 'Giải pháp'
                     }
                   }
                 ]}
@@ -168,7 +168,7 @@ const Services: React.FC = () => {
       {/* Services Content */}
       <div className="relative py-10 bg-white z-10 mt-16">
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="max-w-xl mx-auto text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,21 +180,21 @@ const Services: React.FC = () => {
             </h2>
             <div className="h-1 w-20 bg-primary mx-auto mb-4"></div>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <ServiceCard 
+            {solutions.map((solution, index) => (
+              <ServiceCard
                 key={index}
-                icon={service.icon} 
-                title={service.title} 
-                description={service.description}
-                delay={service.delay}
-                link={service.link}
+                icon={solution.icon}
+                title={solution.title}
+                description={solution.description}
+                delay={solution.delay}
+                link={solution.link}
               />
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             className="mt-16 bg-primary/10 rounded-lg p-8 relative overflow-hidden"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -203,12 +203,12 @@ const Services: React.FC = () => {
           >
             <div className="absolute top-0 right-0 w-40 h-40 bg-primary/20 rounded-full -mr-20 -mt-20"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/20 rounded-full -ml-10 -mb-10"></div>
-            
+
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between">
               <div className="mb-6 md:mb-0">
                 <h3 className="text-2xl font-bold mb-2">
-                  {currentLanguage === 'vi' 
-                    ? 'Sẵn sàng chuyển đổi doanh nghiệp của bạn?' 
+                  {currentLanguage === 'vi'
+                    ? 'Sẵn sàng chuyển đổi doanh nghiệp của bạn?'
                     : 'Ready to transform your business?'}
                 </h3>
                 <p className="text-gray-700">
@@ -218,14 +218,17 @@ const Services: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <motion.a 
-                  href="/contact" 
-                  className="btn bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark transition-colors inline-flex items-center justify-center"
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {currentLanguage === 'vi' ? 'Yêu Cầu Tư Vấn' : 'Request a Consultation'}
-                </motion.a>
+                  <Link
+                    to="/contact"
+                    className="btn bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-primary-dark transition-colors inline-flex items-center justify-center"
+                  >
+                    {currentLanguage === 'vi' ? 'Yêu Cầu Tư Vấn' : 'Request a Consultation'}
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>

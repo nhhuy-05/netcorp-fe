@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Breadcrumb from './Breadcrumb';
@@ -18,9 +18,206 @@ const Clients: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const [activeCategory, setActiveCategory] = useState('all');
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [marqueeDuration, setMarqueeDuration] = useState("1000s");
+
+
 
   // Sample company data - replace with your actual company data
   const companies: Company[] = [
+    // Government Agencies (6)
+    {
+      id: 35,
+      name: "Ban Cơ yếu Chính phủ",
+      category: "government",
+      description: {
+        en: "Government Cipher Committee",
+        vi: "Ban Cơ yếu Chính phủ"
+      },
+      image: "/image/govern/logo-BCYCP.png"
+    },
+    {
+      id: 36,
+      name: "Bộ TNMT",
+      category: "government",
+      description: {
+        en: "Ministry of Natural Resources and Environment",
+        vi: "Bộ Tài nguyên và Môi trường"
+      },
+      image: "/image/govern/logo-BTNVMT.jpg"
+    },
+    {
+      id: 37,
+      name: "Bộ Văn hóa",
+      category: "government",
+      description: {
+        en: "Ministry of Culture",
+        vi: "Bộ Văn hóa, Thể thao và Du lịch"
+      },
+      image: "/image/govern/logo-BVH.png"
+    },
+    {
+      id: 38,
+      name: "Tỉnh Bắc Ninh",
+      category: "government",
+      description: {
+        en: "Bac Ninh Province",
+        vi: "Tỉnh Bắc Ninh"
+      },
+      image: "/image/govern/logo-TBN.png"
+    },
+    {
+      id: 39,
+      name: "Tỉnh Phú Thọ",
+      category: "government",
+      description: {
+        en: "Phu Tho Province",
+        vi: "Tỉnh Phú Thọ"
+      },
+      image: "/image/govern/logo-TPT.png"
+    },
+
+    // Banking Companies (19)
+    {
+      id: 19,
+      name: "Agribank",
+      category: "bank",
+      description: {
+        en: "Agricultural banking solutions",
+        vi: "Giải pháp ngân hàng nông nghiệp"
+      },
+      image: "/image/bank/logo-Agribank.png"
+    },
+    {
+      id: 25,
+      name: "BIDV",
+      category: "bank",
+      description: {
+        en: "Bank for Investment and Development",
+        vi: "Ngân hàng Đầu tư và Phát triển Việt Nam"
+      },
+      image: "/image/bank/logo-BIDV.png"
+    },
+    {
+      id: 29,
+      name: "Vietcombank",
+      category: "bank",
+      description: {
+        en: "Joint Stock Commercial Bank for Foreign Trade",
+        vi: "Ngân hàng Thương mại Cổ phần Ngoại thương Việt Nam"
+      },
+      image: "/image/bank/logo-Vietcombank.png"
+    }, {
+      id: 30,
+      name: "VietinBank",
+      category: "bank",
+      description: {
+        en: "Joint Stock Commercial Bank for Industry and Trade",
+        vi: "Ngân hàng Thương mại Cổ phần Công thương Việt Nam"
+      },
+      image: "/image/bank/logo-Vietinbank.png"
+    },
+    {
+      id: 48,
+      name: "MBBank",
+      category: "bank",
+      description: {
+        en: "Military Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương mại Cổ phần Quân đội"
+      },
+      image: "/image/bank/logo-MBBank.png"
+    },
+    {
+      id: 21,
+      name: "LPBank",
+      category: "bank",
+      description: {
+        en: "Digital banking innovation",
+        vi: "Đổi mới ngân hàng số"
+      },
+      image: "/image/bank/logo-LPbank.png"
+    },
+    {
+      id: 20,
+      name: "Bắc Á Bank",
+      category: "bank",
+      description: {
+        en: "Regional banking services",
+        vi: "Dịch vụ ngân hàng khu vực"
+      },
+      image: "/image/bank/logo-BacABank.png"
+    },
+    {
+      id: 27,
+      name: "CoopBank",
+      category: "bank",
+      description: {
+        en: "Cooperative Bank of Vietnam",
+        vi: "Ngân hàng Hợp tác xã Việt Nam"
+      },
+      image: "/image/bank/logo-CoopBank.png"
+    },
+    {
+      id: 18,
+      name: "ACB Bank",
+      category: "bank",
+      description: {
+        en: "Modern banking infrastructure",
+        vi: "Cơ sở hạ tầng ngân hàng hiện đại"
+      },
+      image: "/image/bank/logo-ACBBank.png"
+    },
+    {
+      id: 28,
+      name: "Shinhan Bank",
+      category: "bank",
+      description: {
+        en: "Shinhan Bank Vietnam",
+        vi: "Ngân hàng Shinhan Việt Nam"
+      },
+      image: "/image/bank/logo-ShinhanBank.png"
+    },
+    {
+      id: 33,
+      name: "VietBank",
+      category: "bank",
+      description: {
+        en: "VietBank Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín"
+      },
+      image: "/image/bank/logo-Vietbank.png"
+    },
+    {
+      id: 34,
+      name: "Sacombank",
+      category: "bank",
+      description: {
+        en: "Saigon Thuong Tin Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương mại Cổ phần Sài Gòn Thương Tín"
+      },
+      image: "/image/bank/logo-Sacombank.png"
+    },
+    {
+      id: 22,
+      name: "MBS",
+      category: "bank",
+      description: {
+        en: "Securities and banking services",
+        vi: "Dịch vụ chứng khoán và ngân hàng"
+      },
+      image: "/image/bank/logo-MBS.png"
+    },
+    {
+      id: 23,
+      name: "MIC",
+      category: "bank",
+      description: {
+        en: "Investment and banking solutions",
+        vi: "Giải pháp đầu tư và ngân hàng"
+      },
+      image: "/image/bank/logo-MIC.png"
+    },
+
     // Enterprise Companies (15)
     {
       id: 1,
@@ -172,295 +369,82 @@ const Clients: React.FC = () => {
       },
       image: "/image/enterprise/logo-Napas.png"
     },
-
-    // Banking Companies (19)
+    // Foreign Companies (5)
     {
-      id: 16,
-      name: "ABBank",
-      category: "bank",
-      description: {
-        en: "Digital banking transformation",
-        vi: "Chuyển đổi số ngân hàng"
-      },
-      image: "/image/bank/logo-ABBank.png"
-    },
-    {
-      id: 17,
-      name: "ABIC",
-      category: "bank",
-      description: {
-        en: "Financial technology solutions",
-        vi: "Giải pháp công nghệ tài chính"
-      },
-      image: "/image/bank/logo-ABIC.png"
-    },
-    {
-      id: 18,
-      name: "ACB Bank",
-      category: "bank",
-      description: {
-        en: "Modern banking infrastructure",
-        vi: "Cơ sở hạ tầng ngân hàng hiện đại"
-      },
-      image: "/image/bank/logo-ACBBank.png"
-    },
-    {
-      id: 19,
-      name: "Agribank",
-      category: "bank",
-      description: {
-        en: "Agricultural banking solutions",
-        vi: "Giải pháp ngân hàng nông nghiệp"
-      },
-      image: "/image/bank/logo-Agribank.png"
-    },
-    {
-      id: 20,
-      name: "Bắc Á Bank",
-      category: "bank",
-      description: {
-        en: "Regional banking services",
-        vi: "Dịch vụ ngân hàng khu vực"
-      },
-      image: "/image/bank/logo-BacABank.png"
-    },
-    {
-      id: 21,
-      name: "LPBank",
-      category: "bank",
-      description: {
-        en: "Digital banking innovation",
-        vi: "Đổi mới ngân hàng số"
-      },
-      image: "/image/bank/logo-LPbank.png"
-    },
-    {
-      id: 22,
-      name: "MBS",
-      category: "bank",
-      description: {
-        en: "Securities and banking services",
-        vi: "Dịch vụ chứng khoán và ngân hàng"
-      },
-      image: "/image/bank/logo-MBS.png"
-    },
-    {
-      id: 23,
-      name: "MIC",
-      category: "bank",
-      description: {
-        en: "Investment and banking solutions",
-        vi: "Giải pháp đầu tư và ngân hàng"
-      },
-      image: "/image/bank/logo-MIC.png"
-    },
-    {
-      id: 24,
-      name: "PGBank",
-      category: "bank",
-      description: {
-        en: "Petrol banking services",
-        vi: "Dịch vụ ngân hàng xăng dầu"
-      },
-      image: "/image/bank/logo-PGBank.png"
-    },
-    {
-      id: 25,
-      name: "BIDV",
-      category: "bank",
-      description: {
-        en: "Bank for Investment and Development",
-        vi: "Ngân hàng Đầu tư và Phát triển Việt Nam"
-      },
-      image: "/image/bank/logo-BIDV.png"
-    },
-    {
-      id: 26,
-      name: "BSC",
-      category: "bank",
-      description: {
-        en: "Banking and Securities Company",
-        vi: "Công ty Chứng khoán và Ngân hàng"
-      },
-      image: "/image/bank/logo-BSC.png"
-    },
-    {
-      id: 27,
-      name: "CoopBank",
-      category: "bank",
-      description: {
-        en: "Cooperative Bank of Vietnam",
-        vi: "Ngân hàng Hợp tác xã Việt Nam"
-      },
-      image: "/image/bank/logo-CoopBank.png"
-    },
-    {
-      id: 28,
-      name: "Shinhan Bank",
-      category: "bank",
-      description: {
-        en: "Shinhan Bank Vietnam",
-        vi: "Ngân hàng Shinhan Việt Nam"
-      },
-      image: "/image/bank/logo-ShinhanBank.png"
-    },
-    {
-      id: 29,
-      name: "Vietcombank",
-      category: "bank",
-      description: {
-        en: "Joint Stock Commercial Bank for Foreign Trade",
-        vi: "Ngân hàng Thương mại Cổ phần Ngoại thương Việt Nam"
-      },
-      image: "/image/bank/logo-Vietcombank.png"
-    },
-    {
-      id: 30,
-      name: "VietinBank",
-      category: "bank",
-      description: {
-        en: "Joint Stock Commercial Bank for Industry and Trade",
-        vi: "Ngân hàng Thương mại Cổ phần Công thương Việt Nam"
-      },
-      image: "/image/bank/logo-Vietinbank.png"
-    },
-    {
-      id: 31,
-      name: "Coop Bank",
-      category: "bank",
-      description: {
-        en: "Cooperative Bank Services",
-        vi: "Dịch vụ Ngân hàng Hợp tác"
-      },
-      image: "/image/bank/logo-CoopBank.png"
-    },
-    {
-      id: 32,
-      name: "HDBank",
-      category: "bank",
-      description: {
-        en: "HDBank Commercial Joint Stock Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Phát triển TP.HCM"
-      },
-      image: "/image/bank/logo-HDBank.png"
-    },
-    {
-      id: 33,
-      name: "VietBank",
-      category: "bank",
-      description: {
-        en: "VietBank Commercial Joint Stock Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Việt Nam Thương Tín"
-      },
-      image: "/image/bank/logo-Vietbank.png"
-    },
-    {
-      id: 34,
-      name: "Sacombank",
-      category: "bank",
-      description: {
-        en: "Saigon Thuong Tin Commercial Joint Stock Bank",
-        vi: "Ngân hàng Thương mại Cổ phần Sài Gòn Thương Tín"
-      },
-      image: "/image/bank/logo-Sacombank.png"
-    },
-
-    // Government Agencies (6)
-    {
-      id: 35,
-      name: "Ban Cơ yếu Chính phủ",
-      category: "government",
-      description: {
-        en: "Government Cipher Committee",
-        vi: "Ban Cơ yếu Chính phủ"
-      },
-      image: "/image/govern/logo-BCYCP.png"
-    },
-    {
-      id: 36,
-      name: "Bộ TNMT",
-      category: "government",
-      description: {
-        en: "Ministry of Natural Resources and Environment",
-        vi: "Bộ Tài nguyên và Môi trường"
-      },
-      image: "/image/govern/logo-BTNVMT.jpg"
-    },
-    {
-      id: 37,
-      name: "Bộ Văn hóa",
-      category: "government",
-      description: {
-        en: "Ministry of Culture",
-        vi: "Bộ Văn hóa, Thể thao và Du lịch"
-      },
-      image: "/image/govern/logo-BVH.png"
-    },
-    {
-      id: 38,
-      name: "Tỉnh Bắc Ninh",
-      category: "government",
-      description: {
-        en: "Bac Ninh Province",
-        vi: "Tỉnh Bắc Ninh"
-      },
-      image: "/image/govern/logo-TBN.png"
-    },
-    {
-      id: 39,
-      name: "Tỉnh Phú Thọ",
-      category: "government",
-      description: {
-        en: "Phu Tho Province",
-        vi: "Tỉnh Phú Thọ"
-      },
-      image: "/image/govern/logo-TPT.png"
-    },
-
-    // Foreign Companies (3)
-    {
-      id: 40,
-      name: "Global Tech Solutions",
+      id: 43,
+      name: "APPLIANCZ",
       category: "foreign",
       description: {
-        en: "International technology services",
-        vi: "Dịch vụ công nghệ quốc tế"
+        en: "APPLIANCZ",
+        vi: "APPLIANCZ"
       },
-      image: "https://source.unsplash.com/random/800x600?global&1"
+      image: "/image/foreign/logo-APPLIANCZ.png"
     },
     {
-      id: 41,
-      name: "Worldwide Systems Inc",
+      id: 44,
+      name: "FORTNA",
       category: "foreign",
       description: {
-        en: "Global IT infrastructure",
-        vi: "Cơ sở hạ tầng CNTT toàn cầu"
+        en: "FORTNA",
+        vi: "FORTNA"
       },
-      image: "https://source.unsplash.com/random/800x600?worldwide&2"
+      image: "/image/foreign/logo-FORTNA.png"
     },
     {
-      id: 42,
-      name: "International Data Corp",
+      id: 45,
+      name: "HILTON",
       category: "foreign",
       description: {
-        en: "International data solutions",
-        vi: "Giải pháp dữ liệu quốc tế"
+        en: "HILTON",
+        vi: "HILTON"
       },
-      image: "https://source.unsplash.com/random/800x600?international&3"
+      image: "/image/foreign/logo-HILTON.png"
+    },
+    {
+      id: 46,
+      name: "JRC",
+      category: "foreign",
+      description: {
+        en: "JRC",
+        vi: "JRC"
+      },
+      image: "/image/foreign/logo-JRC.png"
+    },
+    {
+      id: 47,
+      name: "NTT COMMUNICATIONS",
+      category: "foreign",
+      description: {
+        en: "NTT COMMUNICATIONS",
+        vi: "NTT COMMUNICATIONS"
+      },
+      image: "/image/foreign/logo-NTTCOMMUNICATIONS.png"
     }
   ];
 
   const categories = [
-    { id: 'all', label: currentLanguage === 'vi' ? 'TẤT CẢ' : 'ALL', count: 42 },
-    { id: 'enterprise', label: currentLanguage === 'vi' ? 'DOANH NGHIỆP' : 'ENTERPRISE', count: 15 },
-    { id: 'bank', label: currentLanguage === 'vi' ? 'NGÂN HÀNG' : 'BANKING', count: 19 },
-    { id: 'government', label: currentLanguage === 'vi' ? 'CHÍNH PHỦ' : 'GOVERNMENT', count: 6 },
-    { id: 'foreign', label: currentLanguage === 'vi' ? 'NƯỚC NGOÀI' : 'FOREIGN', count: 3 },
+    { id: 'all', label: currentLanguage === 'vi' ? 'TẤT CẢ' : 'ALL', count: companies.length },
+    { id: 'government', label: currentLanguage === 'vi' ? 'CHÍNH PHỦ' : 'GOVERNMENT', count: companies.filter(c => c.category === 'government').length },
+    { id: 'bank', label: currentLanguage === 'vi' ? 'NGÂN HÀNG & TÀI CHÍNH' : 'BANKING & FINANCE', count: companies.filter(c => c.category === 'bank').length },
+    { id: 'enterprise', label: currentLanguage === 'vi' ? 'DOANH NGHIỆP' : 'ENTERPRISE', count: companies.filter(c => c.category === 'enterprise').length },
+    { id: 'foreign', label: currentLanguage === 'vi' ? 'NƯỚC NGOÀI' : 'FOREIGN', count: companies.filter(c => c.category === 'foreign').length },
   ];
 
-  const filteredCompanies = activeCategory === 'all' 
-    ? companies 
+
+
+  const filteredCompanies = activeCategory === 'all'
+    ? companies
     : companies.filter(company => company.category === activeCategory);
+
+  // Tính toán duration theo chiều rộng danh sách
+  useEffect(() => {
+    if (marqueeRef.current && activeCategory === 'all') {
+      const containerWidth = marqueeRef.current.scrollWidth;
+      const speed = 800; // px/giây (tăng để chạy nhanh hơn)
+      const duration = containerWidth / speed;
+      setMarqueeDuration(`${duration}s`);
+    }
+  }, [filteredCompanies, activeCategory]);
 
   return (
     <section className="relative">
@@ -476,7 +460,7 @@ const Clients: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-white text-center">
           <div className="mt-16">
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -491,15 +475,15 @@ const Clients: React.FC = () => {
             >
               <Breadcrumb
                 items={[
-                  { 
-                    name: { 
+                  {
+                    name: {
                       en: 'Home',
                       vi: 'Trang chủ'
-                    }, 
-                    path: '/' 
+                    },
+                    path: '/'
                   },
-                  { 
-                    name: { 
+                  {
+                    name: {
                       en: 'Clients',
                       vi: 'Khách hàng'
                     }
@@ -515,15 +499,15 @@ const Clients: React.FC = () => {
       <div className="relative py-10 bg-white z-10 mt-16">
         <div className="container mx-auto px-4">
           {/* Thank You Message */}
-          <motion.div 
+          <motion.div
             className="text-center max-w-4xl mx-auto mb-8"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
             <p className="text-gray-600 text-sm leading-relaxed">
-              {currentLanguage === 'vi' 
+              {currentLanguage === 'vi'
                 ? "Netcorp trân trọng cảm ơn những khách hàng đã tin tưởng lựa chọn chúng tôi là đơn vị cung cấp và triển khai thành công các giải pháp, sản phẩm công nghệ thông tin mang lại hiệu quả tối ưu."
                 : "Netcorp sincerely thanks our valued customers for trusting us as the provider and successful implementer of information technology solutions and products that deliver optimal efficiency."
               }
@@ -537,8 +521,8 @@ const Clients: React.FC = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`relative px-6 py-2 text-sm font-medium transition-colors
-                  ${activeCategory === category.id 
-                    ? 'text-primary' 
+                  ${activeCategory === category.id
+                    ? 'text-primary'
                     : 'text-gray-600 hover:text-primary'
                   }`}
                 whileHover={{ scale: 1.05 }}
@@ -559,32 +543,91 @@ const Clients: React.FC = () => {
           </div>
 
           {/* Clients Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {filteredCompanies.map((company, index) => (
-              <motion.div 
-                key={company.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+          {activeCategory === 'all' ? (
+            <div className="overflow-x-hidden w-full py-4">
+              <div
+                ref={marqueeRef}
+                className="flex gap-8 animate-marquee"
+                style={{ animation: `marquee ${marqueeDuration} linear infinite` }}
               >
-                <div className="relative h-48 w-full overflow-hidden bg-white flex items-center justify-center p-4">
-                  <img
-                    src={company.image}
-                    alt={company.name}
-                    className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-lg font-bold mb-2">{company.name}</h3>
-                      <p className="text-sm">{currentLanguage === 'vi' ? company.description.vi : company.description.en}</p>
+                {filteredCompanies.map((company) => (
+                  <div
+                    key={company.id}
+                    className="group flex-shrink-0 w-48 h-48 bg-white rounded-lg shadow flex items-center justify-center p-4 overflow-hidden relative"
+                  >
+                    <img
+                      src={company.image}
+                      alt={company.name}
+                      loading="lazy"
+                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-lg font-bold mb-2">{company.name}</h3>
+                        <p className="text-sm">{currentLanguage === 'vi' ? company.description.vi : company.description.en}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                ))}
+                {/* Lặp lại để hiệu ứng không bị trống khi chạy */}
+                {filteredCompanies.map((company) => (
+                  <div
+                    key={company.id}
+                    className="group flex-shrink-0 w-48 h-48 bg-white rounded-lg shadow flex items-center justify-center p-4 overflow-hidden relative"
+                  >
+                    <img
+                      src={company.image}
+                      alt={company.name}
+                      loading="lazy"
+                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-lg font-bold mb-2">{company.name}</h3>
+                        <p className="text-sm">{currentLanguage === 'vi' ? company.description.vi : company.description.en}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/* CSS cho hiệu ứng marquee */}
+              <style>
+                {`
+                @keyframes marquee {
+                  0% { transform: translateX(0); }
+                  100% { transform: translateX(-200%); }
+                }
+              `}
+              </style>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {filteredCompanies.map((company, index) => (
+                <motion.div
+                  key={company.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.02 }}
+                  className="group relative overflow-hidden rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                >
+                  <div className="relative h-48 w-full overflow-hidden bg-white flex items-center justify-center p-4">
+                    <img
+                      src={company.image}
+                      alt={company.name}
+                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-lg font-bold mb-2">{company.name}</h3>
+                        <p className="text-sm">{currentLanguage === 'vi' ? company.description.vi : company.description.en}</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Background Elements */}

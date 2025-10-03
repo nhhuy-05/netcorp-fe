@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Trang chủ",
-    "services": "Dịch vụ",
+    "solutions": "Giải pháp",
     "about": "Giới thiệu",
     "projects": "Dự án",
     "news": "Tin tức",
@@ -13,20 +13,20 @@
   "hero": {
     "tagline": "Giải pháp Công nghệ Hàng đầu tại Việt Nam",
     "title": "Chúng tôi Xây dựng Giải pháp Công nghệ Sáng tạo",
-    "description": "Giúp doanh nghiệp phát triển trong kỷ nguyên số với cơ sở hạ tầng tiên tiến, phát triển phần mềm và dịch vụ tư vấn CNTT.",
+    "description": "Giúp doanh nghiệp phát triển trong kỷ nguyên số với cơ sở hạ tầng tiên tiến, phát triển phần mềm và giải pháp tư vấn CNTT.",
     "getStarted": "Bắt đầu",
-    "exploreServices": "Khám phá dịch vụ",
+    "exploreServices": "Khám phá giải pháp",
     "trustedBy": "Được tin cậy bởi",
     "companies": "Công ty",
     "projects": "Dự án"
   },
   "services": {
-    "title": "Dịch vụ của chúng tôi",
+    "title": "Giải pháp của chúng tôi",
     "subtitle": "Giải pháp Công nghệ cho Phát triển Kinh doanh",
-    "description": "Chúng tôi cung cấp dịch vụ CNTT toàn diện để giúp doanh nghiệp đạt được tiềm năng tối đa trong bối cảnh kỹ thuật số hiện nay.",
+    "description": "Chúng tôi cung cấp giải pháp CNTT toàn diện để giúp doanh nghiệp đạt được tiềm năng tối đa trong bối cảnh kỹ thuật số hiện nay.",
     "learnMore": "Tìm hiểu thêm",
     "getConsultation": "Nhận Tư vấn Miễn phí",
-    "viewAll": "Xem Tất cả Dịch vụ",
+    "viewAll": "Xem Tất cả Giải pháp",
     "items": {
       "infrastructure": {
         "title": "Cơ sở Hạ tầng CNTT",
@@ -50,7 +50,7 @@
       },
       "consulting": {
         "title": "Tư vấn CNTT",
-        "description": "Dịch vụ tư vấn CNTT chiến lược để gắn kết đầu tư công nghệ với mục tiêu kinh doanh của bạn."
+        "description": "Giải pháp tư vấn CNTT chiến lược để gắn kết đầu tư công nghệ với mục tiêu kinh doanh của bạn."
       }
     }
   },
@@ -102,7 +102,7 @@
     "about": "Về NetCorp",
     "aboutText": "NetCorp là nhà cung cấp giải pháp CNTT hàng đầu tại Việt Nam, giúp doanh nghiệp tận dụng công nghệ để tăng trưởng và đổi mới.",
     "links": "Liên kết Nhanh",
-    "services": "Dịch vụ của Chúng tôi",
+    "services": "Giải pháp của Chúng tôi",
     "legal": {
       "title": "Pháp lý",
       "privacy": "Chính sách Riêng tư",

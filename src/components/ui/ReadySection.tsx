@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const ReadySection: React.FC = () => {
   const { i18n } = useTranslation();
@@ -43,12 +44,12 @@ const ReadySection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a 
-              href="/contact" 
+            <Link 
+              to="/contact" 
               className="inline-block px-8 py-4 bg-primary text-white font-bold text-lg rounded hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               {currentLanguage === 'vi' ? 'LIÊN HỆ VỚI CHÚNG TÔI' : 'CONTACT WITH US'}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

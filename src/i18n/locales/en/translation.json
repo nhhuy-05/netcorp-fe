@@ -1,7 +1,7 @@
 {
   "navbar": {
     "home": "Home",
-    "services": "Services",
+    "solutions": "Solutions",
     "about": "About",
     "projects": "Projects",
     "news": "News",
@@ -15,18 +15,18 @@
     "title": "We Build Innovative Technology Solutions",
     "description": "Helping businesses thrive in the digital age with cutting-edge infrastructure, software development, and IT consulting services.",
     "getStarted": "Get Started",
-    "exploreServices": "Explore Services",
+    "exploreServices": "Explore Solutions",
     "trustedBy": "Trusted by",
     "companies": "Companies",
     "projects": "Projects"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Our Solutions",
     "subtitle": "Technology Solutions for Business Growth",
-    "description": "We provide comprehensive IT services to help your business reach its full potential in today's digital landscape.",
+    "description": "We provide comprehensive IT solutions to help your business reach its full potential in today's digital landscape.",
     "learnMore": "Learn More",
     "getConsultation": "Get Free Consultation",
-    "viewAll": "View All Services",
+    "viewAll": "View All Solutions",
     "items": {
       "infrastructure": {
         "title": "IT Infrastructure",

@@ -71,6 +71,72 @@ export const positions = [
         'Annual salary review policy based on individual capacity and achievement assessment.'
       ]
     }
+  },
+  {
+    id: 1,
+    type: 'technology',
+    slug: 'assistant-project-manager-account-manager-it',
+    title: 'Assistant Project Manager/Account Manager (CNTT)',
+    titleEn: 'Assistant Project Manager/Account Manager (IT)',
+    image: '/image/LOGO_NC.png',
+    quantity: 1,
+    deadline: '30/10/2025',
+    location: 'Tầng 3, Tòa Casa, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội',
+    locationEn: '3rd Floor, Casa Building, 78 Duy Tan Alley, Cau Giay, Hanoi',
+    salary: '10.000.000 – 14.000.000 VNĐ',
+    salaryEn: '10,000,000 – 14,000,000 VND',
+    description: 'Hỗ trợ quản lý dự án, theo dõi tiến độ, quản trị nhiệm vụ, phối hợp khách hàng và các bên liên quan.',
+    descriptionEn: 'Support project management, monitor progress, manage tasks, coordinate with customers and stakeholders.',
+    detail: {
+      responsibilities: [
+        'Hỗ trợ Quản lý Dự án trong việc quản lý và theo dõi dự án, lập kế hoạch, theo dõi tiến độ và quản trị các nhiệm vụ với khách hàng, đối tác và nội bộ.',
+        'Soạn thảo hợp đồng, phụ lục hợp đồng, biên bản làm việc, công văn, hồ sơ thanh toán theo quy định của công ty, phối hợp làm báo giá, hỗ trợ với đối tác liên quan.',
+        'Chuẩn bị, hoàn thiện và nộp hồ sơ theo yêu cầu của khách hàng.',
+        'Quản lý tài liệu dự án, theo dõi cam kết hợp đồng, nhắc nhở các bên liên quan đảm bảo tiến độ.',
+        'Tổng hợp báo cáo tiến độ hàng tuần, các vấn đề phát sinh cho cấp quản lý liên quan, chuẩn bị tài liệu họp và hỗ trợ xử lý các vấn đề phát sinh.',
+        'Tổ chức và tham gia công tác hành chính cho dự án được phân công.',
+        'Hỗ trợ các công tác triển khai và công việc chuyên môn khác.'
+      ],
+      responsibilitiesEn: [
+        'Support Project Manager in managing and monitoring projects, planning, tracking progress, and managing tasks with customers, partners, and internal teams.',
+        'Draft contracts, contract appendices, meeting minutes, official documents, payment documents according to company regulations, coordinate quotations, support related partners.',
+        'Prepare, complete, and submit documents as required by customers.',
+        'Manage project documents, monitor contract commitments, remind stakeholders to ensure progress.',
+        'Summarize weekly progress reports, arising issues for relevant managers, prepare meeting documents and support issue resolution.',
+        'Organize and participate in administrative tasks for assigned projects.',
+        'Support implementation and other professional tasks.'
+      ],
+      requirements: [
+        'Nam/nữ ngoại hình ưa nhìn, tốt nghiệp đại học chuyên ngành Quản trị kinh doanh, Kinh tế, CNTT hoặc liên quan (ưu tiên ứng viên có kinh nghiệm trợ lý dự án, sale admin từ 1 năm trở lên).',
+        'Kỹ năng quản lý tài liệu, hợp đồng; ưu tiên có kinh nghiệm làm hồ sơ thầu/báo giá.',
+        'Thành thạo tin học văn phòng (Word, Excel, Powerpoint…), kỹ năng giao tiếp và phối hợp tốt.',
+        'Ngoại ngữ: Tiếng Anh (tối thiểu kỹ năng đọc - viết).',
+        'Cẩn thận, có trách nhiệm, chịu được áp lực công việc.'
+      ],
+      requirementsEn: [
+        'Male/female with good appearance, graduated from university majoring in Business Administration, Economics, IT or related fields (priority for candidates with at least 1 year experience as project assistant, sales admin).',
+        'Document and contract management skills; priority for candidates with experience in bidding/quotation documents.',
+        'Proficient in office computing (Word, Excel, PowerPoint...), good communication and coordination skills.',
+        'Foreign language: English (minimum reading - writing skills).',
+        'Careful, responsible, able to work under pressure.'
+      ],
+      benefits: [
+        'Hưởng đầy đủ các chế độ theo quy định của pháp luật (BHYT, BHXH, BHTN) và các chế độ phúc lợi theo nội quy, quy chế của Công ty (tham quan, nghỉ mát, Team Building, ...).',
+        'Môi trường làm việc trẻ trung, năng động và chú trọng vào phát triển năng lực sự nghiệp.',
+        'Cơ hội làm việc với đối tác là những ngân hàng lớn, tập đoàn lớn trong lĩnh vực tài chính.',
+        'Cơ hội thăng tiến trong công việc.',
+        'Xét lương định kỳ, thưởng theo hiệu quả công việc.',
+        'Xét lương định kỳ: Chính sách xét tăng lương hàng năm dựa trên đánh giá năng lực và thành tích cá nhân.'
+      ],
+      benefitsEn: [
+        'Full benefits according to legal regulations (health insurance, social insurance, unemployment insurance) and company welfare policies (travel, vacation, team building, ...).',
+        'Young, dynamic working environment focused on career development.',
+        'Opportunity to work with major banks and corporations in the financial sector.',
+        'Promotion opportunities.',
+        'Periodic salary review, bonuses based on work performance.',
+        'Annual salary review policy based on individual capacity and achievement assessment.'
+      ]
+    }
   }
 ];
 

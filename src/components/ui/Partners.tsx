@@ -20,267 +20,267 @@ const Partners: React.FC = () => {
   const currentLanguage = i18n.language;
 
   const partners: Partner[] = [
-  {
-    id: 1,
-    name: "DELL",
-    category: "enterprise",
-    description: {
-      en: "Global technology leader in computing and storage.",
-      vi: "Nhà cung cấp công nghệ toàn cầu về máy tính và lưu trữ."
+    {
+      id: 1,
+      name: "DELL",
+      category: "enterprise",
+      description: {
+        en: "Global technology leader in computing and storage.",
+        vi: "Nhà cung cấp công nghệ toàn cầu về máy tính và lưu trữ."
+      },
+      image: "/image/partners/logo-DELL.png"
     },
-    image: "/image/partners/logo-DELL.png"
-  },
-  {
-    id: 2,
-    name: "CISCO",
-    category: "networking",
-    description: {
-      en: "World leader in IT, networking, and cybersecurity solutions.",
-      vi: "Nhà cung cấp giải pháp CNTT, mạng và an ninh mạng hàng đầu thế giới."
+    {
+      id: 2,
+      name: "CISCO",
+      category: "networking",
+      description: {
+        en: "World leader in IT, networking, and cybersecurity solutions.",
+        vi: "Nhà cung cấp giải pháp CNTT, mạng và an ninh mạng hàng đầu thế giới."
+      },
+      image: "/image/partners/logo-CISCO.png"
     },
-    image: "/image/partners/logo-CISCO.png"
-  },
-  {
-    id: 3,
-    name: "IBM",
-    category: "software",
-    description: {
-      en: "Global leader in hybrid cloud and AI.",
-      vi: "Nhà cung cấp giải pháp điện toán đám mây lai và AI hàng đầu."
+    {
+      id: 3,
+      name: "IBM",
+      category: "software",
+      description: {
+        en: "Global leader in hybrid cloud and AI.",
+        vi: "Nhà cung cấp giải pháp điện toán đám mây lai và AI hàng đầu."
+      },
+      image: "/image/partners/logo-IBM.png"
     },
-    image: "/image/partners/logo-IBM.png"
-  },
-  {
-    id: 4,
-    name: "HPE",
-    category: "enterprise",
-    description: {
-      en: "Enterprise IT infrastructure and cloud solutions.",
-      vi: "Giải pháp hạ tầng CNTT và điện toán đám mây doanh nghiệp."
+    {
+      id: 4,
+      name: "HPE",
+      category: "enterprise",
+      description: {
+        en: "Enterprise IT infrastructure and cloud solutions.",
+        vi: "Giải pháp hạ tầng CNTT và điện toán đám mây doanh nghiệp."
+      },
+      image: "/image/partners/logo-HPE.png"
     },
-    image: "/image/partners/logo-HPE.png"
-  },
-  {
-    id: 5,
-    name: "ORACLE",
-    category: "software",
-    description: {
-      en: "Database, cloud, and enterprise software solutions.",
-      vi: "Giải pháp cơ sở dữ liệu, đám mây và phần mềm doanh nghiệp."
+    {
+      id: 5,
+      name: "ORACLE",
+      category: "software",
+      description: {
+        en: "Database, cloud, and enterprise software solutions.",
+        vi: "Giải pháp cơ sở dữ liệu, đám mây và phần mềm doanh nghiệp."
+      },
+      image: "/image/partners/logo-ORACLE.png"
     },
-    image: "/image/partners/logo-ORACLE.png"
-  },
-  {
-    id: 6,
-    name: "MICROSOFT",
-    category: "software",
-    description: {
-      en: "Global leader in software, cloud, and productivity solutions.",
-      vi: "Nhà cung cấp phần mềm, điện toán đám mây và giải pháp năng suất hàng đầu."
+    {
+      id: 6,
+      name: "MICROSOFT",
+      category: "software",
+      description: {
+        en: "Global leader in software, cloud, and productivity solutions.",
+        vi: "Nhà cung cấp phần mềm, điện toán đám mây và giải pháp năng suất hàng đầu."
+      },
+      image: "/image/partners/logo-MICROSOFT.png"
     },
-    image: "/image/partners/logo-MICROSOFT.png"
-  },
-  {
-    id: 7,
-    name: "VMWARE",
-    category: "enterprise",
-    description: {
-      en: "Cloud computing and virtualization solutions.",
-      vi: "Giải pháp điện toán đám mây và ảo hóa."
+    {
+      id: 7,
+      name: "VMWARE",
+      category: "enterprise",
+      description: {
+        en: "Cloud computing and virtualization solutions.",
+        vi: "Giải pháp điện toán đám mây và ảo hóa."
+      },
+      image: "/image/partners/logo-VMWARE.png"
     },
-    image: "/image/partners/logo-VMWARE.png"
-  },
-  {
-    id: 8,
-    name: "PALOALTO",
-    category: "security",
-    description: {
-      en: "Next-generation cybersecurity solutions.",
-      vi: "Giải pháp an ninh mạng thế hệ mới."
+    {
+      id: 8,
+      name: "PALOALTO",
+      category: "security",
+      description: {
+        en: "Next-generation cybersecurity solutions.",
+        vi: "Giải pháp an ninh mạng thế hệ mới."
+      },
+      image: "/image/partners/logo-PALOALTO.png"
     },
-    image: "/image/partners/logo-PALOALTO.png"
-  },
-  {
-    id: 9,
-    name: "CHECKPOINT",
-    category: "security",
-    description: {
-      en: "Global leader in cybersecurity solutions.",
-      vi: "Nhà cung cấp giải pháp an ninh mạng hàng đầu thế giới."
+    {
+      id: 9,
+      name: "CHECKPOINT",
+      category: "security",
+      description: {
+        en: "Global leader in cybersecurity solutions.",
+        vi: "Nhà cung cấp giải pháp an ninh mạng hàng đầu thế giới."
+      },
+      image: "/image/partners/logo-CHECKPOINT.png"
     },
-    image: "/image/partners/logo-CHECKPOINT.png"
-  },
-  {
-    id: 10,
-    name: "THALES",
-    category: "security",
-    description: {
-      en: "Digital identity and security solutions.",
-      vi: "Giải pháp nhận dạng số và bảo mật."
+    {
+      id: 10,
+      name: "THALES",
+      category: "security",
+      description: {
+        en: "Digital identity and security solutions.",
+        vi: "Giải pháp nhận dạng số và bảo mật."
+      },
+      image: "/image/partners/logo-THALES.png"
     },
-    image: "/image/partners/logo-THALES.png"
-  },
-  {
-    id: 11,
-    name: "NETAPP",
-    category: "enterprise",
-    description: {
-      en: "Data management and cloud storage solutions.",
-      vi: "Giải pháp quản lý dữ liệu và lưu trữ đám mây."
+    {
+      id: 11,
+      name: "NETAPP",
+      category: "enterprise",
+      description: {
+        en: "Data management and cloud storage solutions.",
+        vi: "Giải pháp quản lý dữ liệu và lưu trữ đám mây."
+      },
+      image: "/image/partners/logo-NETAPP.png"
     },
-    image: "/image/partners/logo-NETAPP.png"
-  },
-  {
-    id: 12,
-    name: "FORTINET",
-    category: "security",
-    description: {
-      en: "Broad, integrated, and automated cybersecurity solutions.",
-      vi: "Giải pháp an ninh mạng tích hợp, tự động và toàn diện."
+    {
+      id: 12,
+      name: "FORTINET",
+      category: "security",
+      description: {
+        en: "Broad, integrated, and automated cybersecurity solutions.",
+        vi: "Giải pháp an ninh mạng tích hợp, tự động và toàn diện."
+      },
+      image: "/image/partners/logo-FORTINET.png"
     },
-    image: "/image/partners/logo-FORTINET.png"
-  },
-  {
-    id: 13,
-    name: "JUNIPER",
-    category: "networking",
-    description: {
-      en: "High-performance networking and cybersecurity.",
-      vi: "Giải pháp mạng hiệu suất cao và an ninh mạng."
+    {
+      id: 13,
+      name: "JUNIPER",
+      category: "networking",
+      description: {
+        en: "High-performance networking and cybersecurity.",
+        vi: "Giải pháp mạng hiệu suất cao và an ninh mạng."
+      },
+      image: "/image/partners/logo-JUNIPER.png"
     },
-    image: "/image/partners/logo-JUNIPER.png"
-  },
-  {
-    id: 14,
-    name: "F5",
-    category: "networking",
-    description: {
-      en: "Application delivery and security solutions.",
-      vi: "Giải pháp phân phối và bảo mật ứng dụng."
+    {
+      id: 14,
+      name: "F5",
+      category: "networking",
+      description: {
+        en: "Application delivery and security solutions.",
+        vi: "Giải pháp phân phối và bảo mật ứng dụng."
+      },
+      image: "/image/partners/logo-F5.png"
     },
-    image: "/image/partners/logo-F5.png"
-  },
-  {
-    id: 15,
-    name: "RADWARE",
-    category: "security",
-    description: {
-      en: "Application delivery and cybersecurity solutions.",
-      vi: "Giải pháp phân phối ứng dụng và an ninh mạng."
+    {
+      id: 15,
+      name: "RADWARE",
+      category: "security",
+      description: {
+        en: "Application delivery and cybersecurity solutions.",
+        vi: "Giải pháp phân phối ứng dụng và an ninh mạng."
+      },
+      image: "/image/partners/logo-RADWARE.png"
     },
-    image: "/image/partners/logo-RADWARE.png"
-  },
-  {
-    id: 16,
-    name: "MCAFEE",
-    category: "security",
-    description: {
-      en: "Cybersecurity solutions for businesses.",
-      vi: "Giải pháp an ninh mạng cho doanh nghiệp."
+    {
+      id: 16,
+      name: "MCAFEE",
+      category: "security",
+      description: {
+        en: "Cybersecurity solutions for businesses.",
+        vi: "Giải pháp an ninh mạng cho doanh nghiệp."
+      },
+      image: "/image/partners/logo-MCAFEE.png"
     },
-    image: "/image/partners/logo-MCAFEE.png"
-  },
-  {
-    id: 17,
-    name: "CYBERARK",
-    category: "security",
-    description: {
-      en: "Leader in privileged access management.",
-      vi: "Nhà cung cấp giải pháp quản lý truy cập đặc quyền hàng đầu."
+    {
+      id: 17,
+      name: "CYBERARK",
+      category: "security",
+      description: {
+        en: "Leader in privileged access management.",
+        vi: "Nhà cung cấp giải pháp quản lý truy cập đặc quyền hàng đầu."
+      },
+      image: "/image/partners/logo-CYBERARK.png"
     },
-    image: "/image/partners/logo-CYBERARK.png"
-  },
-  {
-    id: 18,
-    name: "TUFIN",
-    category: "security",
-    description: {
-      en: "Security policy automation solutions.",
-      vi: "Giải pháp tự động hóa chính sách bảo mật."
+    {
+      id: 18,
+      name: "TUFIN",
+      category: "security",
+      description: {
+        en: "Security policy automation solutions.",
+        vi: "Giải pháp tự động hóa chính sách bảo mật."
+      },
+      image: "/image/partners/logo-TUFIN.png"
     },
-    image: "/image/partners/logo-TUFIN.png"
-  },
-  {
-    id: 19,
-    name: "VERTIV",
-    category: "enterprise",
-    description: {
-      en: "Critical infrastructure and data center solutions.",
-      vi: "Giải pháp hạ tầng quan trọng và trung tâm dữ liệu."
+    {
+      id: 19,
+      name: "VERTIV",
+      category: "enterprise",
+      description: {
+        en: "Critical infrastructure and data center solutions.",
+        vi: "Giải pháp hạ tầng quan trọng và trung tâm dữ liệu."
+      },
+      image: "/image/partners/logo-VERTIV.png"
     },
-    image: "/image/partners/logo-VERTIV.png"
-  },
-  {
-    id: 20,
-    name: "SCHNEIDER",
-    category: "enterprise",
-    description: {
-      en: "Energy management and automation solutions.",
-      vi: "Giải pháp quản lý năng lượng và tự động hóa."
+    {
+      id: 20,
+      name: "SCHNEIDER",
+      category: "enterprise",
+      description: {
+        en: "Energy management and automation solutions.",
+        vi: "Giải pháp quản lý năng lượng và tự động hóa."
+      },
+      image: "/image/partners/logo-SCHNEIDER.png"
     },
-    image: "/image/partners/logo-SCHNEIDER.png"
-  },
-  {
-    id: 21,
-    name: "POLYCOM",
-    category: "enterprise",
-    description: {
-      en: "Unified communications and collaboration solutions.",
-      vi: "Giải pháp truyền thông hợp nhất và cộng tác."
+    {
+      id: 21,
+      name: "POLYCOM",
+      category: "enterprise",
+      description: {
+        en: "Unified communications and collaboration solutions.",
+        vi: "Giải pháp truyền thông hợp nhất và cộng tác."
+      },
+      image: "/image/partners/logo-POLYCOM.png"
     },
-    image: "/image/partners/logo-POLYCOM.png"
-  },
-  {
-    id: 22,
-    name: "AVER",
-    category: "enterprise",
-    description: {
-      en: "Innovative video conferencing and education technology.",
-      vi: "Công nghệ hội nghị truyền hình và giáo dục sáng tạo."
+    {
+      id: 22,
+      name: "AVER",
+      category: "enterprise",
+      description: {
+        en: "Innovative video conferencing and education technology.",
+        vi: "Công nghệ hội nghị truyền hình và giáo dục sáng tạo."
+      },
+      image: "/image/partners/logo-AVER.png"
     },
-    image: "/image/partners/logo-AVER.png"
-  },
-  {
-    id: 23,
-    name: "SYMANTEC",
-    category: "security",
-    description: {
-      en: "Cybersecurity software and services.",
-      vi: "Phần mềm và dịch vụ an ninh mạng."
+    {
+      id: 23,
+      name: "SYMANTEC",
+      category: "security",
+      description: {
+        en: "Cybersecurity software and services.",
+        vi: "Phần mềm và dịch vụ an ninh mạng."
+      },
+      image: "/image/partners/logo-SYMANTEC.png"
     },
-    image: "/image/partners/logo-SYMANTEC.png"
-  },
-  {
-    id: 24,
-    name: "CLEARONE",
-    category: "enterprise",
-    description: {
-      en: "Leading provider of audio and visual communication solutions.",
-      vi: "Nhà cung cấp giải pháp truyền thông âm thanh và hình ảnh hàng đầu."
+    {
+      id: 24,
+      name: "CLEARONE",
+      category: "enterprise",
+      description: {
+        en: "Leading provider of audio and visual communication solutions.",
+        vi: "Nhà cung cấp giải pháp truyền thông âm thanh và hình ảnh hàng đầu."
+      },
+      image: "/image/partners/logo-CLEARONE.png"
     },
-    image: "/image/partners/logo-CLEARONE.png"
-  },
-  {
-    id: 25,
-    name: "DAHUA",
-    category: "surveillance",
-    description: {
-      en: "Provider of video surveillance solutions.",
-      vi: "Nhà cung cấp giải pháp giám sát video."
+    {
+      id: 25,
+      name: "DAHUA",
+      category: "surveillance",
+      description: {
+        en: "Provider of video surveillance solutions.",
+        vi: "Nhà cung cấp giải pháp giám sát video."
+      },
+      image: "/image/partners/logo-DAHUA.png"
     },
-    image: "/image/partners/logo-DAHUA.png"
-  },
-  {
-    id: 26,
-    name: "AVAYA",
-    category: "enterprise",
-    description: {
-      en: "Leading provider of business communications solutions.",
-      vi: "Nhà cung cấp giải pháp truyền thông doanh nghiệp hàng đầu."
-    },
-    image: "/image/partners/logo-AVAYA.png"
-  }
-];
+    {
+      id: 26,
+      name: "AVAYA",
+      category: "enterprise",
+      description: {
+        en: "Leading provider of business communications solutions.",
+        vi: "Nhà cung cấp giải pháp truyền thông doanh nghiệp hàng đầu."
+      },
+      image: "/image/partners/logo-AVAYA.png"
+    }
+  ];
 
   return (
     <section className="relative">
@@ -296,7 +296,7 @@ const Partners: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-white text-center">
           <div className="mt-16">
-            <motion.h1 
+            <motion.h1
               className="text-4xl md:text-6xl font-bold mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -311,15 +311,15 @@ const Partners: React.FC = () => {
             >
               <Breadcrumb
                 items={[
-                  { 
-                    name: { 
+                  {
+                    name: {
                       en: 'Home',
                       vi: 'Trang chủ'
-                    }, 
-                    path: '/' 
+                    },
+                    path: '/'
                   },
-                  { 
-                    name: { 
+                  {
+                    name: {
                       en: 'Partners',
                       vi: 'Đối tác'
                     }
@@ -335,7 +335,7 @@ const Partners: React.FC = () => {
       <div className="relative py-10 bg-white z-10 mt-16">
         <div className="container mx-auto px-4">
           {/* Section Title */}
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center mb-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -343,8 +343,8 @@ const Partners: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <p className="text-gray-600 text-sm leading-relaxed">
-              {currentLanguage === 'vi' 
-                ? 'Netcorp cam kết luôn đồng hành với các đối tác công nghệ của mình để cung cấp các giải pháp công nghệ, dịch vụ tốt nhất vì mục tiêu chung là sự hài lòng của khách hàng. Netcorp đã thành công trong việc hợp tác, phát triển cung cấp các sản phẩm, giải pháp và dịch vụ của nhiều hãng danh tiếng trên thế giới cho các khách hàng tại khu vực. Hàng năm, chúng tôi đầu tư phần lớn chi phí vào nghiên cứu phát triển, đào tạo chuyên gia để cung cấp các giải pháp chiến lược mà các đối tác đem lại.' 
+              {currentLanguage === 'vi'
+                ? 'Netcorp cam kết luôn đồng hành với các đối tác công nghệ của mình để cung cấp các giải pháp công nghệ, dịch vụ tốt nhất vì mục tiêu chung là sự hài lòng của khách hàng. Netcorp đã thành công trong việc hợp tác, phát triển cung cấp các sản phẩm, giải pháp và dịch vụ của nhiều hãng danh tiếng trên thế giới cho các khách hàng tại khu vực. Hàng năm, chúng tôi đầu tư phần lớn chi phí vào nghiên cứu phát triển, đào tạo chuyên gia để cung cấp các giải pháp chiến lược mà các đối tác đem lại.'
                 : 'Netcorp is committed to working closely with our technology partners to deliver the best technology solutions and services, with the shared goal of ensuring customer satisfaction. We have successfully collaborated with renowned global brands to develop and provide their products, solutions, and services to clients across the region. Each year, we dedicate a significant portion of our budget to research and development, as well as expert training, to offer strategic solutions introduced by our partners.'}
             </p>
           </motion.div>
@@ -380,7 +380,7 @@ const Partners: React.FC = () => {
           {/* Partners Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {partners.map((partner, index) => (
-              <motion.div 
+              <motion.div
                 key={partner.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -388,11 +388,12 @@ const Partners: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.02 }}
                 className="group relative overflow-hidden rounded-lg shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
               >
-                <div className="relative h-48 w-full overflow-hidden">
+                <div className="relative h-48 w-full overflow-hidden flex items-center justify-center bg-white">
                   <img
                     src={partner.image}
                     alt={partner.name}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                    className="max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110" // max-h-20 ~ 80px
+                    style={{ maxWidth: '80%', maxHeight: '80px' }}
                   />
                   <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

@@ -27,7 +27,7 @@ const VideoSection: React.FC = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Phương pháp của chúng tôi' : 'Our Approach'}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white" style={{ fontSize: '40px' }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase mb-6 text-white">
             {currentLanguage === 'vi' ? 'GIẢI PHÁP' : 'SOLUTIONS'}
           </h2>
           <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>

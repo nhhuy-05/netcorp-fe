@@ -559,7 +559,8 @@ const Clients: React.FC = () => {
                       src={company.image}
                       alt={company.name}
                       loading="lazy"
-                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      className="max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110" // max-h-20 ~ 80px
+                      style={{ maxWidth: '80%', maxHeight: '80px' }}
                     />
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -579,7 +580,8 @@ const Clients: React.FC = () => {
                       src={company.image}
                       alt={company.name}
                       loading="lazy"
-                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      className="max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110"
+                      style={{ maxWidth: '80%', maxHeight: '80px' }}
                     />
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -615,7 +617,8 @@ const Clients: React.FC = () => {
                     <img
                       src={company.image}
                       alt={company.name}
-                      className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                      className="max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110"
+                      style={{ maxWidth: '80%', maxHeight: '80px' }}
                     />
                     <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="text-center text-white p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

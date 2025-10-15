@@ -33,7 +33,7 @@ const ProjectDetail: React.FC = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
         >            {/* Hero Banner */}
-            <div className="relative h-[40vh] mt-0 w-full">
+            <div className="relative h-[50vh] md:h-[40vh] mt-0 w-full">
                 <div className="fixed top-0 left-0 right-0">
                     <img
                         src={work.customerImage || work.image}
@@ -43,11 +43,11 @@ const ProjectDetail: React.FC = () => {
                     <div className="fixed inset-0 bg-black/60"></div>
                 </div>
                 <div className="relative container mx-auto px-4 h-full flex flex-col items-center justify-center text-white text-center">
-                    <div className="mt-16">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+                    <div className="mt-12 md:mt-16">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4 px-2">
                             {currentLanguage === 'vi' ? work.customerVi : work.customer}
                         </h1>
-                        <p className="text-lg md:text-xl">
+                        <p className="text-sm md:text-lg lg:text-xl px-4">
                             {currentLanguage === 'vi' ? work.titleVi : work.title}
                         </p>
                     </div>
@@ -55,18 +55,18 @@ const ProjectDetail: React.FC = () => {
             </div>
 
             {/* Project Content */}
-            <div className="relative py-20 bg-white z-10 mt-16">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+            <div className="relative py-12 md:py-16 lg:py-20 bg-white z-10 mt-12 md:mt-16">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-stretch">
                         {/* Left Column: Project Image */}
-                        <div className="relative rounded-3xl overflow-hidden shadow-lg h-full flex min-w-[400px] md:min-w-[520px]">
+                        <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg h-full flex items-center justify-center bg-white p-4 md:p-6 lg:p-8 min-h-[200px] md:min-h-[250px]">
                             {/* Nút/quay lại nằm phía trên ảnh */}
                             <button
                                 onClick={() => navigate(-1)}
-                                className="absolute top-4 left-4 z-10 flex items-center justify-center w-12 h-12 bg-black/30 hover:bg-white text-primary rounded-full shadow transition-all"
+                                className="absolute top-3 left-3 md:top-4 md:left-4 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-black/30 hover:bg-white text-primary rounded-full shadow transition-all"
                                 title={currentLanguage === 'vi' ? 'Quay lại' : 'Go Back'}
                             >
-                                <svg width="20" height="20" fill="none" viewBox="0 0 24 24">
+                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         d="M15 19l-7-7 7-7" />
                                 </svg>
@@ -74,24 +74,24 @@ const ProjectDetail: React.FC = () => {
                             <img
                                 src={work.customerImage || work.image}
                                 alt={work.customer}
-                                className="w-full h-full object-cover"
+                                className="max-w-full max-h-[60px] md:max-h-[100px] lg:max-h-160px w-auto object-contain mx-auto"
                             />
                             <div
-                                className="absolute bottom-0 left-0 w-0 h-0 border-l-[120px] border-t-[120px] border-t-transparent"
+                                className="absolute bottom-0 left-0 w-0 h-0 border-l-[60px] md:border-l-[80px] lg:border-l-[120px] border-t-[60px] md:border-t-[80px] lg:border-t-[120px] border-t-transparent"
                                 style={{ borderLeftColor: 'var(--primary)' }}
                             ></div>
                         </div>
 
                         {/* Right Column: Project Details */}
                         <div className="flex flex-col justify-center">
-                            <h2 className="text-2xl md:text-3xl font-bold mb-6"> {/* Giảm kích thước chữ */}
+                            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">
                                 {currentLanguage === 'vi' ? (
                                     <>DỰ ÁN <span className="text-primary">{work.titleVi}</span></>
                                 ) : (
-                                    <>PROJECT <br /><span className="text-primary">{work.title}</span></>
+                                    <>PROJECT <span className="text-primary">{work.title}</span></>
                                 )}
                             </h2>
-                            <div className="grid grid-cols-1 gap-8">
+                            <div className="grid grid-cols-1 gap-4 md:gap-6 lg:gap-8">
                                 <div>
                                     <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
                                         {currentLanguage === 'vi'
@@ -99,30 +99,30 @@ const ProjectDetail: React.FC = () => {
                                             : 'Detailed information about this project is presented below.'}
                                     </p>
                                 </div>
-                                <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                                <div className="bg-gray-50 md:bg-gray-100 p-4 md:p-6 rounded-lg shadow-md">
                                     <table className="w-full text-left border-collapse">
                                         <tbody>
                                             <tr className="border-b">
-                                                <th className="p-4 text-gray-700 font-semibold">{currentLanguage === 'vi' ? 'Tên khách hàng' : 'Customer Name'}</th>
-                                                <td className="p-4 text-gray-900">
+                                                <th className="p-2 md:p-4 text-gray-700 font-semibold text-sm md:text-base">{currentLanguage === 'vi' ? 'Tên khách hàng' : 'Customer Name'}</th>
+                                                <td className="p-2 md:p-4 text-gray-900 text-sm md:text-base">
                                                     {currentLanguage === 'vi' ? work.customerVi : work.customer}
                                                 </td>
                                             </tr>
                                             <tr className="border-b">
-                                                <th className="p-4 text-gray-700 font-semibold w-1/3">{currentLanguage === 'vi' ? 'Địa chỉ' : 'Address'}</th>
-                                                <td className="p-4 text-gray-900">{
+                                                <th className="p-2 md:p-4 text-gray-700 font-semibold w-1/3 text-sm md:text-base">{currentLanguage === 'vi' ? 'Địa chỉ' : 'Address'}</th>
+                                                <td className="p-2 md:p-4 text-gray-900 text-sm md:text-base">{
                                                     currentLanguage === 'vi' ? work.addressVi : work.address
                                                 }</td>
                                             </tr>
                                             <tr className="border-b">
-                                                <th className="p-4 text-gray-700 font-semibold">{currentLanguage === 'vi' ? 'Mô tả' : 'Description'}</th>
-                                                <td className="p-4 text-gray-900">{
+                                                <th className="p-2 md:p-4 text-gray-700 font-semibold text-sm md:text-base">{currentLanguage === 'vi' ? 'Mô tả' : 'Description'}</th>
+                                                <td className="p-2 md:p-4 text-gray-900 text-sm md:text-base">{
                                                     currentLanguage === 'vi' ? work.descriptionVi : work.description
                                                 }</td>
                                             </tr>
                                             <tr>
-                                                <th className="p-4 text-gray-700 font-semibold">{currentLanguage === 'vi' ? 'Năm thực hiện' : 'Year'}</th>
-                                                <td className="p-4 text-gray-900">{work.year}</td>
+                                                <th className="p-2 md:p-4 text-gray-700 font-semibold text-sm md:text-base">{currentLanguage === 'vi' ? 'Năm thực hiện' : 'Year'}</th>
+                                                <td className="p-2 md:p-4 text-gray-900 text-sm md:text-base">{work.year}</td>
                                             </tr>
                                         </tbody>
                                     </table>

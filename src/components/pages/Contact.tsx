@@ -11,60 +11,92 @@ const Contact: React.FC = () => {
   const contactCards = isEn
     ? [
       {
-        icon: <FiHome size={32} className="text-primary mb-2" />,
+        icon: <FiHome size={32} className="text-primary" />,
         title: 'Address',
         content: (
           <>
-            <div>Casla Building, 78 Duy Tan Alley, Cau Giay, Hanoi.</div>
+            <div>
+              <span>Address:</span>{' '}
+              <span >No. 12, Alley 1, Lane 178 Trung Liet, Trung Liet Ward, Dong Da District, Hanoi, Vietnam</span>
+            </div>
+            <div>
+              <span>R/O:</span>{' '}
+              <span >Casla Building, 78 Duy Tan Alley, Cau Giay, Hanoi.</span>
+            </div>
           </>
         ),
       },
       {
-        icon: <FiBriefcase size={32} className="text-primary mb-2" />,
+        icon: <FiBriefcase size={32} className="text-primary" />,
         title: 'Sales Department',
         content: (
           <>
-            <div> Email: info@netcorp.vn</div>
-            <div> Tel: (+84) 24.777.01912</div>
+            <div>
+              <span>Email:</span>{' '}
+              <span >info@netcorp.vn</span>
+            </div>
+            <div>
+              <span>Tel:</span>{' '}
+              <span >(+84) 24.777.01912</span>
+            </div>
           </>
         ),
       },
       {
-        icon: <FiCpu size={32} className="text-primary mb-2" />,
+        icon: <FiCpu size={32} className="text-primary" />,
         title: 'Technical Department',
         content: (
           <>
-            <div> Email: nis@netcorp.vn</div>
+            <div>
+              <span>Email:</span>{' '}
+              <span >nis@netcorp.vn</span>
+            </div>
           </>
         ),
       },
     ]
     : [
       {
-        icon: <FiHome size={32} className="text-primary mb-2" />,
+        icon: <FiHome size={32} className="text-primary" />,
         title: 'Địa chỉ',
         content: (
           <>
-            <div>Tòa nhà Casla, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội.</div>
+            <div>
+              <span>Địa chỉ:</span>{' '}
+              <span >Số 12, Ngõ 1, Số 178 Trung Liệt, Phường Trung Liệt, Quận Đống Đa, Hà Nội, Việt Nam</span>
+            </div>
+            <div>
+              <span>Văn phòng đại diện:</span>{' '}
+              <span >Tòa nhà Casla, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội.</span>
+            </div>
           </>
         ),
       },
       {
-        icon: <FiBriefcase size={32} className="text-primary mb-2" />,
+        icon: <FiBriefcase size={32} className="text-primary" />,
         title: 'Bộ Phận Kinh Doanh',
         content: (
           <>
-            <div> Email: info@netcorp.vn</div>
-            <div> Tel: (+84) 24.777.01912</div>
+            <div>
+              <span>Email:</span>{' '}
+              <span >info@netcorp.vn</span>
+            </div>
+            <div>
+              <span>Tel:</span>{' '}
+              <span >(+84) 24.777.01912</span>
+            </div>
           </>
         ),
       },
       {
-        icon: <FiCpu size={32} className="text-primary mb-2" />,
+        icon: <FiCpu size={32} className="text-primary" />,
         title: 'Bộ Phận Kỹ Thuật',
         content: (
           <>
-            <div> Email: nis@netcorp.vn</div>
+            <div>
+              <span>Email:</span>{' '}
+              <span >nis@netcorp.vn</span>
+            </div>
           </>
         ),
       },
@@ -126,23 +158,25 @@ const Contact: React.FC = () => {
       <div className="relative py-0 bg-white z-10 mt-16">
         <div className="container mx-auto px-4">
           {/* Info Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
             {contactCards.map((card, idx) => (
               <motion.div
-                key={card.title}
-                className="group rounded-xl p-8 shadow-md flex flex-col items-start  transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.2 * idx }}
+              key={card.title}
+              className="group rounded-xl p-8 shadow-md flex flex-col items-start transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 * idx }}
               >
-                <div className="mb-4 p-3 rounded-lg bg-primary/10 shadow-md transition-colors duration-300 group-hover:bg-white">
-                  {React.cloneElement(card.icon, { className: 'text-primary group-hover:text-primary transition-colors duration-300', size: 32 })}
-                </div>
-                <div className="text-lg font-bold tracking-widest mb-2 transition-colors duration-300 group-hover:text-white">{card.title}</div>
-                <div className="text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{card.content}</div>
+              <div className="flex items-center mb-4">
+                <span className="p-3 rounded-lg bg-primary/10 shadow-md transition-colors duration-300 group-hover:bg-white mr-3">
+                {React.cloneElement(card.icon, { className: 'text-primary group-hover:text-primary transition-colors duration-300', size: 24 })}
+                </span>
+                <span className="text-lg font-bold tracking-widest transition-colors duration-300 group-hover:text-white">{card.title}</span>
+              </div>
+              <div className="text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{card.content}</div>
               </motion.div>
             ))}
-          </div>
+            </div>
 
           {/* Google Map */}
           <motion.div

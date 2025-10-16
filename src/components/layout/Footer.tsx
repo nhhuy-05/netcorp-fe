@@ -113,12 +113,6 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/solutions/broadcasting" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300 flex items-center">
-                    <FiArrowRight className="mr-2 text-sm text-primary" />
-                    {currentLanguage === 'vi' ? 'Broadcasting' : 'Broadcasting'}
-                  </Link>
-                </li>
-                <li>
                   <Link to="/solutions/business-application" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300 flex items-center">
                     <FiArrowRight className="mr-2 text-sm text-primary" />
                     {currentLanguage === 'vi' ? 'Business Application' : 'Business Application'}
@@ -128,6 +122,12 @@ const Footer: React.FC = () => {
                   <Link to="/solutions/me" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300 flex items-center">
                     <FiArrowRight className="mr-2 text-sm text-primary" />
                     M&E
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/solutions/broadcasting" className="text-gray-400 hover:text-primary text-sm transition-colors duration-300 flex items-center">
+                    <FiArrowRight className="mr-2 text-sm text-primary" />
+                    {currentLanguage === 'vi' ? 'Broadcasting' : 'Broadcasting'}
                   </Link>
                 </li>
               </ul>

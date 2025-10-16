@@ -57,59 +57,62 @@ const VideoSection: React.FC = () => {
 
             {/* Right: content (2/5 on md+) */}
             <motion.div
-              className="md:col-span-2 relative w-full h-full md:bg-gradient-to-l flex flex-col justify-center p-6 md:p-8"
+              className="md:col-span-2 relative w-full h-full md:bg-primary-dark flex flex-col justify-center p-4 sm:p-6 md:p-8 lg:p-10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
-                {currentLanguage === 'vi'
-                  ? 'Giải pháp công nghệ thúc đẩy tăng trưởng doanh nghiệp'
-                  : 'Technology Solutions that Drive Business Growth'}
-              </h3>
+              {/* Mobile background overlay */}
+              <div className="md:hidden absolute inset-0 bg-primary/90"></div>
 
-              <div className="mb-6">
-                <ul className="space-y-2">
-                  {[
-                    currentLanguage === 'vi' ? 'Phát triển phần mềm trí tuệ nhân tạo AI' : 'AI software development',
-                    currentLanguage === 'vi' ? 'Tối ưu hạ tầng CNTT' : 'IT infrastructure optimization',
-                    currentLanguage === 'vi' ? 'Giải pháp an ninh mạng' : 'Cybersecurity solutions',
-                    currentLanguage === 'vi' ? 'Chuyển đổi nền tảng điện toán đám mây' : 'Cloud transformation'
-                  ].map((item, index) => (
-                    <motion.li
-                      key={index}
-                      className="flex items-center text-white"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    >
-                      <FiCheck className="mr-2 text-white/80" />
-                      <span>{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+              <div className="relative z-10">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">
+                  {currentLanguage === 'vi'
+                    ? 'Giải pháp công nghệ thúc đẩy tăng trưởng doanh nghiệp'
+                    : 'Technology Solutions that Drive Business Growth'}
+                </h3>
 
-              <Link
-                to="/solutions"
-                className="inline-flex items-center bg-transparent text-white border border-white px-6 py-3 rounded-md font-medium transition-colors max-w-max hover:bg-primary-dark hover:border-primary group relative overflow-hidden"
-              >
-                {currentLanguage === 'vi' ? 'Khám phá các giải pháp của chúng tôi' : 'Explore Our Solutions'}
-                {/* icon container: width transition on hover */}
-                <span className="relative ml-0 group-hover:ml-2 transition-all duration-300 ease-in-out w-0 group-hover:w-5 flex items-center overflow-hidden">
+                <div className="mb-4 sm:mb-6">
+                  <ul className="space-y-2 sm:space-y-2.5">
+                    {[
+                      currentLanguage === 'vi' ? 'Phát triển phần mềm trí tuệ nhân tạo AI' : 'AI software development',
+                      currentLanguage === 'vi' ? 'Tối ưu hạ tầng CNTT' : 'IT infrastructure optimization',
+                      currentLanguage === 'vi' ? 'Giải pháp an ninh mạng' : 'Cybersecurity solutions',
+                      currentLanguage === 'vi' ? 'Chuyển đổi nền tảng điện toán đám mây' : 'Cloud transformation'
+                    ].map((item, index) => (
+                      <motion.li
+                        key={index}
+                        className="flex items-center text-white"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                      >
+                        <FiCheck className="mr-2 text-white/90 flex-shrink-0" />
+                        <span className="text-sm sm:text-base">{item}</span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link
+                  to="/solutions"
+                  className="inline-flex items-center gap-2 px-4 sm:px-6 md:px-4 py-2.5 sm:py-3 md:py-4 bg-white text-primary text-sm sm:text-base md:text-lg rounded hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center"
+                  style={{ width: 'auto' }}
+                >
+                  {currentLanguage === 'vi' ? 'Khám phá các giải pháp của chúng tôi' : 'Explore Our Solutions'}
                   <svg
-                    className="w-5 h-5 transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+                    className="w-5 h-5 text-primary"
                     fill="none"
                     stroke="currentColor"
+                    strokeWidth={2}
                     viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M13 6l6 6-6 6" />
                   </svg>
-                </span>
-              </Link>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </div>

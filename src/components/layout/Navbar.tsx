@@ -7,9 +7,9 @@ import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 const services = [
   { name: { en: 'ICT', vi: 'ICT' }, path: '/solutions/ict' },
-  { name: { en: 'Broadcasting', vi: 'Broadcasting' }, path: '/solutions/broadcasting' },
   { name: { en: 'Business Application', vi: 'Business Application' }, path: '/solutions/business-application' },
   { name: { en: 'M&E', vi: 'M&E' }, path: '/solutions/me' },
+  { name: { en: 'Broadcasting', vi: 'Broadcasting' }, path: '/solutions/broadcasting' },
 ];
 
 const Navbar: React.FC = () => {
@@ -57,6 +57,7 @@ const Navbar: React.FC = () => {
 
   // Nav items (contact removed from main list; careers added)
   const navItems = [
+    { name: currentLanguage === 'vi' ? 'Trang chủ' : 'Home', path: '/' },
     { name: t('navbar.about'), path: '/about' },
     { name: t('navbar.solutions'), path: '/solutions' },
     { name: t('navbar.client'), path: '/client' },

@@ -7,9 +7,9 @@ import Breadcrumb from '../ui/Breadcrumb';
 
 const solutions = [
   { name: { en: 'ICT', vi: 'ICT' }, path: '/solutions/ict' },
-  { name: { en: 'Broadcasting', vi: 'Broadcasting' }, path: '/solutions/broadcasting' },
   { name: { en: 'Business Application', vi: 'Business Application' }, path: '/solutions/business-application' },
   { name: { en: 'M&E', vi: 'M&E' }, path: '/solutions/me' },
+  { name: { en: 'Broadcasting', vi: 'Broadcasting' }, path: '/solutions/broadcasting' },
 ];
 
 const BroadcastingServicePage: React.FC = () => {

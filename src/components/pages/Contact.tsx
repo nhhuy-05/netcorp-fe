@@ -1,12 +1,106 @@
-import React from 'react';
-import { FiHome, FiBriefcase, FiCpu } from 'react-icons/fi';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useState } from 'react';
+import { FiHome, FiBriefcase, FiCpu, FiMail, FiPhone, FiUser, FiMessageCircle, FiCheck, FiAlertCircle } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import Breadcrumb from '../ui/Breadcrumb';
 import { motion } from 'framer-motion';
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
+
 const Contact: React.FC = () => {
   const { i18n } = useTranslation();
   const isEn = i18n.language === 'en';
+  
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const validateForm = (): boolean => {
+    if (!formData.name.trim()) {
+      setErrorMessage(isEn ? 'Please enter your name' : 'Vui lòng nhập họ tên');
+      return false;
+    }
+    if (!formData.email.trim()) {
+      setErrorMessage(isEn ? 'Please enter your email' : 'Vui lòng nhập email');
+      return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorMessage(isEn ? 'Please enter a valid email address' : 'Vui lòng nhập địa chỉ email hợp lệ');
+      return false;
+    }
+    if (!formData.message.trim()) {
+      setErrorMessage(isEn ? 'Please enter your message' : 'Vui lòng nhập tin nhắn');
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('https://netcorp-apis.onrender.com/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage(isEn ? 'Failed to send message. Please try again later.' : 'Gửi tin nhắn thất bại. Vui lòng thử lại sau.');
+    } finally {
+      setIsSubmitting(false);
+      // Reset status after 5 seconds
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
+  };
 
   const contactCards = isEn
     ? [
@@ -207,63 +301,122 @@ const Contact: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               {isEn ? 'Request a Consultation' : 'Gửi yêu cầu tư vấn'}
             </h2>
-            <form
-              action="https://formspree.io/f/xkgqrvel"
-              method="POST"
-              className="space-y-6"
-            >
+            
+            {/* Status Messages */}
+            {submitStatus !== 'idle' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
+                  submitStatus === 'success' 
+                    ? 'bg-green-100 text-green-700 border border-green-200' 
+                    : 'bg-red-100 text-red-700 border border-red-200'
+                }`}
+              >
+                {submitStatus === 'success' ? (
+                  <>
+                    <FiCheck className="flex-shrink-0" size={20} />
+                    <span className="font-medium">
+                      {isEn ? 'Message sent successfully! We will get back to you soon.' : 'Tin nhắn đã được gửi thành công! Chúng tôi sẽ sớm liên hệ với bạn.'}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <FiAlertCircle className="flex-shrink-0" size={20} />
+                    <span className="font-medium">{errorMessage}</span>
+                  </>
+                )}
+              </motion.div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.input
-                  type="text"
-                  name="name"
-                  placeholder={namePlaceholder}
-                  required
-                  className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
-                  whileFocus={{ scale: 1.02 }}
-                />
-                <motion.input
-                  type="email"
-                  name="email"
-                  placeholder={emailPlaceholder}
-                  required
-                  className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
-                  whileFocus={{ scale: 1.02 }}
-                />
+                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                  <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={namePlaceholder}
+                    required
+                    disabled={isSubmitting}
+                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
+                  />
+                </motion.div>
+                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                  <FiMail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={emailPlaceholder}
+                    required
+                    disabled={isSubmitting}
+                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
+                  />
+                </motion.div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.input
-                  type="text"
-                  name="phone"
-                  placeholder={phonePlaceholder}
-                  className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
-                  whileFocus={{ scale: 1.02 }}
-                />
-                <motion.input
-                  type="text"
-                  name="subject"
-                  placeholder={subjectPlaceholder}
-                  className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
-                  whileFocus={{ scale: 1.02 }}
-                />
+                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                  <FiPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                  <input
+                    type="text"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder={phonePlaceholder}
+                    disabled={isSubmitting}
+                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
+                  />
+                </motion.div>
+                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                  <FiMessageCircle className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    placeholder={subjectPlaceholder}
+                    disabled={isSubmitting}
+                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
+                  />
+                </motion.div>
               </div>
-              <motion.textarea
-                rows={6}
-                name="message"
-                placeholder={messagePlaceholder}
-                required
-                className="bg-gray-100 rounded-md px-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base"
-                whileFocus={{ scale: 1.02 }}
-              ></motion.textarea>
+              <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
+                <FiMessageCircle className="absolute left-4 top-6 text-gray-400" size={20} />
+                <textarea
+                  rows={6}
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder={messagePlaceholder}
+                  required
+                  disabled={isSubmitting}
+                  className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base resize-none disabled:opacity-50"
+                ></textarea>
+              </motion.div>
               <div className="flex justify-center">
                 <motion.button
                   type="submit"
-                  className="bg-primary hover:bg-primary-dark text-white font-bold px-10 py-4 rounded-md shadow-md transition-all duration-300 tracking-widest text-lg relative"
+                  disabled={isSubmitting}
+                  className="bg-primary hover:bg-primary-dark disabled:bg-gray-400 text-white font-bold px-10 py-4 rounded-md shadow-md transition-all duration-300 tracking-widest text-lg relative disabled:cursor-not-allowed flex items-center gap-2"
                   style={{ letterSpacing: '0.15em' }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
-                  {buttonText}
-                  <span className="absolute right-0 bottom-0 w-6 h-6 bg-green-700 rounded-br-md" style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      {isEn ? 'SENDING...' : 'ĐANG GỬI...'}
+                    </>
+                  ) : (
+                    <>
+                      {buttonText}
+                      <span className="absolute right-0 bottom-0 w-6 h-6 bg-green-700 rounded-br-md" style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></span>
+                    </>
+                  )}
                 </motion.button>
               </div>
             </form>

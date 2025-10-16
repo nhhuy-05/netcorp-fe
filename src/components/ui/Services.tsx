@@ -76,19 +76,6 @@ const Services: React.FC = () => {
       link: '/solutions/ict'
     },
     {
-      icon: <FiRadio />,
-      title: {
-        en: "Broadcasting",
-        vi: "Broadcasting"
-      },
-      description: {
-        en: "Building multi-platform content distribution infrastructure, applying AI, VR, and AR technologies.",
-        vi: "Xây dựng hạ tầng sản xuất phân phối nội dung đa nền tảng, ứng dụng trí tuệ nhân tạo (AI), thực tế ảo (VR), thực tế tăng cường (AR)."
-      },
-      delay: 0.2,
-      link: '/solutions/broadcasting'
-    },
-    {
       icon: <FiDatabase />,
       title: {
         en: "Business Application",
@@ -113,6 +100,19 @@ const Services: React.FC = () => {
       },
       delay: 0.4,
       link: '/solutions/me'
+    },
+    {
+      icon: <FiRadio />,
+      title: {
+        en: "Broadcasting",
+        vi: "Broadcasting"
+      },
+      description: {
+        en: "Building multi-platform content distribution infrastructure, applying AI, VR, and AR technologies.",
+        vi: "Xây dựng hạ tầng sản xuất phân phối nội dung đa nền tảng, ứng dụng trí tuệ nhân tạo (AI), thực tế ảo (VR), thực tế tăng cường (AR)."
+      },
+      delay: 0.2,
+      link: '/solutions/broadcasting'
     }
   ];
 

@@ -50,14 +50,14 @@ export const works: WorkItem[] =
   {
     id: 2,
     category: "NETWORK",
-    title: "Centralized Procurement of BIDV Equipment",
-    titleVi: "Mua sắm tập trung thiết bị thông của BIDV",
+    title: "Centralized Procurement of Information Equipment for BIDV",
+    titleVi: "Mua sắm tập trung thiết bị thông tin của BIDV",
     customer: "BIDV",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
-    description: "Centralized procurement of BIDV's communication equipment",
-    descriptionVi: "Mua sắm tập trung thiết bị thông của BIDV",
+    description: "Centralized procurement of information equipment for BIDV",
+    descriptionVi: "Mua sắm tập trung thiết bị thông tin của BIDV",
     year: 2024,
     slug: "centralized-procurement-of-bidv-equipment",
     customerImage: "/image/bank/logo-BIDV.png"
@@ -1516,13 +1516,14 @@ const WorkShowcase: React.FC = () => {
               {getCurrentPageItems().map((work, index) => (
                 <motion.div
                   key={work.id}
-                  className="group relative cursor-pointer rounded-lg overflow-hidden shadow-lg"
+                  className="group relative cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
                   onClick={() => navigate(`/project/${work.slug}`)}
                 >
-                  <div className="aspect-square bg-white flex items-center justify-center p-2 md:p-4">
+                  {/* Image section - 75% height */}
+                  <div className="aspect-[4/3] bg-white flex items-center justify-center p-2 md:p-4 border-b border-gray-100">
                     <img
                       src={work.customerImage}
                       alt={work.title}
@@ -1538,6 +1539,15 @@ const WorkShowcase: React.FC = () => {
                         </p>
                       </div>
                     </div>
+                  </div>
+                  
+                  {/* Project name section - 25% height */}
+                  <div className="h-[25%] p-2 md:p-3 flex items-center justify-center bg-white">
+                    <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-600 text-center w-full overflow-hidden">
+                      <span className="line-clamp-2" title={currentLanguage === 'vi' ? work.titleVi : work.title}>
+                        {currentLanguage === 'vi' ? work.titleVi : work.title}
+                      </span>
+                    </h3>
                   </div>
                 </motion.div>
               ))}

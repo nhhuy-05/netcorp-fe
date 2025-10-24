@@ -71,7 +71,7 @@ export const positions = [
         'Annual salary review policy based on individual capacity and achievement assessment.'
       ]
     }
-  }
+  },
 ];
 
 const Careers: React.FC = () => {
@@ -197,7 +197,7 @@ const Careers: React.FC = () => {
                       <img
                         src={pos.image}
                         alt={isEn ? pos.titleEn : pos.title}
-                        className="w-20 h-20 md:w-28 md:h-28 object-contain"
+                        className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain"
                       />
                     </div>
                   </div>
@@ -205,17 +205,17 @@ const Careers: React.FC = () => {
                   <h3 className="text-base md:text-xl font-bold text-primary mb-1">
                     {isEn ? pos.titleEn : pos.title}
                   </h3>
-                  <div className="mb-2 text-gray-700 text-xs md:text-sm">
+                  <div className="mb-2 text-gray-700 text-sm md:text-base italic">
                     {isEn ? pos.descriptionEn : pos.description}
                   </div>
-                  <div className="text-gray-500 text-xs mb-2">
+                  <div className="text-gray-500 text-xs md:text-sm mb-2">
                     {isEn ? pos.locationEn : pos.location}
                   </div>
                   <div className="flex gap-2 mb-3 md:mb-4 flex-wrap">
-                    <span className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
+                    <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
                       {isEn ? 'Hanoi' : 'Hà Nội'}
                     </span>
-                    <span className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700">
+                    <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
                       {(() => {
                         const deadlineDate = new Date(
                           pos.deadline.split('/').reverse().join('-')

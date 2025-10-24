@@ -8,9 +8,9 @@ const ReadySection: React.FC = () => {
   const currentLanguage = i18n.language;
 
   return (
-    <section className="relative bg-white py-16 z-10 mt-20">
+    <section className="relative bg-white py-8 md:py-16 z-10 mt-20">
       <div className="container mx-auto px-4 relative z-20">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6 lg:gap-8">
           {/* Text Content */}
           <motion.div 
             className="lg:w-2/3 text-center lg:text-left"
@@ -23,13 +23,13 @@ const ReadySection: React.FC = () => {
               {currentLanguage === 'vi' ? (
                 <>
                   Sẵn sàng với những dự án
-                  <div className="h-5"></div>
+                  <div className="h-2 md:h-5"></div>
                   quy mô <span className="text-primary">&</span> mạnh mẽ hơn
                 </>
               ) : (
                 <>
                   We're Ready To Bring Bigger
-                  <div className="h-5"></div>
+                  <div className="h-2 md:h-5"></div>
                   <span className="text-primary">&</span> Stronger Projects
                 </>
               )}
@@ -38,7 +38,7 @@ const ReadySection: React.FC = () => {
 
           {/* Button */}
           <motion.div
-            className="mt-6 lg:mt-0"
+            className="mt-2 lg:mt-0"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

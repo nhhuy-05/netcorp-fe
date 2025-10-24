@@ -37,7 +37,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Router & Switch Installation for LPBank",
     titleVi: "Cung cấp lắp đặt thiết bị Router và Switch cho LPBank",
-    customer: "LPBank",
+    customer: "Loc Phat Viet Nam Commercial Joint Stock Bank (LPBank)",
     customerVi: "Ngân hàng TMCP Lộc Phát Việt Nam (LPBank)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -52,7 +52,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Centralized Procurement of Information Equipment for BIDV",
     titleVi: "Mua sắm tập trung thiết bị thông tin của BIDV",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -67,7 +67,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Network and Information Security Equipment for LPBank",
     titleVi: "Cung cấp lắp đặt thiết bị mạng và an ninh thông tin cho LPBank",
-    customer: "LPBank",
+    customer: "Loc Phat Viet Nam Commercial Joint Stock Bank (LPBank)",
     customerVi: "Ngân hàng TMCP Lộc Phát Việt Nam (LPBank)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -82,7 +82,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Replacement of Communication Network and SAN Switch Equipment (2024)",
     titleVi: "Mua sắm thay thế thiết bị mạng truyền thông và SAN Switch năm 2024",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -97,7 +97,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Router Installation for Branches to Connect Multi-Service Unified Network",
     titleVi: "Cung cấp lắp đặt thiết bị Router tại các chi nhánh kết nối mạng hợp nhất đa dịch vụ",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -112,7 +112,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Replacement of Central Control Equipment for Communication Network (2025)",
     titleVi: "Mua sắm thay thế thiết bị điều khiển trung tâm của hệ thống mạng truyền thông năm 2025 của BIDV",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -127,7 +127,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Replacement and Supplement of Central Control and Segmentation Equipment",
     titleVi: "Mua sắm thay thế thiết bị điều khiển trung tâm của hệ thống mạng truyền thông và bổ sung thiết bị mạng phân vùng kết nối máy chủ",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -142,7 +142,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply and Implementation of Load Balancer",
     titleVi: "Cung cấp và triển khai thiết bị cân bằng tải",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -158,7 +158,7 @@ export const works: WorkItem[] =
     title: "Complete Network System Supply and Installation",
     titleVi: "Cung cấp toàn bộ vật tư, thiết bị, nhân lực, thiết kế, thi công, lắp đặt, cài đặt hoàn chỉnh, hướng dẫn sử dụng, chuyển giao trọn gói hệ thống mạng",
     customer: "Vicem Hoang Thach Cement",
-    customerVi: "Công ty TNHH MTV Xi măng Vicem Hoàng Thạch",
+    customerVi: "Công ty xi măng VICEM Hoàng Thạch",
     address: "Hai Phong",
     addressVi: "Hải Phòng",
     description: "Complete supply and installation of materials, equipment, human resources, design, construction, installation, complete configuration, usage instruction, and handover of the entire network system",
@@ -172,7 +172,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Self-procurement of various types for VCB",
     titleVi: "Mua sắm tự mua các loại cho VCB",
-    customer: "Vietcombank (VCB)",
+    customer: "Viet Nam Joint Stock Commercial Bank for Foreign Trade (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -187,7 +187,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply of WAN Equipment for Regional Data Centers",
     titleVi: "Cung cấp hệ thống thiết bị WAN cho trung tâm vùng miền Bắc, miền Nam, miền Trung",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -202,7 +202,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply of Router and Switch Equipment for CN and PGD",
     titleVi: "Cung cấp hệ thống thiết bị định tuyến, thiết bị chuyển mạch cho các CN và PGD",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -217,7 +217,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply and Construction of ACI System",
     titleVi: "Cung cấp và xây dựng hệ thống ACI",
-    customer: "MB Securities (MBS)",
+    customer: "MB Securities Joint Stock Company (MBS)",
     customerVi: "Công ty Cổ phần Chứng khoán MB (MBS)",
     address: "Dong Da Ward, Hanoi",
     addressVi: "Phường Đống Đa, Hà Nội",
@@ -232,7 +232,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply of Router and Switch Equipment for Branches and PGD (2019)",
     titleVi: "Cung cấp thiết bị định tuyến, thiết bị chuyển mạch cho các chi nhánh và PGD",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -247,7 +247,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Switch Supply for Branches",
     titleVi: "Cung cấp Switch cho Chi nhánh",
-    customer: "Vietinbank",
+    customer: "Viet Nam Joint Stock Commercial Bank for Industry and Trade (Vietinbank)",
     customerVi: "Ngân hàng TMCP Công thương Việt Nam (Vietinbank)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -278,7 +278,7 @@ export const works: WorkItem[] =
     title: "Supply and Service for Internal Network System",
     titleVi: "Cung cấp lắp đặt thiết bị và dịch vụ cho Hệ thống mạng nội bộ",
     customer: "Vicem But Son Cement Joint Stock Company",
-    customerVi: "Công ty CP xi măng Vicem Bút Sơn",
+    customerVi: "Công ty Cổ Phần Xi măng Vicem Bút Sơn",
     address: "Ninh Binh",
     addressVi: "Ninh Bình",
     description: "Supply and installation of equipment and services for the internal network system",
@@ -307,7 +307,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply and Integration of Network and Security Equipment",
     titleVi: "Cung cấp và tích hợp thiết bị hệ thống mạng, an ninh",
-    customer: "MB Securities (MBS)",
+    customer: "MB Securities Joint Stock Company (MBS)",
     customerVi: "Công ty cổ phần chứng khoán MB (MBS)",
     address: "Dong Da Ward, Hanoi",
     addressVi: "Phường Đống Đa, Hà Nội",
@@ -322,7 +322,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply and Construction of HCI System",
     titleVi: "Cung cấp và xây dựng hệ thống HCI",
-    customer: "Noi Bai Cargo (NCTS)",
+    customer: "Noi Bai Cargo Terminal Service Joint Stock Company (NCTS)",
     customerVi: "Công ty Cổ phần Dịch vụ Hàng hóa Nội Bài",
     address: "Noi Bai International Airport, Hanoi",
     addressVi: "Sân bay quốc tế Nội Bài, Hà Nội",
@@ -337,7 +337,7 @@ export const works: WorkItem[] =
     category: "NETWORK",
     title: "Supply and Deployment of Access Point for An Khanh Data Center Building",
     titleVi: "Cung cấp, triển khai thiết bị Access Point cho tòa nhà Trung tâm dữ liệu An Khánh",
-    customer: "Agribank",
+    customer: "Vietnam Bank for Agriculture and Rural Development (Agribank)",
     customerVi: "Ngân hàng Nông nghiệp và Phát triển nông thôn Việt Nam",
     address: "Ba Dinh Ward, Hanoi",
     addressVi: "Phường Ba Đình, Hà Nội",
@@ -367,7 +367,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Supply of High-Performance Computing (HPC) for Core Banking",
     titleVi: "Cung cấp hạ tầng máy chủ hiệu suất cao (HPC) cho hệ thống core",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -382,7 +382,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "AI and BigData Platform Implementation",
     titleVi: "Cung cấp hạ tầng máy chủ AI và triển khai platform BigData",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -397,7 +397,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Supply of Enterprise Servers",
     titleVi: "Cung cấp hệ thống máy chủ Intel",
-    customer: "MB Securities (MBS)",
+    customer: "MB Securities Joint Stock Company (MBS)", 
     customerVi: "Công ty Cổ phần Chứng khoán MB (MBS)",
     address: "Dong Da Ward, Hanoi",
     addressVi: "Phường Đống Đa, Hà Nội",
@@ -442,7 +442,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Supply of IBM P-series Server",
     titleVi: "Cung cấp máy chủ IBM P-series hệ thống SAP",
-    customer: "TH Milk Joint Stock Company",
+    customer: "TH Milk Joint Stock Company (TH)",
     customerVi: "Công ty Cổ phần Thực phẩm Sữa TH",
     address: "Nghe An",
     addressVi: "Nghệ An",
@@ -472,7 +472,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Supply and Deployment of Storage, Server, Network, and SAN/LAN Equipment",
     titleVi: "Cung cấp và triển khai tích hợp hệ thống máy chủ, lưu trữ, Network, hạ tầng mạng LAN, SAN",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -487,7 +487,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Procurement of Network and Peripheral Equipment for Branches",
     titleVi: "Mua sắm thiết bị mạng, an ninh bổ sung cho các chi nhánh và phòng giao dịch",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -547,7 +547,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "Supply of Storage System for Web Cho Bank Lab",
     titleVi: "Cung cấp hệ thống tường lửa ứng dụng WEB cho Bank Lab",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -577,7 +577,7 @@ export const works: WorkItem[] =
     category: "SYSTEM",
     title: "License Upgrade for Core Banking Software",
     titleVi: "Đầu tư license phần mềm phục vụ core banking",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (Vietcombank)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -667,7 +667,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Investment in Load Balancer for DMZ Partition",
     titleVi: "Đầu tư thiết bị cân bằng tải cho phân vùng DMZ tại DC",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -682,7 +682,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Internal Zoning Firewall System",
     titleVi: "Hệ thống tường lửa vùng bên trong",
-    customer: "MB Securities (MBS)",
+    customer: "MB Securities Joint Stock Company (MBS)",
     customerVi: "Công ty Cổ phần Chứng khoán MB (MBS)",
     address: "Dong Da Ward, Hanoi",
     addressVi: "Phường Đống Đa, Hà Nội",
@@ -697,7 +697,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Investment in Load Balancer and Application Security Services",
     titleVi: "Đầu tư mua sắm cho cân bằng tải và dịch vụ hỗ trợ (Application Loadbalancer và Support)",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -712,7 +712,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Procurement of HSM Equipment (HSM Thay thế HSMPayShield9000)",
     titleVi: "Mua sắm thiết bị HSM thay thế HSM PayShield9000",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -727,7 +727,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Investment in Firewall Management and Optimization",
     titleVi: "Đầu tư phần mềm quản lý và tối ưu hóa chính sách bảo mật trên firewall cho Vietcombank",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -742,7 +742,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply of Security Equipment for Agribank",
     titleVi: "Trang bị thiết bị bảo mật ứng dụng",
-    customer: "Agribank",
+    customer: "Vietnam Bank for Agriculture and Rural Development (Agribank)",
     customerVi: "Ngân hàng Nông nghiệp và Phát triển nông thôn Việt Nam",
     address: "Ba Dinh Ward, Hanoi",
     addressVi: "Phường Ba Đình, Hà Nội",
@@ -772,7 +772,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Website Security Assessment via SkyHigh",
     titleVi: "Giải pháp bảo mật truy cập web SkyHigh",
-    customer: "Vietcombank (VCB)",
+    customer: "Joint Stock Commercial Bank for Foreign Trade of Vietnam (VCB)",
     customerVi: "Ngân hàng TMCP Ngoại thương Việt Nam (VCB)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -787,7 +787,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply, Installation, and Integration of Storage at Data Center",
     titleVi: "Cung cấp, lắp đặt và tích hợp thiết bị lưu trữ tại trung tâm dữ liệu",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -802,7 +802,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply and Deployment of Integrated Firewall for MB Bank Network",
     titleVi: "Cung cấp, triển khai lắp đặt tường lửa ứng dụng web tích hợp vào hệ thống MB Bank",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -817,7 +817,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Replacement of Firewall Switch Module",
     titleVi: "Thay thế, bổ sung thiết bị Firewall Switch Module - 6509 - DR (module Core DR)",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -832,7 +832,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply of Load Balancer Services for Core Banking",
     titleVi: "Cung cấp dịch vụ cho các chi nhánh cân bằng tải của hệ thống Corebanking",
-    customer: "BIDV",
+    customer: "Joint Stock Commercial Bank for Investment and Development of Vietnam (BIDV)",
     customerVi: "Ngân hàng TMCP Đầu tư và Phát triển Việt Nam (BIDV)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -862,7 +862,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply of Private Cloud Firewall",
     titleVi: "Cung cấp hệ thống tường lửa ứng dụng Private cloud",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -877,7 +877,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Procurement of Firewall for Phase 1 of Data Center",
     titleVi: "Mua sắm Firewall chi nhánh, toà nhà đợt 1",
-    customer: "Vietinbank",
+    customer: "Viet Nam Joint Stock Commercial Bank for Industry and Trade (Vietinbank)",
     customerVi: "Ngân hàng TMCP Công thương Việt Nam (Vietinbank)",
     address: "Hoan Kiem Ward, Hanoi",
     addressVi: "Phường Hoàn Kiếm, Hà Nội",
@@ -892,7 +892,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Procurement of Threat Intelligence License",
     titleVi: "Mua bản license giải pháp Threat Intelligence",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -907,7 +907,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply and Installation of Imperva Web Application Firewall for BankLab",
     titleVi: "Cung cấp, lắp đặt hệ thống tường lửa ứng dụng Imperva web cho BankLab",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -937,7 +937,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply and Installation of VDI Firewall",
     titleVi: "Cung cấp lắp đặt hệ thống tường lửa VDI",
-    customer: "MB Bank",
+    customer: "Military Commercial Joint Stock Bank (MB Bank)",
     customerVi: "Ngân hàng TMCP Quân đội (MB Bank)",
     address: "Cau Giay Ward, Hanoi",
     addressVi: "Phường Cầu Giấy, Hà Nội",
@@ -967,7 +967,7 @@ export const works: WorkItem[] =
     category: "SECURITY",
     title: "Supply of Core Firewall for TH Milk's Central Data Center",
     titleVi: "Cung cấp thiết bị tường lửa Core Firewall bảo vệ phân vùng máy chủ DC của TH",
-    customer: "TH Milk Joint Stock Company",
+    customer: "TH Milk Joint Stock Company (TH)",
     customerVi: "Công ty Cổ phần Thực phẩm Sữa TH",
     address: "Nghe An",
     addressVi: "Nghệ An",
@@ -1430,10 +1430,10 @@ const WorkShowcase: React.FC = () => {
   }, [isMobile]);
 
   return (
-    <section className="py-20 bg-gray-50 relative z-10">
+    <section className="py-10 md:py-20 bg-gray-50 relative z-10">
       <div className="container mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16 px-2 md:px-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -1442,14 +1442,14 @@ const WorkShowcase: React.FC = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Danh mục dự án' : 'Our Portfolio'}
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase mb-6 text-gray-900">
-            {currentLanguage === 'vi' ? 'CÁC DỰ ÁN TIÊU BIỂU' : 'WORK SHOWCASE'}
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase text-gray-900">
+            {currentLanguage === 'vi' ? 'CÁC DỰ ÁN TIÊU BIỂU' : 'FEATURED PROJECT'}
           </h2>
-          <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-primary mx-auto my-3 md:my-6"></div>
           <p className="text-gray-600">
             {currentLanguage === 'vi'
               ? 'Khám phá danh mục dự án đa dạng của chúng tôi trong nhiều lĩnh vực khác nhau.'
-              : 'Explore our diverse portfolio across various domains.'}
+              : 'Explore our diverse portfolio across various sectors.'}
           </p>
         </motion.div>
 
@@ -1458,7 +1458,7 @@ const WorkShowcase: React.FC = () => {
           {categories.map((category, index) => (
             <motion.button
               key={category.en}
-              className={`px-3 md:px-6 py-2 text-sm font-medium transition-all duration-300 
+              className={`px-1 md:px-3  md:px-6 py-1 md:py-2 text-sm font-medium transition-all duration-300 
                 ${activeCategory === category.en
                   ? 'text-primary border-b-2 border-primary'
                   : 'text-gray-600 hover:text-primary'}`}
@@ -1477,7 +1477,7 @@ const WorkShowcase: React.FC = () => {
         </div>
 
         {/* Multi-item Showcase with Auto-rotation */}
-        <div className="relative overflow-hidden px-8 md:px-12">
+        <div className="relative overflow-hidden px-2 md:px-12">
           {/* Previous Button */}
           {totalPages > 1 && (
             <button

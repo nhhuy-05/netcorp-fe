@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import Breadcrumb from './Breadcrumb';
@@ -12,7 +12,7 @@ const About: React.FC = () => {
   const tabContent = {
     humanResource: {
       en: "At Netcorp, we take pride in our high-caliber workforce — a team of technology experts with many years of experience both domestically and internationally, accumulated through hundreds of real-world projects over nearly two decades. With extensive expertise, dedication, and creativity, the Netcorp team has consistently been highly regarded by major clients for their capabilities and work efficiency.\n\nWe not only deliver outstanding technology products, solutions, and services, but also accompany our clients in shaping their strategic technology direction, developing products, and optimizing operations. In addition, to meet the company’s continuous growth and evolving market demands, Netcorp places strong emphasis on building a professional recruitment and training system.\n\nWe are committed to fostering a modern working environment where every individual can fully unleash their potential, continuously update their knowledge, and contribute to the collective development of the organization.",
-      vi: "Tại Netcorp, chúng tôi luôn tự hào về đội ngũ nhân sự chất lượng cao – những chuyên gia công nghệ có nhiều năm kinh nghiệm trong và ngoài nước, tích lũy từ hàng trăm dự án thực tế trong gần 20 năm qua. Với sự chuyên môn sâu rộng, tận tâm và sáng tạo, đội ngũ Netcorp đã và đang được nhiều khách hàng lớn đánh giá cao về năng lực và hiệu quả làm việc.\n\nChúng tôi không chỉ mang đến các sản phẩm, giải pháp và dịch vụ công nghệ vượt trội mà còn đồng hành cùng khách hàng trong việc xây dựng định hướng chiến lược công nghệ, phát triển sản phẩm và tối ưu hóa vận hành. Bên cạnh đó, để đáp ứng sự mở rộng không ngừng của doanh nghiệp và nhu cầu thị trường, Netcorp chú trọng phát triển hệ thống tuyển dụng và đào tạo chuyên nghiệp.\n\nChúng tôi cam kết xây dựng một môi trường làm việc hiện đại, nơi mỗi cá nhân có thể phát huy tối đa tiềm năng, liên tục cập nhật kiến thức mới và đóng góp vào sự phát triển chung của tổ chức.",
+      vi: "Tại Netcorp, chúng tôi luôn tự hào về đội ngũ nhân sự chất lượng cao – những chuyên gia công nghệ có nhiều năm kinh nghiệm trong và ngoài nước, tích lũy từ hàng trăm dự án thực tế trong gần 20 năm qua. Với chuyên môn sâu rộng, sự tận tâm và sáng tạo, đội ngũ Netcorp đã và đang được nhiều khách hàng lớn đánh giá cao về năng lực và hiệu quả làm việc.\n\nChúng tôi không chỉ mang đến các sản phẩm, giải pháp và dịch vụ công nghệ vượt trội mà còn đồng hành cùng khách hàng trong việc xây dựng định hướng chiến lược công nghệ, phát triển sản phẩm và tối ưu hóa vận hành. Bên cạnh đó, để đáp ứng sự mở rộng không ngừng của doanh nghiệp và nhu cầu thị trường, Netcorp chú trọng phát triển hệ thống tuyển dụng và đào tạo chuyên nghiệp.\n\nChúng tôi cam kết xây dựng một môi trường làm việc hiện đại, nơi mỗi cá nhân có thể phát huy tối đa tiềm năng, liên tục cập nhật kiến thức mới và đóng góp vào sự phát triển chung của tổ chức.",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dGVhbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
     },
     visionMission: {
@@ -45,6 +45,19 @@ const About: React.FC = () => {
   const getActiveTabImage = () => {
     return tabContent[activeTab].image;
   };
+
+  const [isMobile, setIsMobile] = useState(false);
+  // Detect mobile screen
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <section id="about" className="relative">
@@ -84,7 +97,7 @@ const About: React.FC = () => {
                   },
                   {
                     name: {
-                      en: 'About',
+                      en: 'About Us',
                       vi: 'Về chúng tôi'
                     }
                   }
@@ -99,6 +112,7 @@ const About: React.FC = () => {
       <div className="relative py-20 bg-white z-10 mt-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            {/* logo of company */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: -20 }}
@@ -122,28 +136,49 @@ const About: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                {currentLanguage === 'vi' ? (
-                  <>
-                    <span className="text-3xl md:text-4xl font-semibold">CÔNG TY CỔ PHẦN TẬP ĐOÀN</span>
-                    <br />
-                    <span className="text-primary text-4xl md:text-5xl font-bold">NETCORP</span>
-                  </>
-                ) : (
-                  <>
-                    <span className="text-primary text-4xl md:text-5xl font-bold uppercase">NETCORP</span>
-                    <br />
-                    <span className="text-3xl md:text-4xl font-semibold uppercase">Group Joint Stock Company</span>
-                  </>
-                )}
-              </h2>
+              {/* name of company */}
+              {
+                isMobile ?
+                  (
+                    <h2 className="text-4xl font-bold mb-6">
+                      {currentLanguage === 'vi' ? (
+                        <>
+                          <span className="text-3xl font-semibold">CÔNG TY CỔ PHẦN TẬP ĐOÀN </span>
+                          <span className="text-primary text-3xl font-semibold">NETCORP</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-primary text-3xl font-semibold">NETCORP </span>
+                          <span className="text-3xl font-semibold uppercase">Group Joint Stock Company</span>
+                        </>
+                      )}
+                    </h2>
+                  ) : (
+                    <h2 className="md:text-5xl font-bold mb-6">
+                      {currentLanguage === 'vi' ? (
+                        <>
+                          <span className="md:text-4xl font-semibold">CÔNG TY CỔ PHẦN TẬP ĐOÀN</span>
+                          <br />
+                          <span className="text-primary md:text-5xl font-bold">NETCORP</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="text-primary  md:text-5xl font-bold uppercase">NETCORP</span>
+                          <br />
+                          <span className="md:text-4xl font-semibold uppercase">Group Joint Stock Company</span>
+                        </>
+                      )}
+                    </h2>
+                  )
+              }
+
               <div className="grid grid-cols-1 gap-8">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 }}
                 >
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line text-justify">
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed whitespace-pre-line text-justify">
                     {currentLanguage === 'vi'
                       ? `Được thành lập vào năm 2005, với gần hai thập kỷ phát triển, Netcorp đã không ngừng đổi mới và mở rộng để mang đến những giải pháp công nghệ toàn diện, đáp ứng nhu cầu đa dạng của khách hàng.
 
@@ -199,75 +234,71 @@ const About: React.FC = () => {
       </div>
 
       {/* Tabs Section */}
-      <div className="relative py-20 bg-gray-50 z-10">
+      <div className="relative pt-4 pb-12 md:py-16 lg:py-20 bg-gray-50 z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
             {/* Left Column */}
             <div>
-              <div className="flex space-x-4 md:space-x-6 lg:space-x-8 mb-8">
-                <div className="h-24 flex items-end">
-                  <button
-                    className={`px-4 md:px-8 lg:px-12 py-3 border-b-2 transition-all uppercase text-xl font-bold flex flex-col items-center justify-end min-w-[180px] md:min-w-[200px] lg:min-w-[220px] ${activeTab === 'humanResource'
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-transparent hover:border-primary hover:text-primary'
-                      }`}
-                    onClick={() => setActiveTab('humanResource')}
-                  >
-                    {currentLanguage === 'vi'
-                      ? <div className="flex flex-col items-center gap-1">
-                        <div>NGUỒN</div>
-                        <div>NHÂN LỰC</div>
-                      </div>
-                      : <div className="flex flex-col items-center gap-1">
-                        <div>HUMAN</div>
-                        <div>RESOURCE</div>
-                      </div>
-                    }
-                  </button>
-                </div>
-                <div className="h-24 flex items-end">
-                  <button
-                    className={`px-4 md:px-8 lg:px-12 py-3 border-b-2 transition-all uppercase text-xl font-bold flex flex-col items-center justify-end min-w-[160px] md:min-w-[180px] whitespace-nowrap ${activeTab === 'visionMission'
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-transparent hover:border-primary hover:text-primary'
-                      }`}
-                    onClick={() => setActiveTab('visionMission')}
-                  >
-                    {currentLanguage === 'vi'
-                      ? <div className="flex flex-col items-center gap-1">
-                        <div>TẦM NHÌN</div>
-                        <div>SỨ MỆNH</div>
-                      </div>
-                      : <div className="flex flex-col items-center gap-1">
-                        <div>VISION</div>
-                        <div>MISSION</div>
-                      </div>
-                    }
-                  </button>
-                </div>
-                <div className="h-24 flex items-end">
-                  <button
-                    className={`px-4 md:px-8 lg:px-12 py-3 border-b-2 transition-all uppercase text-xl font-bold flex flex-col items-center justify-end min-w-[160px] md:min-w-[180px] ${activeTab === 'coreValues'
-                      ? 'border-primary bg-primary/10 text-primary'
-                      : 'border-transparent hover:border-primary hover:text-primary'
-                      }`}
-                    onClick={() => setActiveTab('coreValues')}
-                  >
-                    {currentLanguage === 'vi'
-                      ? <div className="flex flex-col items-center gap-1">
-                        <div>GIÁ TRỊ</div>
-                        <div>CỐT LÕI</div>
-                      </div>
-                      : <div className="flex flex-col items-center gap-1">
-                        <div>CORE</div>
-                        <div>VALUES</div>
-                      </div>
-                    }
-                  </button>
-                </div>
+              {/* Button Section */}
+              <div className="flex mb-2 md:mb-6 lg:mb-8 w-full">
+                <button
+                  className={`w-1/3 px-2 md:px-3 py-3 border-b-2 transition-all uppercase text-base md:text-xl font-bold flex flex-col items-center justify-center ${activeTab === 'humanResource'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-transparent hover:border-primary hover:text-primary'
+                    }`}
+                  onClick={() => setActiveTab('humanResource')}
+                >
+                  {currentLanguage === 'vi'
+                    ? <div className="flex flex-col items-center gap-1">
+                      <div>NGUỒN</div>
+                      <div>NHÂN LỰC</div>
+                    </div>
+                    : <div className="flex flex-col items-center gap-1">
+                      <div>HUMAN</div>
+                      <div>RESOURCES</div>
+                    </div>
+                  }
+                </button>
+                <button
+                  className={`w-1/3 px-2 md:px-3 py-3 border-b-2 transition-all uppercase text-base md:text-xl font-bold flex flex-col items-center justify-center ${activeTab === 'visionMission'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-transparent hover:border-primary hover:text-primary'
+                    }`}
+                  onClick={() => setActiveTab('visionMission')}
+                >
+                  {currentLanguage === 'vi'
+                    ? <div className="flex flex-col items-center gap-1">
+                      <div>TẦM NHÌN</div>
+                      <div>SỨ MỆNH</div>
+                    </div>
+                    : <div className="flex flex-col items-center gap-1">
+                      <div>VISION</div>
+                      <div>MISSION</div>
+                    </div>
+                  }
+                </button>
+                <button
+                  className={`w-1/3 px-2 md:px-3 py-3 border-b-2 transition-all uppercase text-base md:text-xl font-bold flex flex-col items-center justify-center ${activeTab === 'coreValues'
+                    ? 'border-primary bg-primary/10 text-primary'
+                    : 'border-transparent hover:border-primary hover:text-primary'
+                    }`}
+                  onClick={() => setActiveTab('coreValues')}
+                >
+                  {currentLanguage === 'vi'
+                    ? <div className="flex flex-col items-center gap-1">
+                      <div>GIÁ TRỊ</div>
+                      <div>CỐT LÕI</div>
+                    </div>
+                    : <div className="flex flex-col items-center gap-1">
+                      <div>CORE</div>
+                      <div>VALUES</div>
+                    </div>
+                  }
+                </button>
               </div>
 
-              <div className="h-[300px] overflow-y-auto">
+              {/* Content Section */}
+              <div className="md:h-[300px] overflow-y-auto">
                 <motion.div
                   key={activeTab}
                   initial={{ opacity: 0, y: 20 }}
@@ -276,35 +307,35 @@ const About: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <p
-                  className="text-gray-600 text-sm leading-relaxed whitespace-pre-line mb-6 text-justify"
-                  dangerouslySetInnerHTML={{
-                    __html: activeTab === 'humanResource'
-                    ? getHumanResourceText()
-                    : activeTab === 'visionMission'
-                      ? getVisionMissionText()
-                      : getCoreValuesText()
-                  }}
+                    className="text-gray-600 text-sm md:text-base leading-relaxed whitespace-pre-line mb-6 text-justify"
+                    dangerouslySetInnerHTML={{
+                      __html: activeTab === 'humanResource'
+                        ? getHumanResourceText()
+                        : activeTab === 'visionMission'
+                          ? getVisionMissionText()
+                          : getCoreValuesText()
+                    }}
                   />
                 </motion.div>
               </div>
             </div>
 
             {/* Right Column */}
-            <div className="flex flex-col justify-center items-end">
+            <div className="flex flex-col justify-center items-center">
               <motion.div
-                key={`image-${activeTab}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4 }}
-                className="w-full flex justify-end pr-0 lg:pr-0"
+              key={`image-${activeTab}`}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              className="w-full flex justify-center"
               >
-                <div className="rounded-full overflow-hidden h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 shadow-xl">
-                  <img
-                    src={getActiveTabImage()}
-                    alt={`${activeTab} Image`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="rounded-full overflow-hidden h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 shadow-xl">
+                <img
+                src={getActiveTabImage()}
+                alt={`${activeTab} Image`}
+                className="w-full h-full object-cover"
+                />
+              </div>
               </motion.div>
             </div>
           </div>

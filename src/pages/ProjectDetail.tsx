@@ -86,17 +86,17 @@ const ProjectDetail: React.FC = () => {
                         <div className="flex flex-col justify-center">
                             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">
                                 {currentLanguage === 'vi' ? (
-                                    <>DỰ ÁN <span className="text-primary">{work.titleVi}</span></>
+                                    <>Dự án: <span className="text-primary">{work.titleVi}</span></>
                                 ) : (
-                                    <>PROJECT <span className="text-primary">{work.title}</span></>
+                                    <>Project: <span className="text-primary">{work.title}</span></>
                                 )}
                             </h2>
                             <div className="grid grid-cols-1 gap-4 md:gap-6 lg:gap-8">
                                 <div>
                                     <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
                                         {currentLanguage === 'vi'
-                                            ? 'Thông tin chi tiết về dự án này được trình bày dưới đây.'
-                                            : 'Detailed information about this project is presented below.'}
+                                            ? 'Thông tin chi tiết về dự án này được trình bày dưới đây:'
+                                            : 'Detailed information about this project is presented below:'}
                                     </p>
                                 </div>
                                 <div className="bg-gray-50 md:bg-gray-100 p-4 md:p-6 rounded-lg shadow-md">

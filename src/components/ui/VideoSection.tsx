@@ -10,7 +10,7 @@ const VideoSection: React.FC = () => {
   const currentLanguage = i18n.language;
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-10 md:py-20 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-black/5"></div>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-black/5 backdrop-blur-sm"></div>
@@ -18,7 +18,7 @@ const VideoSection: React.FC = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          className="max-w-2xl mx-auto text-center mb-16"
+          className="max-w-2xl mx-auto text-center mb-8 md:mb-16 px-2 md:px-0"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -27,10 +27,10 @@ const VideoSection: React.FC = () => {
           <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Phương pháp của chúng tôi' : 'Our Approach'}
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase mb-6 text-white">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase text-white">
             {currentLanguage === 'vi' ? 'GIẢI PHÁP' : 'SOLUTIONS'}
           </h2>
-          <div className="h-1 w-20 bg-primary mx-auto mb-6"></div>
+          <div className="h-1 w-20 bg-primary mx-auto my-3 md:my-6"></div>
           <p className="text-gray-200">
             {currentLanguage === 'vi'
               ? 'Hãy xem NetCorp mang đến các giải pháp công nghệ đổi mới như thế nào, góp phần thúc đẩy thành công kinh doanh cho khách hàng trên toàn Việt Nam.'
@@ -42,16 +42,17 @@ const VideoSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-5">
             {/* Left: video (3/5 on md+) */}
             <div className="md:col-span-3">
-              <div className="aspect-[16/7] md:aspect-video w-full h-full overflow-hidden">
-                <iframe
-                  // ensure the player URL supports these params; adjust if needed
-                  src={`${video_section}?autoplay=1&muted=1&loop=1&controls=1&title=0&byline=0&portrait=0`}
-                  title="NetCorp Technology Solutions"
-                  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full object-cover block"
-                />
-                <div className="absolute inset-0 bg-black/30 pointer-events-none md:hidden"></div>
+              <div className="relative aspect-video w-full">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                >
+                  <source src={video_section} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
 

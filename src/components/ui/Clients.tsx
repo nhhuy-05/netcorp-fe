@@ -28,7 +28,7 @@ const Clients: React.FC = () => {
     // Government Agencies (6)
     {
       id: 35,
-      name: "Ban Cơ yếu Chính phủ",
+      name: "BCYCP",
       category: "government",
       description: {
         en: "Government Cipher Committee",
@@ -38,7 +38,7 @@ const Clients: React.FC = () => {
     },
     {
       id: 36,
-      name: "Bộ TNMT",
+      name: "MONRE",
       category: "government",
       description: {
         en: "Ministry of Natural Resources and Environment",
@@ -48,10 +48,10 @@ const Clients: React.FC = () => {
     },
     {
       id: 37,
-      name: "Bộ Văn hóa",
+      name: "MOCST",
       category: "government",
       description: {
-        en: "Ministry of Culture",
+        en: "Ministry of Culture, Sports and Tourism",
         vi: "Bộ Văn hóa, Thể thao và Du lịch"
       },
       image: "/image/govern/logo-BVH.png"
@@ -83,8 +83,8 @@ const Clients: React.FC = () => {
       name: "Agribank",
       category: "bank",
       description: {
-        en: "Agricultural banking solutions",
-        vi: "Giải pháp ngân hàng nông nghiệp"
+        en: "Vietnam Bank for Agriculture and Rural Development",
+        vi: "Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam"
       },
       image: "/image/bank/logo-Agribank.png"
     },
@@ -93,8 +93,8 @@ const Clients: React.FC = () => {
       name: "BIDV",
       category: "bank",
       description: {
-        en: "Bank for Investment and Development",
-        vi: "Ngân hàng Đầu tư và Phát triển Việt Nam"
+        en: "Joint Stock Commercial Bank for Investment and Development of Vietnam",
+        vi: "Ngân hàng Thương Mại Cổ Phần Đầu tư và Phát triển Việt Nam"
       },
       image: "/image/bank/logo-BIDV.png"
     },
@@ -103,7 +103,7 @@ const Clients: React.FC = () => {
       name: "Vietcombank",
       category: "bank",
       description: {
-        en: "Joint Stock Commercial Bank for Foreign Trade",
+        en: "Joint Stock Commercial Bank for Foreign Trade of Vietnam",
         vi: "Ngân hàng Thương mại Cổ phần Ngoại thương Việt Nam"
       },
       image: "/image/bank/logo-Vietcombank.png"
@@ -112,7 +112,7 @@ const Clients: React.FC = () => {
       name: "VietinBank",
       category: "bank",
       description: {
-        en: "Joint Stock Commercial Bank for Industry and Trade",
+        en: "Viet Nam Joint Stock Commercial Bank for Industry and Trade",
         vi: "Ngân hàng Thương mại Cổ phần Công thương Việt Nam"
       },
       image: "/image/bank/logo-Vietinbank.png"
@@ -132,18 +132,18 @@ const Clients: React.FC = () => {
       name: "LPBank",
       category: "bank",
       description: {
-        en: "Digital banking innovation",
-        vi: "Đổi mới ngân hàng số"
+        en: "Loc Phat Viet Nam Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương mại Cổ phần Lộc Phát Việt Nam"
       },
       image: "/image/bank/logo-LPbank.png"
     },
     {
       id: 20,
-      name: "Bắc Á Bank",
+      name: "Bac A Bank",
       category: "bank",
       description: {
-        en: "Regional banking services",
-        vi: "Dịch vụ ngân hàng khu vực"
+        en: "Bac A Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương mại cổ phần Bắc Á"
       },
       image: "/image/bank/logo-BacABank.png"
     },
@@ -162,8 +162,8 @@ const Clients: React.FC = () => {
       name: "ACB Bank",
       category: "bank",
       description: {
-        en: "Modern banking infrastructure",
-        vi: "Cơ sở hạ tầng ngân hàng hiện đại"
+        en: "Asia Commercial Joint Stock Bank",
+        vi: "Ngân hàng Thương Mại Cổ Phần Á Châu"
       },
       image: "/image/bank/logo-ACBBank.png"
     },
@@ -172,8 +172,8 @@ const Clients: React.FC = () => {
       name: "Shinhan Bank",
       category: "bank",
       description: {
-        en: "Shinhan Bank Vietnam",
-        vi: "Ngân hàng Shinhan Việt Nam"
+        en: "Shinhan Bank Vietnam Limited",
+        vi: "Ngân hàng TNHH Một Thành Viên Shinhan Việt Nam"
       },
       image: "/image/bank/logo-ShinhanBank.png"
     },
@@ -202,8 +202,8 @@ const Clients: React.FC = () => {
       name: "MBS",
       category: "bank",
       description: {
-        en: "Securities and banking services",
-        vi: "Dịch vụ chứng khoán và ngân hàng"
+        en: "MB Securities Joint Stock Company",
+        vi: "Công ty cổ phần Chứng khoán MB"
       },
       image: "/image/bank/logo-MBS.png"
     },
@@ -212,8 +212,8 @@ const Clients: React.FC = () => {
       name: "MIC",
       category: "bank",
       description: {
-        en: "Investment and banking solutions",
-        vi: "Giải pháp đầu tư và ngân hàng"
+        en: "Military Insurance Corporation",
+        vi: "Công ty Cổ phần Bảo hiểm Quân đội"
       },
       image: "/image/bank/logo-MIC.png"
     },
@@ -229,16 +229,16 @@ const Clients: React.FC = () => {
       },
       image: "/image/enterprise/logo-ACV.png"
     },
-    {
-      id: 2,
-      name: "Dịch vụ mặt đất sân bay",
-      category: "enterprise",
-      description: {
-        en: "Vietnam Airport Ground Services",
-        vi: "Công ty TNHH Dịch vụ mặt đất sân bay Việt Nam"
-      },
-      image: "/image/enterprise/logo-Viags.png"
-    },
+    // {
+    //   id: 2,
+    //   name: "Dịch vụ mặt đất sân bay",
+    //   category: "enterprise",
+    //   description: {
+    //     en: "Vietnam Airport Ground Services",
+    //     vi: "Công ty TNHH Dịch vụ mặt đất sân bay Việt Nam"
+    //   },
+    //   image: "/image/enterprise/logo-Viags.png"
+    // },
     {
       id: 3,
       name: "Genco 1",
@@ -254,8 +254,8 @@ const Clients: React.FC = () => {
       name: "NCTS",
       category: "enterprise",
       description: {
-        en: "National Single Window Portal",
-        vi: "Cổng thông tin một cửa quốc gia"
+        en: "Noi Bai Cargo Terminal Service Joint Stock Company",
+        vi: "Công ty Cổ phần Dịch vụ Hàng hóa Nội Bài"
       },
       image: "/image/enterprise/logo-NCTS.png"
     },
@@ -264,8 +264,8 @@ const Clients: React.FC = () => {
       name: "PetroVietnam",
       category: "enterprise",
       description: {
-        en: "Vietnam Oil and Gas Group",
-        vi: "Tập đoàn Dầu khí Việt Nam"
+        en: "Vietnam National Industrial & Energy Group",
+        vi: "Tập đoàn Công nghiệp Năng lượng Quốc gia Việt Nam"
       },
       image: "/image/enterprise/logo-Petrovietnam.png"
     },
@@ -274,17 +274,17 @@ const Clients: React.FC = () => {
       name: "PV Gas",
       category: "enterprise",
       description: {
-        en: "PetroVietnam Gas Corporation",
+        en: "PetroVietnam Gas Joint Stock Corporation",
         vi: "Tổng công ty Khí Việt Nam"
       },
       image: "/image/enterprise/logo-PVGas.png"
     },
     {
       id: 7,
-      name: "Tổng công ty Xi măng VN",
+      name: "VICEM",
       category: "enterprise",
       description: {
-        en: "Vietnam Cement Corporation",
+        en: "Vietnam National Cement Corporation",
         vi: "Tổng công ty Xi măng Việt Nam"
       },
       image: "/image/enterprise/logo-VICEM.png"
@@ -294,8 +294,8 @@ const Clients: React.FC = () => {
       name: "VIAGS",
       category: "enterprise",
       description: {
-        en: "Vietnam Airlines Ground Services",
-        vi: "Công ty Dịch vụ mặt đất hàng không Việt Nam"
+        en: "Vietnam Airport Ground Services Company Limited",
+        vi: "Công ty TNHH MTV Dịch vụ mặt đất sân bay Việt Nam"
       },
       image: "/image/enterprise/logo-Viags.png"
     },
@@ -304,8 +304,8 @@ const Clients: React.FC = () => {
       name: "Viettel Solutions",
       category: "enterprise",
       description: {
-        en: "Viettel Technology Solutions",
-        vi: "Tập đoàn Công nghiệp - Viễn thông Quân đội"
+        en: "Viettel Business Solutions Corporation",
+        vi: "Tổng Công ty Giải pháp Doanh nghiệp Viettel"
       },
       image: "/image/enterprise/logo-ViettelSolutions.png"
     },
@@ -315,7 +315,7 @@ const Clients: React.FC = () => {
       category: "enterprise",
       description: {
         en: "Vietnam National Shipping Lines",
-        vi: "Tổng công ty Hàng hải Việt Nam"
+        vi: "Tổng Công ty Hàng hải Việt Nam"
       },
       image: "/image/enterprise/logo-Vinalines.png"
     },
@@ -349,16 +349,16 @@ const Clients: React.FC = () => {
       },
       image: "/image/enterprise/logo-TH.png"
     },
-    {
-      id: 14,
-      name: "MCredit",
-      category: "enterprise",
-      description: {
-        en: "MCredit Financial Services",
-        vi: "Công ty Tài chính MCredit"
-      },
-      image: "/image/enterprise/logo-Mcredit.png"
-    },
+    // {
+    //   id: 14,
+    //   name: "MCredit",
+    //   category: "enterprise",
+    //   description: {
+    //     en: "MCredit Financial Services",
+    //     vi: "Công ty Tài chính MCredit"
+    //   },
+    //   image: "/image/enterprise/logo-Mcredit.png"
+    // },
     {
       id: 15,
       name: "NAPAS",
@@ -515,12 +515,12 @@ const Clients: React.FC = () => {
           </motion.div>
 
           {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-6 mb-6 md:mb-12">
             {categories.map((category) => (
               <motion.button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`relative px-6 py-2 text-sm font-medium transition-colors
+                className={`relative px-3 md:px-6 py-1 md:py-2 text-sm font-medium transition-colors
                   ${activeCategory === category.id
                     ? 'text-primary'
                     : 'text-gray-600 hover:text-primary'
@@ -634,7 +634,7 @@ const Clients: React.FC = () => {
         </div>
 
         {/* Background Elements */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 -mb-48 -mr-48 transform rotate-45"></div>
+        {/* <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 -mb-48 -mr-48 transform rotate-45"></div> */}
         <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 -ml-36 rounded-full filter blur-3xl"></div>
       </div>
     </section>

@@ -42,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
           {typeof title === 'string' ? title : currentLanguage === 'vi' ? title.vi : title.en}
         </h3>
         <div className={`h-0.5 w-12 bg-primary mb-4 transition-all duration-300 group-hover:w-20 ${isActive ? 'bg-white w-20' : 'group-hover:bg-white'}`}></div>
-        <p className={`text-gray-600 mt-auto mb-6 leading-relaxed transition-colors duration-300 ${isActive ? 'text-white/90' : 'group-hover:text-white/90'}`}>
+        <p className={`text-gray-600 mt-2 mb-6 leading-relaxed transition-colors duration-300 text-left self-start ${isActive ? 'text-white/90' : 'group-hover:text-white/90'}`}>
           {typeof description === 'string' ? description : currentLanguage === 'vi' ? description.vi : description.en}
         </p>
         <a href="#" className={`mt-auto inline-flex items-center text-sm font-medium text-primary transition-all duration-300 group-hover:translate-x-2 ${isActive ? 'text-white translate-x-2' : 'group-hover:text-white'}`}>
@@ -69,8 +69,8 @@ const Services: React.FC = () => {
         vi: "ICT"
       },
       description: {
-        en: "Comprehensive information and communication technology solutions for your business.",
-        vi: "Giải pháp công nghệ thông tin và truyền thông toàn diện cho doanh nghiệp của bạn."
+        en: "Empowering your business with integrated ICT solutions.",
+        vi: "Cung cấp giải pháp công nghệ thông tin và truyền thông toàn diện cho doanh nghiệp của bạn."
       },
       delay: 0.1,
       link: '/solutions/ict'
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
         vi: "Business Application"
       },
       description: {
-        en: "Development and deployment of custom business applications tailored to your needs.",
+        en: "Developing and deploying custom business applications tailored to your needs.",
         vi: "Phát triển và triển khai các ứng dụng doanh nghiệp tùy chỉnh theo nhu cầu của bạn."
       },
       delay: 0.3,
@@ -95,8 +95,8 @@ const Services: React.FC = () => {
         vi: "M&E"
       },
       description: {
-        en: "Monitoring and evaluation solutions for projects and business processes.",
-        vi: "Giải pháp giám sát và đánh giá hiệu quả cho các dự án và quy trình kinh doanh."
+        en: "Providing M&E equipment for safe, efficient, and energy-saving operations with easy maintenance, expansion, and centralized management.",
+        vi: "Cung cấp các thiết bị cơ điện giúp công trình vận hành an toàn, hiệu quả, tiết kiệm năng lượng và dễ dàng trong việc bảo trì, mở rộng hoặc quản lý tập trung."
       },
       delay: 0.4,
       link: '/solutions/me'
@@ -108,7 +108,7 @@ const Services: React.FC = () => {
         vi: "Broadcasting"
       },
       description: {
-        en: "Building multi-platform content distribution infrastructure, applying AI, VR, and AR technologies.",
+        en: "Building multi-platform content distribution infrastructure, applying AI, VR and AR technologies.",
         vi: "Xây dựng hạ tầng sản xuất phân phối nội dung đa nền tảng, ứng dụng trí tuệ nhân tạo (AI), thực tế ảo (VR), thực tế tăng cường (AR)."
       },
       delay: 0.2,
@@ -235,7 +235,7 @@ const Services: React.FC = () => {
         </div>
 
         {/* Background Elements */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 -mb-48 -mr-48 transform rotate-45"></div>
+        {/* <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 -mb-48 -mr-48 transform rotate-45"></div> */}
         <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 -ml-36 rounded-full filter blur-3xl"></div>
       </div>
     </section>

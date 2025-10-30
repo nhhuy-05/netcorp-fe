@@ -4,8 +4,101 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import Breadcrumb from '../ui/Breadcrumb';
 
+// NoPositions component for empty state
+const NoPositions: React.FC<{ isEn: boolean; category?: string; navigate: (path: string) => void }> = ({ isEn, category, navigate }) => {
+  const getCategoryName = () => {
+    if (category === 'technology') {
+      return isEn ? 'technology' : 'khối công nghệ';
+    }
+    if (category === 'business') {
+      return isEn ? 'business' : 'khối kinh doanh';
+    }
+    return isEn ? 'any category' : 'bất kỳ danh mục nào';
+  };
+
+  return (
+    <motion.div
+      className="flex flex-col items-center justify-center py-16 px-4"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
+      <div className="text-center max-w-md">
+        {/* Empty State Icon */}
+        <div className="mb-6 flex justify-center">
+          <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center">
+            <svg
+              className="w-12 h-12 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1.5}
+                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
+              />
+            </svg>
+          </div>
+        </div>
+        
+        {/* Title */}
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">
+          {isEn ? 'No Open Positions' : 'Không có vị trí tuyển dụng'}
+        </h3>
+        
+        {/* Description */}
+        <p className="text-gray-600 mb-6 text-sm leading-relaxed">
+          {isEn 
+            ? `Currently, there are no open positions in the ${getCategoryName()} category. Please check back later or explore other categories.`
+            : `Hiện tại không có vị trí tuyển dụng nào trong ${getCategoryName()}. Vui lòng kiểm tra lại sau hoặc khám phá các danh mục khác.`
+          }
+        </p>
+        
+        {/* CTA Button */}
+        <motion.button
+          onClick={() => navigate('/contact')}
+          className="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-hover transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {isEn ? 'Contact Us' : 'Liên hệ với chúng tôi'}
+        </motion.button>
+      </div>
+    </motion.div>
+  );
+};
+
+interface Position {
+  id: number;
+  type: string;
+  slug: string;
+  title: string;
+  titleEn: string;
+  image: string;
+  quantity: number;
+  deadline: string;
+  status: 'active' | 'expired' | 'closed';
+  location: string;
+  locationEn: string;
+  salary: string;
+  salaryEn: string;
+  description: string;
+  descriptionEn: string;
+  detail: {
+    responsibilities: string[];
+    responsibilitiesEn: string[];
+    requirements: string[];
+    requirementsEn: string[];
+    benefits: string[];
+    benefitsEn: string[];
+  };
+}
+
 // Sample data
-export const positions = [
+export const positions: Position[] = [
   {
     id: 1,
     type: 'technology',
@@ -14,7 +107,8 @@ export const positions = [
     titleEn: 'Assistant Project Manager/Account Manager (IT)',
     image: '/image/LOGO_NC.png',
     quantity: 1,
-    deadline: '30/10/2025',
+    deadline: '29/10/2025',
+    status: 'active', // 'active', 'expired', 'closed'
     location: 'Tầng 3, Tòa Casa, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội',
     locationEn: '3rd Floor, Casa Building, 78 Duy Tan Alley, Cau Giay, Hanoi',
     salary: '10.000.000 – 14.000.000 VNĐ',
@@ -72,6 +166,31 @@ export const positions = [
       ]
     }
   },
+  {
+    id: 2,
+    type: 'business',
+    slug: 'business-development-manager',
+    title: 'Quản lý Phát triển Kinh doanh',
+    titleEn: 'Business Development Manager',
+    image: '/image/LOGO_NC.png',
+    quantity: 1,
+    deadline: '25/10/2024',
+    status: 'expired',
+    location: 'Tầng 3, Tòa Casa, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội',
+    locationEn: '3rd Floor, Casa Building, 78 Duy Tan Alley, Cau Giay, Hanoi',
+    salary: '15.000.000 – 20.000.000 VNĐ',
+    salaryEn: '15,000,000 – 20,000,000 VND',
+    description: 'Quản lý và phát triển kinh doanh, tìm kiếm khách hàng mới.',
+    descriptionEn: 'Manage and develop business, find new customers.',
+    detail: {
+      responsibilities: ['Tìm kiếm khách hàng mới'],
+      responsibilitiesEn: ['Find new customers'],
+      requirements: ['Kinh nghiệm 2 năm'],
+      requirementsEn: ['2 years experience'],
+      benefits: ['Lương tốt'],
+      benefitsEn: ['Good salary']
+    }
+  }
 ];
 
 const Careers: React.FC = () => {
@@ -86,10 +205,25 @@ const Careers: React.FC = () => {
     { key: 'business', label: isEn ? 'BUSINESS' : 'KHỐI KINH DOANH' }
   ];
 
+  const isPositionActive = (pos: Position) => {
+    // Check if position status is active
+    if (pos.status !== 'active') return false;
+    
+    // Check if deadline has passed
+    const deadlineDate = new Date(
+      pos.deadline.split('/').reverse().join('-')
+    );
+    const today = new Date();
+    deadlineDate.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0);
+    
+    return deadlineDate.getTime() >= today.getTime();
+  };
+
   const filteredPositions =
     activeCategory === 'all'
-      ? positions
-      : positions.filter(pos => pos.type === activeCategory);
+      ? positions.filter(isPositionActive)
+      : positions.filter(pos => isPositionActive(pos) && pos.type === activeCategory);
 
   return (
     <section className="relative">
@@ -183,61 +317,69 @@ const Careers: React.FC = () => {
                 </motion.button>
               ))}
             </div>
-            {/* Position Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-              {filteredPositions.map(pos => (
-                <div
-                  key={pos.id}
-                  className="relative bg-white rounded-xl shadow border hover:shadow-lg transition-all duration-300 p-4 md:p-6 cursor-pointer flex flex-col"
-                  onClick={() => navigate(`/careers/${pos.slug}`)}
-                >
-                  {/* Logo/Image */}
-                  <div className="flex items-start mb-3 md:mb-4">
-                    <div className="flex-shrink-0 w-full h-auto rounded-lg bg-gray-50 flex items-center justify-center border mr-2 md:mr-4">
-                      <img
-                        src={pos.image}
-                        alt={isEn ? pos.titleEn : pos.title}
-                        className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain"
-                      />
+            {/* Position Cards or Empty State */}
+            {filteredPositions.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+                {filteredPositions.map(pos => (
+                  <div
+                    key={pos.id}
+                    className="relative bg-white rounded-xl shadow border hover:shadow-lg transition-all duration-300 p-4 md:p-6 cursor-pointer flex flex-col"
+                    onClick={() => navigate(`/careers/${pos.slug}`)}
+                  >
+                    {/* Logo/Image */}
+                    <div className="flex items-start mb-3 md:mb-4">
+                      <div className="flex-shrink-0 w-full h-auto rounded-lg bg-gray-50 flex items-center justify-center border mr-2 md:mr-4">
+                        <img
+                          src={pos.image}
+                          alt={isEn ? pos.titleEn : pos.title}
+                          className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 object-contain"
+                        />
+                      </div>
+                    </div>
+                    {/* Info */}
+                    <h3 className="text-base md:text-xl font-bold text-primary mb-1">
+                      {isEn ? pos.titleEn : pos.title}
+                    </h3>
+                    <div className="mb-2 text-gray-700 text-sm md:text-base italic">
+                      {isEn ? pos.descriptionEn : pos.description}
+                    </div>
+                    <div className="text-gray-500 text-xs md:text-sm mb-2">
+                      {isEn ? pos.locationEn : pos.location}
+                    </div>
+                    <div className="flex gap-2 mb-3 md:mb-4 flex-wrap">
+                      <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
+                        {isEn ? 'Hanoi' : 'Hà Nội'}
+                      </span>
+                      <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
+                        {(() => {
+                          const deadlineDate = new Date(
+                            pos.deadline.split('/').reverse().join('-')
+                          );
+                          const today = new Date();
+                          deadlineDate.setHours(0, 0, 0, 0);
+                          today.setHours(0, 0, 0, 0);
+                          const diff = Math.ceil(
+                            (deadlineDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
+                          );
+                          if (diff < 0) {
+                            return isEn ? 'Closed' : 'Đã hết hạn';
+                          }
+                          return isEn
+                            ? `${diff} days left to apply`
+                            : `Còn ${diff} ngày để ứng tuyển`;
+                        })()}
+                      </span>
                     </div>
                   </div>
-                  {/* Info */}
-                  <h3 className="text-base md:text-xl font-bold text-primary mb-1">
-                    {isEn ? pos.titleEn : pos.title}
-                  </h3>
-                  <div className="mb-2 text-gray-700 text-sm md:text-base italic">
-                    {isEn ? pos.descriptionEn : pos.description}
-                  </div>
-                  <div className="text-gray-500 text-xs md:text-sm mb-2">
-                    {isEn ? pos.locationEn : pos.location}
-                  </div>
-                  <div className="flex gap-2 mb-3 md:mb-4 flex-wrap">
-                    <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
-                      {isEn ? 'Hanoi' : 'Hà Nội'}
-                    </span>
-                    <span className="bg-gray-100 px-2 py-1 rounded text-xs md:text-sm text-gray-700">
-                      {(() => {
-                        const deadlineDate = new Date(
-                          pos.deadline.split('/').reverse().join('-')
-                        );
-                        const today = new Date();
-                        deadlineDate.setHours(0, 0, 0, 0);
-                        today.setHours(0, 0, 0, 0);
-                        const diff = Math.ceil(
-                          (deadlineDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)
-                        );
-                        if (diff < 0) {
-                          return isEn ? 'Closed' : 'Đã hết hạn';
-                        }
-                        return isEn
-                          ? `${diff} days left to apply`
-                          : `Còn ${diff} ngày để ứng tuyển`;
-                      })()}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            ) : (
+              <NoPositions 
+                isEn={isEn} 
+                category={activeCategory !== 'all' ? activeCategory : undefined} 
+                navigate={navigate}
+              />
+            )}
           </div>
         </div>
       </div>

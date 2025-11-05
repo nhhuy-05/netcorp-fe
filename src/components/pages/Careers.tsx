@@ -102,12 +102,12 @@ export const positions: Position[] = [
   {
     id: 1,
     type: 'technology',
-    slug: 'assistant-project-manager-account-manager-it',
-    title: 'Assistant Project Manager/Account Manager (CNTT)',
-    titleEn: 'Assistant Project Manager/Account Manager (IT)',
+    slug: 'assistant-project-manager-account-manager',
+    title: 'Assistant Project Manager/Account Manager',
+    titleEn: 'Assistant Project Manager/Account Manager',
     image: '/image/LOGO_NC.png',
-    quantity: 1,
-    deadline: '29/10/2025',
+    quantity: 2,
+    deadline: '31/12/2025',
     status: 'active', // 'active', 'expired', 'closed'
     location: 'Tầng 3, Tòa Casa, Ngõ 78 Duy Tân, Cầu Giấy, Hà Nội',
     locationEn: '3rd Floor, Casa Building, 78 Duy Tan Alley, Cau Giay, Hanoi',

@@ -19,7 +19,7 @@ const ReadySection: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight uppercase">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight uppercase">
               {currentLanguage === 'vi' ? (
                 <>
                   Sẵn sàng với những dự án

@@ -1506,53 +1506,86 @@ const WorkShowcase: React.FC = () => {
             </button>
           )}
 
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentPage}
-              className={`grid gap-4 md:gap-6 ${isMobile ? 'grid-cols-2' : 'grid-cols-4'}`}
-              {...getAnimationProps()}
-              transition={{ duration: 0.5 }}
-            >
-              {getCurrentPageItems().map((work, index) => (
-                <motion.div
-                  key={work.id}
-                  className="group relative cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  onClick={() => navigate(`/project/${work.slug}`)}
-                >
-                  {/* Image section - 75% height */}
-                  <div className="aspect-[4/3] bg-white flex items-center justify-center p-2 md:p-4 border-b border-gray-100">
-                    <img
-                      src={work.customerImage}
-                      alt={work.title}
-                      className="max-h-12 md:max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="text-center p-2 md:p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 text-white">
-                          {currentLanguage === 'vi' ? work.titleVi : work.title}
-                        </h3>
-                        <p className="text-xs md:text-sm text-white/80 font-semibold">
-                          {currentLanguage === 'vi' ? work.customerVi : work.customer}
-                        </p>
+          {filteredWorks.length > 0 ? (
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentPage}
+                className={`grid gap-4 md:gap-6 ${isMobile ? 'grid-cols-2' : 'grid-cols-4'}`}
+                {...getAnimationProps()}
+                transition={{ duration: 0.5 }}
+              >
+                {getCurrentPageItems().map((work, index) => (
+                  <motion.div
+                    key={work.id}
+                    className="group relative cursor-pointer rounded-lg overflow-hidden shadow-lg bg-white"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    onClick={() => navigate(`/project/${work.slug}`)}
+                  >
+                    {/* Image section - 75% height */}
+                    <div className="aspect-[4/3] bg-white flex items-center justify-center p-2 md:p-4 border-b border-gray-100">
+                      <img
+                        src={work.customerImage}
+                        alt={work.title}
+                        className="max-h-12 md:max-h-20 w-auto object-contain mx-auto transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="text-center p-2 md:p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                          <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-2 text-white">
+                            {currentLanguage === 'vi' ? work.titleVi : work.title}
+                          </h3>
+                          <p className="text-xs md:text-sm text-white/80 font-semibold">
+                            {currentLanguage === 'vi' ? work.customerVi : work.customer}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  
-                  {/* Project name section - 25% height */}
-                  <div className="h-[25%] p-2 md:p-3 flex items-center justify-center bg-white">
-                    <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-600 text-center w-full overflow-hidden">
-                      <span className="line-clamp-2" title={currentLanguage === 'vi' ? work.titleVi : work.title}>
-                        {currentLanguage === 'vi' ? work.titleVi : work.title}
-                      </span>
-                    </h3>
-                  </div>
-                </motion.div>
-              ))}
+                    
+                    {/* Project name section - 25% height */}
+                    <div className="h-[25%] p-2 md:p-3 flex items-center justify-center bg-white">
+                      <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-600 text-center w-full overflow-hidden">
+                        <span className="line-clamp-2" title={currentLanguage === 'vi' ? work.titleVi : work.title}>
+                          {currentLanguage === 'vi' ? work.titleVi : work.title}
+                        </span>
+                      </h3>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center py-16 md:py-24"
+            >
+              <div className="max-w-md mx-auto px-4">
+                <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                  </svg>
+                </div>
+                <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+                  {currentLanguage === 'vi' ? 'Không có dự án nào trong danh mục này' : 'No projects in this category'}
+                </h3>
+                <p className="text-sm md:text-base text-gray-600 mb-6">
+                  {currentLanguage === 'vi' 
+                    ? 'Vui lòng chọn danh mục khác để xem các dự án của chúng tôi.' 
+                    : 'Please select another category to view our projects.'}
+                </p>
+                <button
+                  onClick={() => setActiveCategory('ALL')}
+                  className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                >
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  {currentLanguage === 'vi' ? 'Xem tất cả dự án' : 'View All Projects'}
+                </button>
+              </div>
             </motion.div>
-          </AnimatePresence>
+          )}
 
           {/* Navigation Dots */}
           {totalPages > 1 && (

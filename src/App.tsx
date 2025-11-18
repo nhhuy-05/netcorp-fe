@@ -22,6 +22,7 @@ import Blog from './components/pages/Blog';
 import ProjectDetail from './pages/ProjectDetail';
 import Careers from './components/pages/Careers';
 import CareerDetail from './pages/CareerDetail';
+import NotFound from './components/pages/NotFound';
 
 function App() {
   const { i18n } = useTranslation();
@@ -62,6 +63,7 @@ function App() {
           <Route path="/project/:slug" element={<ProjectDetail />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/careers/:slug" element={<CareerDetail />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

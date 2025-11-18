@@ -126,5 +126,12 @@
       "consulting": "Consulting Partners",
       "security": "Security Partners"
     }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist or has been moved.",
+    "goHome": "Go Back Home",
+    "orContact": "Or contact us if you think this is an error",
+    "contactUs": "Contact Support"
   }
 } 

@@ -16,7 +16,7 @@ interface FormData {
 const Contact: React.FC = () => {
   const { i18n } = useTranslation();
   const isEn = i18n.language === 'en';
-  
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       setSubmitStatus('error');
       setTimeout(() => setSubmitStatus('idle'), 5000);
@@ -157,7 +157,7 @@ const Contact: React.FC = () => {
           <>
             <div>
               <span>Địa chỉ:</span>{' '}
-              <span >Số 12, Ngõ 1, Số 178 Trung Liệt, Phường Trung Liệt, Quận Đống Đa, Hà Nội, Việt Nam</span>
+              <span >Số 12, Ngách 1, Ngõ 178 Trung Liệt, Phường Trung Liệt, Quận Đống Đa, Hà Nội, Việt Nam</span>
             </div>
             <div>
               <span>Văn phòng đại diện:</span>{' '}
@@ -252,25 +252,25 @@ const Contact: React.FC = () => {
       <div className="relative py-0 bg-white z-10 mt-16">
         <div className="container mx-auto px-4">
           {/* Info Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
             {contactCards.map((card, idx) => (
               <motion.div
-              key={card.title}
-              className="group rounded-xl p-8 shadow-md flex flex-col items-start transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2 * idx }}
+                key={card.title}
+                className="group rounded-xl p-8 shadow-md flex flex-col items-start transition-all duration-300 bg-white text-gray-800 hover:bg-primary hover:text-white hover:scale-105"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 * idx }}
               >
-              <div className="flex items-center mb-4">
-                <span className="p-3 rounded-lg bg-primary/10 shadow-md transition-colors duration-300 group-hover:bg-white mr-3">
-                {React.cloneElement(card.icon, { className: 'text-primary group-hover:text-primary transition-colors duration-300', size: 24 })}
-                </span>
-                <span className="text-lg font-bold tracking-widest transition-colors duration-300 group-hover:text-white">{card.title}</span>
-              </div>
-              <div className="text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{card.content}</div>
+                <div className="flex items-center mb-4">
+                  <span className="p-3 rounded-lg bg-primary/10 shadow-md transition-colors duration-300 group-hover:bg-white mr-3">
+                    {React.cloneElement(card.icon, { className: 'text-primary group-hover:text-primary transition-colors duration-300', size: 24 })}
+                  </span>
+                  <span className="text-lg font-bold transition-colors duration-300 group-hover:text-white">{card.title}</span>
+                </div>
+                <div className="text-sm leading-relaxed transition-colors duration-300 group-hover:text-white">{card.content}</div>
               </motion.div>
             ))}
-            </div>
+          </div>
 
           {/* Google Map */}
           <motion.div
@@ -281,7 +281,7 @@ const Contact: React.FC = () => {
           >
             <iframe
               title="Netcorp Location"
-              src="https://www.google.com/maps?q=Tòa+nhà+Casla,+Ngõ+78+Duy+Tân,+Dịch+Vọng+Hậu,+Cầu+Giấy,+Hà+Nội&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0434127161366!2d105.77839565032096!3d21.03167143079703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab0fb8fd5b31%3A0x4e7748b0b5abe9a6!2zQ8O0bmcgdHkgQ-G7lSBwaOG6p24gVOG6rXAgxJFvw6BuIE5ldENvcnA!5e0!3m2!1svi!2s!4v1762845781318!5m2!1svi!2s"
               width="100%"
               height="350"
               style={{ border: 0, borderRadius: '1rem', minHeight: '300px', maxWidth: '900px' }}
@@ -290,6 +290,8 @@ const Contact: React.FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </motion.div>
+
+          
 
           {/* Contact Form */}
           <motion.div
@@ -301,17 +303,16 @@ const Contact: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
               {isEn ? 'Request a Consultation' : 'Gửi yêu cầu tư vấn'}
             </h2>
-            
+
             {/* Status Messages */}
             {submitStatus !== 'idle' && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${
-                  submitStatus === 'success' 
-                    ? 'bg-green-100 text-green-700 border border-green-200' 
+                className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${submitStatus === 'success'
+                    ? 'bg-green-100 text-green-700 border border-green-200'
                     : 'bg-red-100 text-red-700 border border-red-200'
-                }`}
+                  }`}
               >
                 {submitStatus === 'success' ? (
                   <>
@@ -401,8 +402,7 @@ const Contact: React.FC = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-primary hover:bg-primary-dark disabled:bg-gray-400 text-white font-bold px-10 py-4 rounded-md shadow-md transition-all duration-300 tracking-widest text-lg relative disabled:cursor-not-allowed flex items-center gap-2"
-                  style={{ letterSpacing: '0.15em' }}
+                  className="bg-primary hover:bg-primary-dark disabled:bg-gray-400 text-white font-bold px-10 py-4 rounded-md shadow-md transition-all duration-300 text-lg relative disabled:cursor-not-allowed flex items-center gap-2"
                   whileHover={!isSubmitting ? { scale: 1.02 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >

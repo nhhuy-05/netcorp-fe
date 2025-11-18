@@ -126,5 +126,12 @@
       "consulting": "Đối tác Tư vấn",
       "security": "Đối tác An ninh"
     }
+  },
+  "notFound": {
+    "title": "Không Tìm Thấy Trang",
+    "message": "Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.",
+    "goHome": "Về Trang Chủ",
+    "orContact": "Hoặc liên hệ với chúng tôi nếu bạn nghĩ đây là lỗi",
+    "contactUs": "Liên hệ Hỗ trợ"
   }
 } 

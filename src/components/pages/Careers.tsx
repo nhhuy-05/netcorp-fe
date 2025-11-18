@@ -101,7 +101,7 @@ interface Position {
 export const positions: Position[] = [
   {
     id: 1,
-    type: 'technology',
+    type: 'business',
     slug: 'assistant-project-manager-account-manager',
     title: 'Assistant Project Manager/Account Manager',
     titleEn: 'Assistant Project Manager/Account Manager',

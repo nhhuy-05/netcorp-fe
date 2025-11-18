@@ -63,10 +63,10 @@ const ProjectDetail: React.FC = () => {
                             {/* Nút/quay lại nằm phía trên ảnh */}
                             <button
                                 onClick={() => navigate(-1)}
-                                className="absolute top-3 left-3 md:top-4 md:left-4 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-black/30 hover:bg-white text-primary rounded-full shadow transition-all"
+                                className="absolute top-3 left-3 md:top-4 md:left-4 z-10 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white hover:bg-primary-dark text-primary rounded-full shadow transition-all"
                                 title={currentLanguage === 'vi' ? 'Quay lại' : 'Go Back'}
                             >
-                                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                                <svg className="hover:text-white" width="16" height="16" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         d="M15 19l-7-7 7-7" />
                                 </svg>

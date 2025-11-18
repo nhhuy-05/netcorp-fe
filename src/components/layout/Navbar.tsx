@@ -66,6 +66,17 @@ const Navbar: React.FC = () => {
     { name: currentLanguage === 'vi' ? 'Tuyển dụng' : 'Careers', path: '/careers' }
   ];
 
+  // Check if we're on a page that should have dark navbar background
+  const isDarkNavPage = location.pathname === '*' || 
+                        location.pathname.includes('/not-found') || 
+                        location.pathname === '/404' ||
+                        !navItems.some(item => {
+                          if (item.path === '/') {
+                            return location.pathname === '/' || location.pathname === '/home';
+                          }
+                          return location.pathname.startsWith(item.path);
+                        });
+
   return (
     <>
       {/* Main Navigation */}
@@ -73,7 +84,7 @@ const Navbar: React.FC = () => {
         // track hover on the whole nav to trigger background change
         onMouseEnter={() => setNavHover(true)}
         onMouseLeave={() => setNavHover(false)}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navActive ? 'bg-black/50 shadow-lg backdrop-blur-sm py-6' : 'bg-transparent py-6'}`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navActive || isDarkNavPage ? `${isDarkNavPage ? 'bg-gray-900' : 'bg-black/50'} shadow-lg backdrop-blur-sm py-6` : 'bg-transparent py-6'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}

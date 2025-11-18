@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
                   <FiFacebook />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/netcorp-vn/"
+                  href="https://www.linkedin.com/company/netcorp-group-jsc/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors duration-300"
@@ -148,7 +148,7 @@ const Footer: React.FC = () => {
                   <div className="ml-4 flex items-center h-10">
                     <p className="text-gray-400 text-sm">
                       {currentLanguage === 'vi'
-                        ? 'Địa chỉ: Số 12, Ngõ 1, Số 178 Trung Liệt, Phường Trung Liệt, Quận Đống Đa, Hà Nội, Việt Nam'
+                        ? 'Địa chỉ: Số 12, Ngách 1, Ngõ 178 Trung Liệt, Phường Trung Liệt, Quận Đống Đa, Hà Nội, Việt Nam'
                         : 'Address: No. 12, Alley 1, Lane 178 Trung Liet, Trung Liet Ward, Dong Da District, Hanoi, Vietnam'}
                     </p>
                   </div>

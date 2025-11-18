@@ -752,21 +752,21 @@ export const works: WorkItem[] =
     slug: "supply-of-security-equipment-for-agribank",
     customerImage: "/image/bank/logo-Agribank.png"
   },
-  {
-    id: 72,
-    category: "SECURITY",
-    title: "Supply and Installation of Network Security Equipment for Bac A Bank",
-    titleVi: "Cung cấp, lắp đặt và tích hợp hệ thống thiết bị bảo mật cho Ngân hàng Bắc Á",
-    customer: "Amigo Technologies Joint Stock Company",
-    customerVi: "Công ty Cổ phần Công nghệ Bằng Hữu",
-    address: "Cau Giay Ward, Hanoi",
-    addressVi: "Phường Cầu Giấy, Hà Nội",
-    description: "Supply, installation, and integration of security equipment systems for Bac A Bank",
-    descriptionVi: "Cung cấp, lắp đặt và tích hợp hệ thống thiết bị bảo mật cho Ngân hàng Bắc Á",
-    year: 2021,
-    slug: "supply-and-installation-of-network-security-equipment-for-bac-a-bank",
-    customerImage: "/image/enterprise/logo-AMIGO.png"
-  },
+  // {
+  //   id: 72,
+  //   category: "SECURITY",
+  //   title: "Supply and Installation of Network Security Equipment for Bac A Bank",
+  //   titleVi: "Cung cấp, lắp đặt và tích hợp hệ thống thiết bị bảo mật cho Ngân hàng Bắc Á",
+  //   customer: "Amigo Technologies Joint Stock Company",
+  //   customerVi: "Công ty Cổ phần Công nghệ Bằng Hữu",
+  //   address: "Cau Giay Ward, Hanoi",
+  //   addressVi: "Phường Cầu Giấy, Hà Nội",
+  //   description: "Supply, installation, and integration of security equipment systems for Bac A Bank",
+  //   descriptionVi: "Cung cấp, lắp đặt và tích hợp hệ thống thiết bị bảo mật cho Ngân hàng Bắc Á",
+  //   year: 2021,
+  //   slug: "supply-and-installation-of-network-security-equipment-for-bac-a-bank",
+  //   customerImage: "/image/enterprise/logo-AMIGO.png"
+  // },
   {
     id: 73,
     category: "SECURITY",
@@ -842,21 +842,21 @@ export const works: WorkItem[] =
     slug: "supply-of-load-balancer-services-for-core-banking",
     customerImage: "/image/bank/logo-BIDV.png"
   },
-  {
-    id: 78,
-    category: "SECURITY",
-    title: "Supply of Security Audit and Management Services for CNTT System",
-    titleVi: "Cung cấp dịch vụ Giá bản quyền cho các giải pháp bảo mật và giám sát hệ thống CNTT cho Ngân hàng Bắc Á",
-    customer: "Amigo Technologies Joint Stock Company",
-    customerVi: "Công ty Cổ phần Công nghệ Bằng Hữu",
-    address: "Cau Giay Ward, Hanoi",
-    addressVi: "Phường Cầu Giấy, Hà Nội",
-    description: "Supply of license rights services for security and IT system monitoring solutions for Bac A Bank",
-    descriptionVi: "Cung cấp dịch vụ Giá bản quyền cho các giải pháp bảo mật và giám sát hệ thống CNTT cho Ngân hàng Bắc Á",
-    year: 2025,
-    slug: "supply-of-security-audit-and-management-services-for-cntt-system",
-    customerImage: "/image/enterprise/logo-AMIGO.png"
-  },
+  // {
+  //   id: 78,
+  //   category: "SECURITY",
+  //   title: "Supply of Security Audit and Management Services for CNTT System",
+  //   titleVi: "Cung cấp dịch vụ Giá bản quyền cho các giải pháp bảo mật và giám sát hệ thống CNTT cho Ngân hàng Bắc Á",
+  //   customer: "Amigo Technologies Joint Stock Company",
+  //   customerVi: "Công ty Cổ phần Công nghệ Bằng Hữu",
+  //   address: "Cau Giay Ward, Hanoi",
+  //   addressVi: "Phường Cầu Giấy, Hà Nội",
+  //   description: "Supply of license rights services for security and IT system monitoring solutions for Bac A Bank",
+  //   descriptionVi: "Cung cấp dịch vụ Giá bản quyền cho các giải pháp bảo mật và giám sát hệ thống CNTT cho Ngân hàng Bắc Á",
+  //   year: 2025,
+  //   slug: "supply-of-security-audit-and-management-services-for-cntt-system",
+  //   customerImage: "/image/enterprise/logo-AMIGO.png"
+  // },
   {
     id: 79,
     category: "SECURITY",

@@ -73,7 +73,8 @@ const CareerDetail: React.FC = () => {
                                         name: {
                                             en: 'Careers',
                                             vi: 'Tuyển dụng'
-                                        }
+                                        },
+                                        path: '/careers'
                                     },
                                     {
                                         name: {

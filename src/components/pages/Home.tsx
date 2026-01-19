@@ -39,7 +39,7 @@ const Home: React.FC = () => {
 
   // Construct background style based on loading state
   const backgroundStyle: React.CSSProperties = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${imageLoaded ? bg_homepage : lowQualityUrl})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${imageLoaded ? bg_homepage : lowQualityUrl})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     transition: 'background-image 0.5s ease-in-out',

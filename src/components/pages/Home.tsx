@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Hero from '../ui/Hero';
 import ReadySection from '../ui/ReadySection';
 import VideoSection from '../ui/VideoSection';
@@ -6,44 +6,12 @@ import WorkShowcase from '../ui/WorkShowcase';
 import { bg_homepage } from '../../assets/images';
 
 const Home: React.FC = () => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [lowQualityUrl, setLowQualityUrl] = useState('');
-
-  // Create a low-quality placeholder by scaling down the original image
-  useEffect(() => {
-    // Create tiny placeholder version
-    const img = new Image();
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const maxSize = 40; // Small size for LQIP
-      
-      const ratio = Math.min(maxSize / img.width, maxSize / img.height);
-      canvas.width = img.width * ratio;
-      canvas.height = img.height * ratio;
-      
-      if (ctx) {
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        setLowQualityUrl(canvas.toDataURL('image/jpeg', 0.3));
-      }
-    };
-    img.src = bg_homepage;
-  }, []); // Remove bg_homepage from dependency array as it's a static import
-
-  // Preload the main image and update state when loaded
-  useEffect(() => {
-    const img = new Image();
-    img.onload = () => setImageLoaded(true);
-    img.src = bg_homepage;
-  }, []); // Remove bg_homepage from dependency array as it's a static import
-
-  // Construct background style based on loading state
   const backgroundStyle: React.CSSProperties = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${imageLoaded ? bg_homepage : lowQualityUrl})`,
+    backgroundColor: '#111827',
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bg_homepage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    transition: 'background-image 0.5s ease-in-out',
-    filter: imageLoaded ? 'none' : 'blur(10px)'
+    animation: 'fadeIn 0.6s ease-out',
   };
 
   const sectionStyle: React.CSSProperties = {
@@ -51,7 +19,14 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen pt-20 relative">
+    <main className="min-h-screen pt-20 relative" style={{ backgroundColor: '#111827' }}>
+      {/* Fade-in keyframe for smooth background appearance */}
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
       {/* Dark overlay background */}
       <div
         className="fixed inset-0 z-0 pointer-events-none"

@@ -291,135 +291,225 @@ const Contact: React.FC = () => {
             ></iframe>
           </motion.div>
 
-          
+
 
           {/* Contact Form */}
           <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
+            className="max-w-4xl mx-auto relative"
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-              {isEn ? 'Request a Consultation' : 'Gửi yêu cầu tư vấn'}
-            </h2>
+            {/* Form Card with glassmorphism */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              {/* Animated gradient accent bar */}
+              <div
+                className="h-1.5 w-full"
+                style={{
+                  background: 'linear-gradient(90deg, #c1d72e, #a8c025, #8ab016, #c1d72e)',
+                  backgroundSize: '200% 100%',
+                  animation: 'gradientShift 3s ease infinite',
+                }}
+              />
 
-            {/* Status Messages */}
-            {submitStatus !== 'idle' && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={`mb-6 p-4 rounded-lg flex items-center gap-3 ${submitStatus === 'success'
-                    ? 'bg-green-100 text-green-700 border border-green-200'
-                    : 'bg-red-100 text-red-700 border border-red-200'
-                  }`}
-              >
-                {submitStatus === 'success' ? (
-                  <>
-                    <FiCheck className="flex-shrink-0" size={20} />
-                    <span className="font-medium">
-                      {isEn ? 'Message sent successfully! We will get back to you soon.' : 'Tin nhắn đã được gửi thành công! Chúng tôi sẽ sớm liên hệ với bạn.'}
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <FiAlertCircle className="flex-shrink-0" size={20} />
-                    <span className="font-medium">{errorMessage}</span>
-                  </>
-                )}
-              </motion.div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                  <FiUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder={namePlaceholder}
-                    required
-                    disabled={isSubmitting}
-                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
-                  />
-                </motion.div>
-                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                  <FiMail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder={emailPlaceholder}
-                    required
-                    disabled={isSubmitting}
-                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
-                  />
-                </motion.div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                  <FiPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder={phonePlaceholder}
-                    disabled={isSubmitting}
-                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
-                  />
-                </motion.div>
-                <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                  <FiMessageCircle className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder={subjectPlaceholder}
-                    disabled={isSubmitting}
-                    className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base disabled:opacity-50"
-                  />
-                </motion.div>
-              </div>
-              <motion.div className="relative" whileFocus={{ scale: 1.02 }}>
-                <FiMessageCircle className="absolute left-4 top-6 text-gray-400" size={20} />
-                <textarea
-                  rows={6}
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  placeholder={messagePlaceholder}
-                  required
-                  disabled={isSubmitting}
-                  className="bg-gray-100 rounded-md pl-12 pr-6 py-5 w-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary text-base resize-none disabled:opacity-50"
-                ></textarea>
-              </motion.div>
-              <div className="flex justify-center">
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-primary hover:bg-primary-dark disabled:bg-gray-400 text-white font-bold px-10 py-4 rounded-md shadow-md transition-all duration-300 text-lg relative disabled:cursor-not-allowed flex items-center gap-2"
-                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
-                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
+              <div className="bg-white/95 backdrop-blur-sm px-6 sm:px-10 md:px-14 py-10 md:py-14">
+                {/* Section Header */}
+                <motion.div
+                  className="text-center mb-10"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      {isEn ? 'SENDING...' : 'ĐANG GỬI...'}
-                    </>
-                  ) : (
-                    <>
-                      {buttonText}
-                      <span className="absolute right-0 bottom-0 w-6 h-6 bg-green-700 rounded-br-md" style={{ clipPath: 'polygon(100% 0, 0 100%, 100% 100%)' }}></span>
-                    </>
-                  )}
-                </motion.button>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+                    {isEn ? 'Request a Consultation' : 'Gửi yêu cầu tư vấn'}
+                  </h2>
+                  <p className="text-gray-500 max-w-lg mx-auto text-sm md:text-base">
+                    {isEn
+                      ? 'Fill in the form below and our team will get back to you within 24 hours.'
+                      : 'Điền thông tin bên dưới, đội ngũ chúng tôi sẽ phản hồi trong vòng 24 giờ.'}
+                  </p>
+                </motion.div>
+
+                {/* Status Messages */}
+                {submitStatus !== 'idle' && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                    className={`mb-8 p-4 rounded-xl flex items-center gap-3 ${submitStatus === 'success'
+                      ? 'bg-green-50 text-green-700 border border-green-200 shadow-green-100 shadow-md'
+                      : 'bg-red-50 text-red-700 border border-red-200 shadow-red-100 shadow-md'
+                      }`}
+                  >
+                    {submitStatus === 'success' ? (
+                      <>
+                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-green-100">
+                          <FiCheck size={18} />
+                        </span>
+                        <span className="font-medium">
+                          {isEn ? 'Message sent successfully! We will get back to you soon.' : 'Tin nhắn đã được gửi thành công! Chúng tôi sẽ sớm liên hệ với bạn.'}
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="flex items-center justify-center w-8 h-8 rounded-full bg-red-100">
+                          <FiAlertCircle size={18} />
+                        </span>
+                        <span className="font-medium">{errorMessage}</span>
+                      </>
+                    )}
+                  </motion.div>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Row 1: Name + Email */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <motion.div
+                      className="relative group"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 1.1 }}
+                    >
+                      <FiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors duration-300" size={18} />
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        placeholder={namePlaceholder}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(193,215,46,0.15)] transition-all duration-300 text-base disabled:opacity-50"
+                      />
+                    </motion.div>
+                    <motion.div
+                      className="relative group"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 1.2 }}
+                    >
+                      <FiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors duration-300" size={18} />
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        placeholder={emailPlaceholder}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(193,215,46,0.15)] transition-all duration-300 text-base disabled:opacity-50"
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Row 2: Phone + Subject */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <motion.div
+                      className="relative group"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 1.3 }}
+                    >
+                      <FiPhone className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors duration-300" size={18} />
+                      <input
+                        type="text"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder={phonePlaceholder}
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(193,215,46,0.15)] transition-all duration-300 text-base disabled:opacity-50"
+                      />
+                    </motion.div>
+                    <motion.div
+                      className="relative group"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 1.4 }}
+                    >
+                      <FiMessageCircle className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors duration-300" size={18} />
+                      <input
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleInputChange}
+                        placeholder={subjectPlaceholder}
+                        disabled={isSubmitting}
+                        className="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(193,215,46,0.15)] transition-all duration-300 text-base disabled:opacity-50"
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Row 3: Message */}
+                  <motion.div
+                    className="relative group"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 1.5 }}
+                  >
+                    <FiMessageCircle className="absolute left-4 top-5 text-gray-400 group-focus-within:text-primary transition-colors duration-300" size={18} />
+                    <textarea
+                      rows={5}
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder={messagePlaceholder}
+                      required
+                      disabled={isSubmitting}
+                      className="w-full pl-12 pr-5 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl text-gray-700 placeholder-gray-400 focus:outline-none focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(193,215,46,0.15)] transition-all duration-300 text-base resize-none disabled:opacity-50"
+                    ></textarea>
+                  </motion.div>
+
+                  {/* Submit Button */}
+                  <motion.div
+                    className="flex justify-center pt-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 1.6 }}
+                  >
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="group relative overflow-hidden bg-primary text-white font-bold px-12 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 text-base disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center gap-3"
+                      whileHover={!isSubmitting ? { scale: 1.03, y: -2 } : {}}
+                      whileTap={!isSubmitting ? { scale: 0.97 } : {}}
+                    >
+                      {/* Hover shine effect */}
+                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <span className="relative z-10">
+                            {isEn ? 'SENDING...' : 'ĐANG GỬI...'}
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <FiMail size={18} className="relative z-10" />
+                          <span className="relative z-10">{buttonText}</span>
+                        </>
+                      )}
+                    </motion.button>
+                  </motion.div>
+                </form>
               </div>
-            </form>
+            </div>
+
+            {/* Decorative floating elements */}
+            <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-primary/20 rounded-full pointer-events-none" style={{ animation: 'float 6s ease-in-out infinite' }} />
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/10 rounded-xl pointer-events-none" style={{ animation: 'float 4s ease-in-out infinite reverse' }} />
+
+            {/* Inline keyframes */}
+            <style>{`
+              @keyframes gradientShift {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+              }
+              @keyframes float {
+                0%, 100% { transform: translateY(0px) rotate(0deg); }
+                50% { transform: translateY(-12px) rotate(3deg); }
+              }
+            `}</style>
           </motion.div>
         </div>
 

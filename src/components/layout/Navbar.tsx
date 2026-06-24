@@ -14,8 +14,8 @@ const services = [
 
 const Navbar: React.FC = () => {
   const location = useLocation();
-  const [scrolled, setScrolled] = useState(false);
-  const [navHover, setNavHover] = useState(false); // new: track hover on whole navbar
+  const [scrolled, setScrolled] = useState(true);
+  // const [navHover, setNavHover] = useState(true); // new: track hover on whole navbar
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const { t, i18n } = useTranslation();
@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
       if (window.scrollY > 50) {
         setScrolled(true);
       } else {
-        setScrolled(false);
+        setScrolled(true);
       }
     };
 
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
   };
 
   // compute active state (either scrolled or hovered)
-  const navActive = scrolled || navHover;
+  const navActive = scrolled;
 
   // Nav items (contact removed from main list; careers added)
   const navItems = [
@@ -82,8 +82,8 @@ const Navbar: React.FC = () => {
       {/* Main Navigation */}
       <motion.nav
         // track hover on the whole nav to trigger background change
-        onMouseEnter={() => setNavHover(true)}
-        onMouseLeave={() => setNavHover(false)}
+        // onMouseEnter={() => setNavHover(true)}
+        // onMouseLeave={() => setNavHover(true)}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navActive || isDarkNavPage ? `${isDarkNavPage ? 'bg-gray-900' : 'bg-black/50'} shadow-lg backdrop-blur-sm py-6` : 'bg-transparent py-6'}`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -119,13 +119,18 @@ const Navbar: React.FC = () => {
                 >
                   <Link
                     to={item.path}
-                    className={`nav-link px-5 py-3 font-medium transition-all duration-300 flex items-center ${location.pathname.startsWith('/solutions')
-                      ? 'text-primary'
-                      : 'text-white hover:text-primary'
-                      }`}
+                    className="nav-link px-5 py-3 font-medium transition-all duration-300 flex items-center relative group text-white"
                   >
                     {item.name}
                     <FiChevronDown className="ml-1" />
+                    {location.pathname.startsWith('/solutions') ? (
+                      <motion.div
+                        className="absolute bottom-0 left-5 right-5 h-0.5 bg-primary"
+                        layoutId="navbar-indicator"
+                      />
+                    ) : (
+                      <span className="absolute bottom-0 left-5 right-5 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                    )}
                   </Link>
                   {servicesOpen && (
                     <div className="absolute top-full left-0 w-64 bg-white rounded-md shadow-lg py-2 mt-1">
@@ -146,17 +151,16 @@ const Navbar: React.FC = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`nav-link px-5 py-3 font-medium transition-all duration-300 relative group ${isActive(item.path)
-                    ? 'text-primary'
-                    : 'text-white hover:text-primary'
-                    }`}
+                  className="nav-link px-5 py-3 font-medium transition-all duration-300 relative group text-white"
                 >
                   {item.name}
-                  {isActive(item.path) && (
+                  {isActive(item.path) ? (
                     <motion.div
-                      className="absolute bottom-0 left-0 h-0.5 bg-primary w-full"
+                      className="absolute bottom-0 left-5 right-5 h-0.5 bg-primary"
                       layoutId="navbar-indicator"
                     />
+                  ) : (
+                    <span className="absolute bottom-0 left-5 right-5 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                   )}
                 </Link>
               )

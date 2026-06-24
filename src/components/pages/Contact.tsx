@@ -306,7 +306,6 @@ const Contact: React.FC = () => {
               <div
                 className="h-1.5 w-full"
                 style={{
-                  background: 'linear-gradient(90deg, #c1d72e, #a8c025, #8ab016, #c1d72e)',
                   backgroundSize: '200% 100%',
                   animation: 'gradientShift 3s ease infinite',
                 }}

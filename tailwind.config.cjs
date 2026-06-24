@@ -7,13 +7,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#c1d72e', // Updated primary color
-        'primary-dark': '#a8c025', // Darker shade for hover states
+        'primary': '#b77f2b', // Updated primary color
+        'primary-dark': '#a0681e', // Darker shade for hover states
         'secondary': '#6d6e71', // Secondary color
         'dark': '#111827',
         'darker': '#121212',
         'light': '#F9FAFB',
         'gray-custom': '#6B7280',
+        'white-custom': '#FFFFFF',
       },
       fontFamily: {
         'sans': ['Inter', 'sans-serif'],

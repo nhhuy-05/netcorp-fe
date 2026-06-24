@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Breadcrumb from './Breadcrumb';
+import { bg_image_f5_partner } from '../../assets/images';
 
 interface NewsItem {
   id: number;
@@ -26,35 +27,19 @@ const News: React.FC = () => {
   const navigate = useNavigate();
 
   const newsItems: NewsItem[] = [
-    // Security News
     {
       id: 1,
       title: {
-        en: "Điều phối bảo mật mạng với Tufin Orchestration Suite",
-        vi: "Điều phối bảo mật mạng với Tufin Orchestration Suite"
+        en: "NETCORP OFFICIALLY CERTIFIED AS F5 SILVER PARTNER 2026",
+        vi: "NETCORP CHÍNH THỨC ĐẠT CHỨNG NHẬN F5 SILVER PARTNER 2026"
       },
       category: "security",
       excerpt: {
-        en: "Complete solution to automatically design, provision, analyze and test firewall security policy changes from application to network",
-        vi: "Giải pháp hoàn chỉnh để tự động thiết kế, cung cấp, phân tích và kiểm tra các thay đổi chính sách bảo mật tường lửa từ ứng dụng cho đến mạng"
+        en: "NetCorp is proud to announce that it has officially achieved the F5 Silver Partner 2026 certification, confirming our capability in consulting, deploying, and operating application infrastructure, security, and cloud computing solutions for enterprises.",
+        vi: "NetCorp tự hào thông báo đã chính thức đạt chứng nhận F5 Silver Partner 2026, khẳng định năng lực tư vấn, triển khai và vận hành các giải pháp hạ tầng ứng dụng, bảo mật và điện toán đám mây cho doanh nghiệp."
       },
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      date: "2024-01-16",
-      author: "NetCorp Team"
-    },
-    {
-      id: 2,
-      title: {
-        en: "Các Loại Firewall Hiện Nay Có Làm Khó 1 Số Hacker",
-        vi: "Các Loại Firewall Hiện Nay Có Làm Khó 1 Số Hacker"
-      },
-      category: "security",
-      excerpt: {
-        en: "Exploring the evolution of firewall technology and its impact on cybersecurity",
-        vi: "Khám phá sự phát triển của công nghệ tường lửa và tác động của nó đến bảo mật mạng"
-      },
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      date: "2024-01-15",
+      image: bg_image_f5_partner,
+      date: "2026-06-19",
       author: "NetCorp Team"
     }
   ];

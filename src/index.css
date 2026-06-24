@@ -6,13 +6,14 @@
 @tailwind utilities;
 
 :root {
-  --primary: #c1d72e; /* Updated primary color */
-  --primary-dark: #a8c025; /* Darker shade for hover states */
+  --primary: #b77f2b; /* Updated primary color */
+  --primary-dark: #a0681e; /* Darker shade for hover states */
   --secondary: #6d6e71;
   --dark: #111827;
   --darker: #121212;
   --light: #F9FAFB;
   --gray-custom: #6B7280;
+  --white-custom: #FFFFFF;
 }
 
 @layer base {
@@ -93,7 +94,7 @@
   }
 
   .nav-link {
-    @apply px-4 py-2 font-medium transition-all duration-300 hover:text-primary;
+    @apply px-4 py-2 font-medium transition-all duration-300;
   }
   
   .active-nav-link {

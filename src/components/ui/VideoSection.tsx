@@ -24,9 +24,9 @@ const VideoSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+          {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-white text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Phương pháp của chúng tôi' : 'Our Approach'}
-          </div>
+          </div> */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase text-white">
             {currentLanguage === 'vi' ? 'GIẢI PHÁP' : 'SOLUTIONS'}
           </h2>
@@ -65,7 +65,7 @@ const VideoSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               {/* Mobile background overlay */}
-              <div className="md:hidden absolute inset-0 bg-primary/90"></div>
+              <div className="md:hidden absolute inset-0 bg-primary"></div>
 
               <div className="relative z-10">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">

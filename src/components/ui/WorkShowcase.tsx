@@ -1439,9 +1439,9 @@ const WorkShowcase: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
+          {/* <div className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-medium mb-4">
             {currentLanguage === 'vi' ? 'Danh mục dự án' : 'Our Portfolio'}
-          </div>
+          </div> */}
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight uppercase text-gray-900">
             {currentLanguage === 'vi' ? 'CÁC DỰ ÁN TIÊU BIỂU' : 'FEATURED PROJECT'}
           </h2>
@@ -1576,7 +1576,7 @@ const WorkShowcase: React.FC = () => {
                 </p>
                 <button
                   onClick={() => setActiveCategory('ALL')}
-                  className="inline-flex items-center px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                  className="inline-flex items-center px-4 py-2 bg-transparent text-primary border border-primary rounded-lg hover:bg-primary hover:text-white transition-colors duration-300"
                 >
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />

@@ -3,46 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Breadcrumb from './Breadcrumb';
-import { bg_image_f5_partner } from '../../assets/images';
-
-interface NewsItem {
-  id: number;
-  title: {
-    en: string;
-    vi: string;
-  };
-  category: string;
-  excerpt: {
-    en: string;
-    vi: string;
-  };
-  image: string;
-  date: string;
-  author: string;
-}
+import { getAllBlogPosts, BlogPost as NewsItem } from '../../data/newsData';
 
 const News: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
   const navigate = useNavigate();
 
-  const newsItems: NewsItem[] = [
-    {
-      id: 1,
-      title: {
-        en: "NETCORP OFFICIALLY CERTIFIED AS F5 SILVER PARTNER 2026",
-        vi: "NETCORP CHÍNH THỨC ĐẠT CHỨNG NHẬN F5 SILVER PARTNER 2026"
-      },
-      category: "security",
-      excerpt: {
-        en: "NetCorp is proud to announce that it has officially achieved the F5 Silver Partner 2026 certification, confirming our capability in consulting, deploying, and operating application infrastructure, security, and cloud computing solutions for enterprises.",
-        vi: "NetCorp tự hào thông báo đã chính thức đạt chứng nhận F5 Silver Partner 2026, khẳng định năng lực tư vấn, triển khai và vận hành các giải pháp hạ tầng ứng dụng, bảo mật và điện toán đám mây cho doanh nghiệp."
-      },
-      image: bg_image_f5_partner,
-      date: "2026-06-19",
-      author: "NetCorp Team"
-    }
-  ];
+  const newsItems: NewsItem[] = getAllBlogPosts();
 
 
 

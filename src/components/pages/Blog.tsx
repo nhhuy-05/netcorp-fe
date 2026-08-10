@@ -5,31 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiCalendar, FiUser, FiTag, FiX } from 'react-icons/fi';
 import Breadcrumb from '../ui/Breadcrumb';
-import { bg_image_f5_partner } from '../../assets/images';
-
-interface BlogPost {
-  id: number;
-  title: {
-    en: string;
-    vi: string;
-  };
-  category: string;
-  excerpt: {
-    en: string;
-    vi: string;
-  };
-  content: {
-    en: string;
-    vi: string;
-  };
-  image: string;
-  date: string;
-  author: string;
-  tags: string[];
-  bodyImages?: {
-    [key: string]: string;
-  };
-}
+import NotFound from './NotFound';
+import { getBlogPostById, BlogPost } from '../../data/newsData';
 
 const Blog: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -54,92 +31,11 @@ const Blog: React.FC = () => {
     };
   }, [activeImage]);
 
-  // Mock blog post data - in a real app, this would come from an API
-  const getBlogPost = (id: number): BlogPost => {
-    const blogPosts: { [key: number]: BlogPost } = {
-      1: {
-        id: 1,
-        title: {
-          en: "NETCORP OFFICIALLY CERTIFIED AS F5 SILVER PARTNER 2026",
-          vi: "NETCORP CHÍNH THỨC ĐẠT CHỨNG NHẬN F5 SILVER PARTNER 2026"
-        },
-        category: "security",
-        excerpt: {
-          en: "NetCorp is proud to announce that it has officially achieved the F5 Silver Partner 2026 certification, confirming our capability in consulting, deploying, and operating application infrastructure, security, and cloud computing solutions for enterprises.",
-          vi: "NetCorp tự hào thông báo đã chính thức đạt chứng nhận F5 Silver Partner 2026, khẳng định năng lực tư vấn, triển khai và vận hành các giải pháp hạ tầng ứng dụng, bảo mật và điện toán đám mây cho doanh nghiệp."
-        },
-        content: {
-          en: `NetCorp is proud to announce that it has officially achieved the F5 Silver Partner 2026 certification, confirming our capability in consulting, deploying, and operating application infrastructure, security, and cloud computing solutions for enterprises.
+  const blogPost: BlogPost | undefined = getBlogPostById(id || '1');
 
-          Achieving this certification is an important milestone in NetCorp's strategy to develop its technology partner ecosystem, while demonstrating our commitment to continuously improving technical capabilities, service quality, and the value brought to customers.
-
-          As an F5 Silver Partner, NetCorp continues to accompany enterprises in building modern, secure, and highly scalable IT infrastructures through F5's key solution groups:
-          * Application Delivery & Traffic Management
-          * Web Application & API Protection (WAAP)
-          * Zero Trust Architecture
-          * Network Security & DDoS Protection
-          * Hybrid & Multi-Cloud Connectivity
-          * Kubernetes Networking & Application Modernization
-          * F5 Distributed Cloud Services
-          * AI Infrastructure & AI Security
-
-          [IMAGE:f5_partner|Chứng nhận F5 Silver Partner 2026 của NetCorp|NetCorp's F5 Silver Partner 2026 Certification]
-
-          These capabilities enable NetCorp to support customers in optimizing system performance, enhancing security, ensuring service continuity, and meeting digital transformation requirements in an increasingly complex technology environment.
-
-          Over the past years, NetCorp has participated in deploying many large-scale projects in the finance and banking sector, including:
-          * Investment in load balancing equipment for the DMZ partition at Vietcombank's Data Center.
-          * Provision of application security solutions for Agribank.
-          * Provision of firewall equipment for Agribank's Card System.
-          * Investment in load balancing equipment for BIDV's Core Banking system.
-          * Procurement to replace and supplement load balancing systems for BIDV's non-Core Banking services.
-
-          These projects are testament to NetCorp's capability in deploying infrastructure and security systems with high performance, stability, and availability requirements.
-
-          The F5 Silver Partner 2026 certification is recognition of the NetCorp team's efforts in developing professional expertise, improving service quality, and bringing modern technology solutions to customers. With F5's partnership, NetCorp is committed to continuing to support enterprises in accelerating their digital transformation, enhancing security, and optimizing operational efficiency in the digital era.`,
-          vi: `NetCorp tự hào thông báo đã chính thức đạt chứng nhận F5 Silver Partner 2026, khẳng định năng lực tư vấn, triển khai và vận hành các giải pháp hạ tầng ứng dụng, bảo mật và điện toán đám mây cho doanh nghiệp.
-
-          Việc đạt được chứng nhận này là dấu mốc quan trọng trong chiến lược phát triển hệ sinh thái đối tác công nghệ của NetCorp, đồng thời thể hiện cam kết không ngừng nâng cao năng lực kỹ thuật, chất lượng dịch vụ và giá trị mang lại cho khách hàng.
-
-          Với vai trò là F5 Silver Partner, NetCorp tiếp tục đồng hành cùng doanh nghiệp trong việc xây dựng hạ tầng CNTT hiện đại, an toàn và có khả năng mở rộng cao thông qua các nhóm giải pháp trọng yếu của F5 như:
-          * Application Delivery & Traffic Management
-          * Web Application & API Protection (WAAP)
-          * Zero Trust Architecture
-          * Network Security & DDoS Protection
-          * Hybrid & Multi-Cloud Connectivity
-          * Kubernetes Networking & Application Modernization
-          * F5 Distributed Cloud Services
-          * AI Infrastructure & AI Security
-
-          [IMAGE:f5_partner|Chứng nhận F5 Silver Partner 2026 của NetCorp|NetCorp's F5 Silver Partner 2026 Certification]
-
-          Những năng lực này giúp NetCorp hỗ trợ khách hàng tối ưu hiệu năng hệ thống, nâng cao khả năng bảo mật, đảm bảo tính liên tục của dịch vụ và đáp ứng yêu cầu chuyển đổi số trong môi trường công nghệ ngày càng phức tạp.
-
-          Trong những năm qua, NetCorp đã tham gia triển khai nhiều dự án quy mô lớn trong lĩnh vực tài chính – ngân hàng, bao gồm:
-          * Đầu tư thiết bị cân bằng tải cho phân vùng DMZ tại Trung tâm dữ liệu của Vietcombank.
-          * Trang bị giải pháp bảo mật ứng dụng cho Agribank.
-          * Cung cấp thiết bị tường lửa cho Hệ thống Thẻ Agribank.
-          * Đầu tư thiết bị cân bằng tải cho hệ thống Core Banking của BIDV.
-          * Mua sắm thay thế, bổ sung hệ thống cân bằng tải cho các dịch vụ ngoài Core Banking của BIDV.
-
-          Các dự án trên là minh chứng cho năng lực triển khai các hệ thống hạ tầng và bảo mật có yêu cầu cao về hiệu năng, độ ổn định và tính sẵn sàng.
-
-          Chứng nhận F5 Silver Partner 2026 là sự ghi nhận cho những nỗ lực của đội ngũ NetCorp trong việc phát triển năng lực chuyên môn, nâng cao chất lượng dịch vụ và mang đến các giải pháp công nghệ hiện đại cho khách hàng. Với sự đồng hành của F5, NetCorp cam kết tiếp tục hỗ trợ doanh nghiệp đẩy nhanh quá trình chuyển đổi số, tăng cường bảo mật và tối ưu hiệu quả vận hành trong kỷ nguyên số.`
-        },
-        image: bg_image_f5_partner,
-        date: "2026-06-19",
-        author: "NetCorp Team",
-        tags: ["F5", "Silver Partner", "Security", "Cloud", "Application Delivery"],
-        bodyImages: {
-          f5_partner: bg_image_f5_partner
-        }
-      }
-    };
-
-    return blogPosts[id] || blogPosts[1]; // Default to first post if ID not found
-  };
-
-  const blogPost = getBlogPost(parseInt(id || '1'));
+  if (!blogPost) {
+    return <NotFound />;
+  }
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -155,7 +51,8 @@ const Blog: React.FC = () => {
       technology: { en: 'Technology', vi: 'Công Nghệ' },
       business: { en: 'Business', vi: 'Kinh Doanh' },
       security: { en: 'Security', vi: 'Bảo Mật' },
-      industry: { en: 'Industry', vi: 'Ngành Nghề' }
+      industry: { en: 'Industry', vi: 'Ngành Nghề' },
+      announcement: { en: 'Announcement', vi: 'Thông Báo' }
     };
     return categoryMap[category] || { en: category, vi: category };
   };
